@@ -1,0 +1,29 @@
+// -------------------------------- variables -------------------------------
+
+// colors
+$txtColor: #000000;
+
+// ---------------------------------- fonts ---------------------------------
+
+// google fonts
+@import 'base/fonts';
+
+// ------------------------------- base styles ------------------------------
+
+// base scss file
+@import "base/set";
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+}
+
+main {
+	flex: 1 1 auto;
+}
+
+// --------------------------------------------------------------------------
+
+// sections
+@import "sections/dummy";
