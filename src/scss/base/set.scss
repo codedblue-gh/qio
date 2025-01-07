@@ -10,7 +10,7 @@ html {
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  font-family: "Bulatov";
+  font-family: var(--ff-main);
   font-size: 0.5208335vw;
   font-style: normal;
   font-weight: normal;
@@ -19,16 +19,15 @@ html {
 }
 
 body {
+  font: var(--txt-16);
+  text-transform: uppercase;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1.2;
-  color: $txtColor;
-  background-color: rgb(26, 26, 26);
+  color: var(--c-primary);
+  background-color: var(--c-bg);
   -webkit-animation: bugfix infinite 1s;
 }
 
@@ -58,6 +57,7 @@ textarea {
   outline: none;
   cursor: pointer;
   font: inherit;
+  text-transform: inherit;
   &:focus {
     outline: none;
   }
@@ -107,22 +107,18 @@ ul li {
   list-style: none;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
   margin: 0;
   -webkit-appearance: none;
 }
 
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield;
 }
 
-section {
-  margin-bottom: 18rem;
-}
-
 .container {
-  width: 141rem;
+  width: 166rem;
   margin: 0 auto;
 }
 
@@ -150,8 +146,8 @@ section {
   }
 }
 
-@media (min-width: 2000px) {
-  html {
-    font-size: 10px;
-  }
-}
+// @media (min-width: 2000px) {
+//   html {
+//     font-size: 10px;
+//   }
+// }

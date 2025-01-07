@@ -1,0 +1,111 @@
+.header {
+  position: fixed;
+  z-index: 999;
+
+  width: 100vw;
+  height: 100dvh;
+  inset: 0%;
+
+  pointer-events: none;
+
+  --icon-size: 2.4rem;
+  --gap: 3rem;
+
+  // .header__nav
+
+  &__nav {
+    padding: 3rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+    justify-items: start;
+    height: 100%;
+  }
+
+  // .header__item
+
+  &__item {
+    display: grid;
+    grid-template-columns: var(--icon-size) 1fr;
+    align-items: center;
+    column-gap: 1.5rem;
+
+    pointer-events: auto;
+
+    &:first-child::after,
+    &:last-child::after,
+    &::before {
+      content: url("data:image/svg+xml,%3Csvg  viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M24 24H0V0H24V24ZM1.26314 23.3684H22.7369V1.89484H1.26314V23.3684Z' fill='%230D0D0D'/%3E%3Cpath d='M8.84448 8.83836H15.1603V15.1541H8.84448V8.83836Z' fill='%230D0D0D'/%3E%3C/svg%3E");
+
+      width: var(--icon-size);
+      height: var(--icon-size);
+    }
+
+    &:first-child::after {
+      left: var(--gap);
+    }
+    &:last-child::after {
+      right: var(--gap);
+    }
+    &:first-child::after,
+    &:last-child::after {
+      position: absolute;
+      top: 50%;
+
+      pointer-events: none;
+
+      transform: translateY(-50%);
+    }
+
+    &:nth-child(4),
+    &:last-child {
+      align-self: end;
+    }
+
+    &:nth-child(2),
+    &:nth-child(5) {
+      position: fixed;
+      left: 50%;
+    }
+    &:nth-child(2) {
+      top: var(--gap);
+    }
+    &:nth-child(5) {
+      bottom: var(--gap);
+    }
+
+    &:nth-child(3n) {
+      justify-self: end;
+      grid-template-columns: auto var(--icon-size);
+
+      &::before {
+        order: 1;
+      }
+    }
+
+    // .header__item_menu
+
+    &_menu {
+    }
+
+    // .header__item_scroll
+
+    &_scroll {
+    }
+  }
+
+  &__item-txt {
+    font: var(--txt-small);
+  }
+
+  // .header__breadcrumbs
+
+  &__breadcrumbs {
+  }
+
+  // .header__btn
+
+  &__btn {
+  }
+}

@@ -1,0 +1,156 @@
+.btn,
+.btn__inner,
+.btn__txt {
+  display: inline-flex;
+  align-items: center;
+
+  &::before,
+  &::after {
+    flex: 0 0 1.5rem;
+    width: 1.5rem;
+    height: 2.5rem;
+  }
+}
+.btn,
+.btn__inner {
+  &::before,
+  &::after {
+    opacity: var(--opacity);
+  }
+  &::before {
+    content: var(--chevron-tr);
+  }
+  &::after {
+    content: var(--chevron-tl);
+  }
+}
+
+.btn {
+  column-gap: 7.7rem;
+
+  --arr-1st: 0;
+  --arr-2nd: 0;
+  --arr-3rd: 0;
+  --opacity: 1;
+
+  &::before {
+    transform: translateX(var(--arr-3rd));
+  }
+  &::after {
+    transform: translateX(calc(-1 * var(--arr-3rd)));
+  }
+
+  // .btn__inner
+
+  &__inner {
+    column-gap: 2.5rem;
+
+    &::before {
+      transform: translateX(var(--arr-2nd));
+    }
+    &::after {
+      transform: translateX(calc(-1 * var(--arr-2nd)));
+    }
+  }
+
+  // .btn__txt
+
+  &__txt {
+    column-gap: 3.4rem;
+
+    font: var(--txt-main-sb);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+
+    &::before {
+      content: var(--chevron-tr-black);
+      transform: translateX(var(--arr-1st));
+    }
+    &::after {
+      content: var(--chevron-tl-black);
+      transform: translateX(calc(-1 * var(--arr-1st)));
+    }
+
+    span {
+      &::before {
+        content: '[ ';
+      }
+      &::after {
+        content: ' ]';
+      }
+    }
+  }
+}
+
+@keyframes btn-1 {
+  0% {
+    transform: translateX(0rem);
+  }
+
+  50% {
+    transform: translateX(2.5rem);
+  }
+  100% {
+    transform: translateX(0rem);
+  }
+}
+@keyframes btn-1-r {
+  0% {
+    transform: translateX(0rem);
+  }
+
+  50% {
+    transform: translateX(-2.5rem);
+  }
+  100% {
+    transform: translateX(0rem);
+  }
+}
+@keyframes btn-2 {
+  0% {
+    transform: translateX(0rem);
+  }
+
+  50% {
+    transform: translateX(3rem);
+  }
+  100% {
+    transform: translateX(0rem);
+  }
+}
+@keyframes btn-2-r {
+  0% {
+    transform: translateX(0rem);
+  }
+
+  50% {
+    transform: translateX(-3rem);
+  }
+  100% {
+    transform: translateX(0rem);
+  }
+}
+@keyframes btn-3 {
+  0% {
+    transform: translateX(0rem);
+  }
+
+  50% {
+    transform: translateX(5rem);
+  }
+  100% {
+    transform: translateX(0rem);
+  }
+}
+@keyframes btn-3-r {
+  0% {
+    transform: translateX(0rem);
+  }
+
+  50% {
+    transform: translateX(-5rem);
+  }
+  100% {
+    transform: translateX(0rem);
+  }
+}

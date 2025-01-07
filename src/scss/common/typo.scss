@@ -1,0 +1,15 @@
+.h-heavy {
+  font: var(--h-heavy);
+  letter-spacing: -0.1em;
+  text-transform: lowercase;
+
+  &::before {
+    content: '(-';
+
+    margin-right: 8rem;
+  }
+
+  &::after {
+    content: ')*';
+  }
+}

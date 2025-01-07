@@ -1,7 +1,33 @@
 // -------------------------------- variables -------------------------------
 
-// colors
-$txtColor: #000000;
+:root {
+  // colors
+  --c-primary: #0d0d0d;
+  --c-bg: #eef3ff;
+  --c-gray: #7e7e7e;
+  --c-light-gray: #a3a3a3;
+
+  // font family
+  --ff-main: 'Roobert SemiMono';
+
+  // font size
+  --fz-14: 1.4rem;
+  --fz-16: 1.6rem;
+  --fz-32: 3.2rem;
+
+  // typography
+  --txt-main: 500 var(--fz-16) / 2.2rem var(--ff-main);
+  --txt-main-sb: 600 var(--fz-16) / 2.2rem var(--ff-main);
+  --txt-small: 500 var(--fz-14) / 2.2rem var(--ff-main);
+
+  --h-heavy: 700 var(--fz-32) / 3.3rem var(--ff-main);
+
+  // svg
+  --chevron-tr-black: url('data:image/svg+xml,<svg viewBox="0 0 16 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.1816 12.63L13.4287 8.84458L9.33183 0L5.82992 0L11.6757 12.63L5.82992 25.26H9.33183L13.4287 16.4154L15.1816 12.63Z" fill="%230D0D0D"/><path d="M9.35181 12.63L7.60285 8.84858L3.50599 0L0.000101089 0L5.84991 12.63L0.000101089 25.26H3.50599L7.60285 16.4154L9.35181 12.63Z" fill="%230D0D0D"/></svg>');
+  --chevron-tl-black: url('data:image/svg+xml,<svg viewBox="0 0 16 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 12.63L1.75295 16.4154L5.84981 25.26H9.35172L3.50589 12.63L9.35172 0H5.84981L1.75295 8.84461L0 12.63Z" fill="%230D0D0D"/><path d="M5.83008 12.63L7.57903 16.4114L11.6759 25.26H15.1818L9.33197 12.63L15.1818 0H11.6759L7.57903 8.84461L5.83008 12.63Z" fill="%230D0D0D"/></svg>');
+  --chevron-tr: url('data:image/svg+xml,<svg viewBox="0 0 17 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.0868 0L5.91986 0L11.9898 13.1095L5.91986 26.215H10.0868L16.1567 13.1095L10.0868 0ZM6.78409 25.6673L12.5984 13.1095L6.78409 0.551803L9.73789 0.551803L15.5522 13.1095L9.73789 25.6673H6.78409Z" fill="%230D0D0D"/><path d="M4.16692 0L-6.29425e-05 0L6.06985 13.1095L-6.29425e-05 26.215H4.16692L10.2368 13.1095L4.16692 0ZM0.86417 25.6673L6.67846 13.1095L0.86417 0.551803L3.81797 0.551803L9.63226 13.1095L3.81797 25.6673H0.86417Z" fill="%230D0D0D"/></svg>');
+  --chevron-tl: url('data:image/svg+xml,<svg viewBox="0 0 17 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.0699 26.215H10.2369L4.16697 13.1055L10.2369 0H6.0699L0 13.1055L6.0699 26.215ZM9.37265 0.547743L3.55835 13.1055L9.37265 25.6632H6.41884L0.604552 13.1055L6.41884 0.547743H9.37265Z" fill="%230D0D0D"/><path d="M11.9898 26.215H16.1568L10.0869 13.1055L16.1568 0H11.9898L5.91992 13.1055L11.9898 26.215ZM15.2926 0.547743L9.47828 13.1055L15.2926 25.6632H12.3388L6.52447 13.1055L12.3388 0.547743H15.2926Z" fill="%230D0D0D"/></svg>');
+}
 
 // ---------------------------------- fonts ---------------------------------
 
@@ -10,20 +36,75 @@ $txtColor: #000000;
 
 // ------------------------------- base styles ------------------------------
 
-// base scss file
-@import "base/set";
+// base scss
+@import 'base/set';
+@import 'base/header';
+
+// common scss
+@import 'common/btn';
+@import 'common/typo';
 
 .wrapper {
-	display: flex;
-	flex-direction: column;
-	flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
 }
 
 main {
-	flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+body {
+  &::before {
+    content: '';
+    position: fixed;
+    height: 300%;
+    width: 300%;
+    left: -100%;
+    top: -100%;
+    background-image: url(@img/grain.webp);
+    animation-name: grained;
+    animation-iteration-count: infinite;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(20);
+  }
+}
+
+@keyframes grained {
+  0% {
+    transform: translate(-10%, 10%);
+  }
+  10% {
+    transform: translate(-25%, 0%);
+  }
+  20% {
+    transform: translate(-30%, 10%);
+  }
+  30% {
+    transform: translate(-30%, 30%);
+  }
+  50% {
+    transform: translate(-15%, 10%);
+  }
+  60% {
+    transform: translate(-20%, 20%);
+  }
+  70% {
+    transform: translate(-5%, 20%);
+  }
+  80% {
+    transform: translate(-25%, 5%);
+  }
+  90% {
+    transform: translate(-30%, 25%);
+  }
+  100% {
+    transform: translate(-10%, 10%);
+  }
 }
 
 // --------------------------------------------------------------------------
 
 // sections
-@import "sections/dummy";
+@import 'sections/dummy';
+@import 'sections/hero';

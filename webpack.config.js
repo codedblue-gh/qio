@@ -38,12 +38,15 @@ module.exports = {
   target,
 
   // entry point
-  entry: path.resolve(__dirname, 'src/js/app.js'),
+  entry: {
+    app: path.resolve(__dirname, 'src/js/app.js'),
+    dummy: path.resolve(__dirname, 'src/js/dummy.js'),
+  },
 
   // where the bundled file will resolve
   output: {
     path: path.resolve(__dirname, 'app'),
-    filename: 'js/app.js',
+    filename: 'js/[name].js',
     clean: true,
   },
 
@@ -64,7 +67,7 @@ module.exports = {
       //  warnings: false,
       //  runtimeErrors: true,
       //}
-    }
+    },
   },
 
   // source map

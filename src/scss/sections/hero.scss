@@ -1,0 +1,122 @@
+.hero {
+  position: relative;
+
+  // .hero__container
+
+  &__container {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    min-height: 102.4rem;
+  }
+
+  // .hero__center
+
+  &__center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 4.4rem;
+    grid-column: 2/3;
+  }
+
+  // .hero__logo
+
+  &__logo {
+    &._animate {
+      path:nth-child(1) {
+        animation: flicker 2s ease-in-out 1.5s;
+      }
+      path:nth-child(2) {
+        animation: flicker 2s ease-in-out;
+      }
+      path:nth-child(3) {
+        animation: flicker 2s ease-in-out 1s;
+      }
+    }
+    svg {
+      width: 52.4rem;
+      height: 14.4rem;
+    }
+  }
+
+  // .hero__btn
+
+  &__btn {
+  }
+
+  // .hero__text-content
+
+  &__text-content {
+    padding-right: 5rem;
+    padding-bottom: 15.6rem;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    row-gap: 1.5rem;
+  }
+
+  // .hero__title
+
+  &__title {
+    margin-right: 21rem;
+  }
+
+  // .hero__text-wrap
+
+  &__text-wrap {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    max-width: 46.1rem;
+  }
+
+  // .hero__text
+
+  &__text {
+    font: var(--txt-small);
+    text-align: justify;
+  }
+
+  // .hero__bg
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+
+    opacity: 0.7;
+
+    svg {
+      width: 100dvw;
+    }
+  }
+}
+
+@keyframes flicker {
+  0%,
+  2%,
+  35%,
+  37%,
+  39%,
+  41%,
+  100% {
+    opacity: 1;
+  }
+  0%,
+  3%,
+  34%,
+  36%,
+  38%,
+  40% {
+    opacity: 0;
+  }
+}
