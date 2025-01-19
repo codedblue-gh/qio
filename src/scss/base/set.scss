@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  font: var(--txt-16);
+  font: var(--txt-main);
   text-transform: uppercase;
   margin: 0;
   padding: 0;
@@ -85,6 +85,7 @@ img {
   display: block;
   width: 100%;
   height: auto;
+  object-fit: contain;
 }
 
 button {

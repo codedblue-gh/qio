@@ -1,0 +1,120 @@
+.request-form {
+  padding: 12rem 0;
+  // .request-form__container
+
+  &__container {
+    display: grid;
+    grid-template-columns: 56rem 1fr;
+    row-gap: 3rem;
+    column-gap: 4rem;
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6rem;
+  }
+
+  // .request-form__heading
+
+  &__heading {
+    padding-top: 4rem;
+  }
+
+  // .request-form__txt
+
+  &__txt {
+    margin-bottom: auto;
+
+    max-width: 40rem;
+
+    text-align: justify;
+  }
+
+  &__globe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4.9rem;
+    border-right: 1px solid var(--c-primary);
+
+    svg {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+
+  &__group {
+    display: grid;
+    grid-template-columns: repeat(2, 5rem) 33.8rem 5rem;
+    width: 49rem;
+    height: 5rem;
+    border: 1px solid var(--c-primary);
+
+    &::before {
+      content: '';
+
+      width: 5rem;
+      height: 5rem;
+
+      background-color: var(--c-primary);
+    }
+
+    &::after {
+      content: '';
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 5rem;
+      height: 4.9rem;
+      border-left: 1px solid var(--c-primary);
+
+      background: url(@img/vectors/cross.svg) center / 3.3rem no-repeat;
+    }
+  }
+
+  &__rail-wrap {
+    flex: 1 1 auto;
+  }
+
+  &__rail {
+    display: flex;
+    width: fit-content;
+    flex: auto;
+    flex-direction: row;
+    width: 100%;
+    overflow: hidden;
+
+    div {
+      svg {
+        width: 40rem;
+      }
+    }
+  }
+
+  // .request-form__form
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &__fields {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  &__btn {
+    width: 100%;
+  }
+
+  // .request-form__field
+
+  &__field {
+    &_textarea {
+    }
+  }
+}

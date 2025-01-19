@@ -1,0 +1,28 @@
+.section-head {
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  border-bottom: 1px solid var(--c--light-gray);
+
+  &::after {
+    content: var(--i-arrow-main);
+
+    width: 1.7rem;
+    height: 1.7rem;
+
+    transform: rotate(90deg);
+  }
+
+  // .section-head__heading
+
+  &__heading {
+  }
+
+  // .section-head__subtitle
+
+  &__subtitle {
+    font: var(--txt-small);
+  }
+}

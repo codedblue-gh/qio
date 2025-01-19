@@ -1,0 +1,157 @@
+.reviews {
+  // .reviews__container
+
+  &__container {
+    padding: 12rem 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10rem;
+  }
+
+  // .reviews__heading
+
+  &__heading {
+  }
+
+  // .reviews__body
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5rem;
+  }
+
+  // .reviews__slider
+
+  &__slider {
+    &.swiper {
+      width: 127rem;
+
+      overflow: visible;
+    }
+  }
+
+  // .reviews__wrapper
+
+  &__wrapper {
+  }
+
+  // .reviews__slide
+
+  &__slide {
+  }
+}
+
+.reviews-card::before,
+.reviews-card::after,
+.reviews-card__inner::before,
+.reviews-card__inner::after {
+  content: '';
+
+  position: absolute;
+
+  width: 2.1rem;
+  height: 2.1rem;
+  border: var(--c-primary) 1px solid;
+}
+.reviews-card {
+  position: relative;
+
+  &.swiper-slide {
+    &:not(.swiper-slide-active) {
+      opacity: 0.3;
+    }
+  }
+
+  &::before,
+  &::after {
+    top: 0;
+
+    border-bottom: none;
+  }
+
+  &::before {
+    left: 0;
+
+    border-right: none;
+  }
+
+  &::after {
+    right: 0;
+
+    border-left: none;
+  }
+
+  &__inner {
+    padding: 4rem 6rem;
+
+    display: flex;
+    justify-content: space-between;
+    column-gap: 5rem;
+
+    &::before,
+    &::after {
+      bottom: 0;
+
+      border-top: none;
+    }
+
+    &::before {
+      left: 0;
+
+      border-right: none;
+    }
+
+    &::after {
+      right: 0;
+
+      border-left: none;
+    }
+  }
+
+  // .reviews-card__content
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 30rem;
+  }
+
+  // .reviews-card__text
+
+  &__text {
+    margin-bottom: auto;
+    margin-top: auto;
+  }
+
+  // .reviews-card__name
+
+  &__name {
+    margin-bottom: 1rem;
+  }
+
+  // .reviews-card__date
+
+  &__date {
+    font: var(--txt-small);
+    color: var(--c-gray);
+  }
+
+  // .reviews-card__image-wrap
+
+  &__image-wrap {
+    flex: 0 0 28rem;
+
+    width: 28rem;
+
+    img {
+      height: 100%;
+
+      object-fit: cover;
+    }
+  }
+}
