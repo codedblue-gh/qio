@@ -66,6 +66,7 @@
 @import 'base/set';
 @import 'base/header';
 @import 'base/footer';
+@import 'base/preloader';
 
 // lib
 @import 'lib/swiper';
@@ -98,11 +99,16 @@ main {
   flex: 1 1 auto;
 }
 
-// [data-section] {
-//   height: 100dvh;
-//   top: 0;
-//   will-change: transform;
-// }
+html:not(._page-loaded) {
+  overflow: hidden;
+}
+
+#twinkle-bg {
+  transition: opacity 0.3s ease;
+}
+.lenis-scrolling #twinkle-bg {
+  opacity: 0;
+}
 
 .bg {
   &::before {

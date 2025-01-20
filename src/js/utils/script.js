@@ -2,6 +2,7 @@ import { horizontalLoop } from './marquee';
 
 import gsap from 'gsap';
 import { removeClasses } from './utils';
+import { animateHero } from '../anim/hero';
 
 document.addEventListener('DOMContentLoaded', function () {
   if (document.querySelector('.header__item_menu')) {
@@ -52,4 +53,11 @@ document.addEventListener('DOMContentLoaded', function () {
       speed: 0.6,
     });
   }
+});
+window.addEventListener('load', function () {
+  document.documentElement.classList.add('_page-loaded');
+
+  setTimeout(() => {
+    animateHero();
+  }, 300);
 });

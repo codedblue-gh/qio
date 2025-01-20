@@ -121,7 +121,15 @@
 }
 
 .accordion-item {
-  border-bottom: 1px solid var(--c-gray);
+  border-bottom: 1px solid var(--c-light-gray);
+
+  transition: border-bottom 0.3s ease;
+
+  @media (any-hover: hover) {
+    &:hover {
+      border-bottom: 1px solid var(--c-primary);
+    }
+  }
 
   // .accordion-item__head
 

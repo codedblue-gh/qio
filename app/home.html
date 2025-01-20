@@ -17,17 +17,17 @@
 		<header class="header">
 			<a href="/" class="header__logo"><img src="img/logo-sm.svg" alt="" /></a>
 			<nav class="header__nav">
-				<a href="#" class="header__link">услуги</a>
-				<a href="#" class="header__link">проекты</a>
-				<a href="#" class="header__link">цены</a>
-				<a href="#" class="header__link">статьи</a>
-				<a href="#" class="header__link">о нас</a>
-				<a href="#" class="header__link">контакты</a>
+				<a href="#" data-scramble="услуги" class="header__link">услуги</a>
+				<a href="#" data-scramble="проекты" class="header__link">проекты</a>
+				<a href="#" data-scramble="цены" class="header__link">цены</a>
+				<a href="#" data-scramble="статьи" class="header__link">статьи</a>
+				<a href="#" data-scramble="о нас" class="header__link">о нас</a>
+				<a href="#" data-scramble="контакты" class="header__link">контакты</a>
 			</nav>
 		</header>
 
 		<main class="main">
-			<section data-section class="hero section">
+			<section class="hero">
 				<div class="hero__container container">
 					<div class="hero__center">
 						<div class="hero__logo">
@@ -1848,7 +1848,7 @@
 					</svg>
 				</div>
 			</section>
-			<section data-section class="about section">
+			<section data-section class="about">
 				<div class="marquee">
 					<div class="marquee__rail">
 						<span class="marquee__txt">seo продвижение</span>
@@ -1866,7 +1866,7 @@
 				</div>
 				<div class="about__container container">
 					<div class="about__col">
-						<h2 class="about__heading h-main">
+						<h2 data-gsap-opacity class="about__heading h-main">
 							<div class="h-main__txt">о нас</div>
 						</h2>
 						<div class="about__group">
@@ -2256,39 +2256,16 @@
 						</div>
 					</div>
 				</div>
-				<svg id="twinkle-bg" style="
-      position: absolute;
-      z-index: -1;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    " data-twinkle-anim viewBox="0 0 1920 990" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M1536.57 270.433H1531.43V275.567C1531.43 275.806 1531.24 276 1531 276C1530.76 276 1530.57 275.807 1530.57 275.567V270.433H1525.43C1525.19 270.433 1525 270.24 1525 270C1525 269.76 1525.19 269.567 1525.43 269.567H1530.57V264.433C1530.57 264.194 1530.76 264 1531 264C1531.24 264 1531.43 264.194 1531.43 264.433V269.567H1536.57C1536.81 269.567 1537 269.761 1537 270C1537 270.239 1536.81 270.433 1536.57 270.433H1536.57Z" fill="#0D0D0D" />
-					<path d="M1174.57 270.433H1169.43V275.567C1169.43 275.806 1169.24 276 1169 276C1168.76 276 1168.57 275.807 1168.57 275.567V270.433H1163.43C1163.19 270.433 1163 270.24 1163 270C1163 269.76 1163.19 269.567 1163.43 269.567H1168.57V264.433C1168.57 264.194 1168.76 264 1169 264C1169.24 264 1169.43 264.194 1169.43 264.433V269.567H1174.57C1174.81 269.567 1175 269.761 1175 270C1175 270.239 1174.81 270.433 1174.57 270.433H1174.57Z" fill="#0D0D0D" />
-					<path d="M815.566 91.433H810.432V96.567C810.432 96.8058 810.238 97 809.999 97C809.76 97 809.566 96.8068 809.566 96.567V91.433H804.433C804.194 91.433 804 91.2398 804 91C804 90.7602 804.194 90.567 804.433 90.567H809.567V85.433C809.567 85.1942 809.761 85 810 85C810.239 85 810.433 85.1942 810.433 85.433V90.567H815.567C815.806 90.567 816 90.7612 816 91C816 91.2388 815.806 91.433 815.567 91.433H815.566Z" fill="#0D0D0D" />
-					<path d="M996.566 451.433H991.432V456.567C991.432 456.806 991.238 457 990.999 457C990.76 457 990.566 456.807 990.566 456.567V451.433H985.433C985.194 451.433 985 451.24 985 451C985 450.76 985.194 450.567 985.433 450.567H990.567V445.433C990.567 445.194 990.761 445 991 445C991.239 445 991.433 445.194 991.433 445.433V450.567H996.567C996.806 450.567 997 450.761 997 451C997 451.239 996.806 451.433 996.567 451.433H996.566Z" fill="#0D0D0D" />
-					<path d="M906.566 631.433H901.432V636.567C901.432 636.806 901.238 637 900.999 637C900.76 637 900.566 636.807 900.566 636.567V631.433H895.433C895.194 631.433 895 631.24 895 631C895 630.76 895.194 630.567 895.433 630.567H900.567V625.433C900.567 625.194 900.761 625 901 625C901.239 625 901.433 625.194 901.433 625.433V630.567H906.567C906.806 630.567 907 630.761 907 631C907 631.239 906.806 631.433 906.567 631.433H906.566Z" fill="#0D0D0D" />
-					<path d="M1267.07 630.933H1261.93V636.067C1261.93 636.306 1261.74 636.5 1261.5 636.5C1261.26 636.5 1261.07 636.307 1261.07 636.067V630.933H1255.93C1255.69 630.933 1255.5 630.74 1255.5 630.5C1255.5 630.26 1255.69 630.067 1255.93 630.067H1261.07V624.933C1261.07 624.694 1261.26 624.5 1261.5 624.5C1261.74 624.5 1261.93 624.694 1261.93 624.933V630.067H1267.07C1267.31 630.067 1267.5 630.261 1267.5 630.5C1267.5 630.739 1267.31 630.933 1267.07 630.933H1267.07Z" fill="#0D0D0D" />
-					<path d="M1086.57 811.433H1081.43V816.567C1081.43 816.806 1081.24 817 1081 817C1080.76 817 1080.57 816.807 1080.57 816.567V811.433H1075.43C1075.19 811.433 1075 811.24 1075 811C1075 810.76 1075.19 810.567 1075.43 810.567H1080.57V805.433C1080.57 805.194 1080.76 805 1081 805C1081.24 805 1081.43 805.194 1081.43 805.433V810.567H1086.57C1086.81 810.567 1087 810.761 1087 811C1087 811.239 1086.81 811.433 1086.57 811.433H1086.57Z" fill="#0D0D0D" />
-					<path d="M1805.57 721.433H1800.43V726.567C1800.43 726.806 1800.24 727 1800 727C1799.76 727 1799.57 726.807 1799.57 726.567V721.433H1794.43C1794.19 721.433 1794 721.24 1794 721C1794 720.76 1794.19 720.567 1794.43 720.567H1799.57V715.433C1799.57 715.194 1799.76 715 1800 715C1800.24 715 1800.43 715.194 1800.43 715.433V720.567H1805.57C1805.81 720.567 1806 720.761 1806 721C1806 721.239 1805.81 721.433 1805.57 721.433H1805.57Z" fill="#0D0D0D" />
-					<path d="M545.566 630.433H540.432V635.567C540.432 635.806 540.238 636 539.999 636C539.76 636 539.566 635.807 539.566 635.567V630.433H534.433C534.194 630.433 534 630.24 534 630C534 629.76 534.194 629.567 534.433 629.567H539.567V624.433C539.567 624.194 539.761 624 540 624C540.239 624 540.433 624.194 540.433 624.433V629.567H545.567C545.806 629.567 546 629.761 546 630C546 630.239 545.806 630.433 545.567 630.433H545.566Z" fill="#0D0D0D" />
-					<path d="M186.378 270.433H181.549V275.567C181.549 275.806 181.367 276 181.142 276C180.918 276 180.735 275.807 180.735 275.567V270.433H175.907C175.683 270.433 175.5 270.24 175.5 270C175.5 269.76 175.683 269.567 175.907 269.567H180.736V264.433C180.736 264.194 180.918 264 181.143 264C181.368 264 181.55 264.194 181.55 264.433V269.567H186.379C186.603 269.567 186.786 269.761 186.786 270C186.786 270.239 186.603 270.433 186.379 270.433H186.378Z" fill="#0D0D0D" />
-					<path d="M455.566 811.933H450.432V817.067C450.432 817.306 450.238 817.5 449.999 817.5C449.76 817.5 449.566 817.307 449.566 817.067V811.933H444.433C444.194 811.933 444 811.74 444 811.5C444 811.26 444.194 811.067 444.433 811.067H449.567V805.933C449.567 805.694 449.761 805.5 450 805.5C450.239 805.5 450.433 805.694 450.433 805.933V811.067H455.567C455.806 811.067 456 811.261 456 811.5C456 811.739 455.806 811.933 455.567 811.933H455.566Z" fill="#0D0D0D" />
-					<path d="M725.566 361.433H720.432V366.567C720.432 366.806 720.238 367 719.999 367C719.76 367 719.566 366.807 719.566 366.567V361.433H714.433C714.194 361.433 714 361.24 714 361C714 360.76 714.194 360.567 714.433 360.567H719.567V355.433C719.567 355.194 719.761 355 720 355C720.239 355 720.433 355.194 720.433 355.433V360.567H725.567C725.806 360.567 726 360.761 726 361C726 361.239 725.806 361.433 725.567 361.433H725.566Z" fill="#0D0D0D" />
-					<path d="M95.566 539.433H90.432V544.567C90.432 544.806 90.2379 545 89.999 545C89.7602 545 89.566 544.807 89.566 544.567V539.433H84.433C84.1942 539.433 84 539.24 84 539C84 538.76 84.1942 538.567 84.433 538.567H89.567V533.433C89.567 533.194 89.7612 533 90 533C90.2388 533 90.433 533.194 90.433 533.433V538.567H95.567C95.8058 538.567 96 538.761 96 539C96 539.239 95.8058 539.433 95.567 539.433H95.566Z" fill="#0D0D0D" />
-					<path d="M1625.57 90.933H1620.43V96.067C1620.43 96.3058 1620.24 96.5 1620 96.5C1619.76 96.5 1619.57 96.3068 1619.57 96.067V90.933H1614.43C1614.19 90.933 1614 90.7398 1614 90.5C1614 90.2602 1614.19 90.067 1614.43 90.067H1619.57V84.933C1619.57 84.6942 1619.76 84.5 1620 84.5C1620.24 84.5 1620.43 84.6942 1620.43 84.933V90.067H1625.57C1625.81 90.067 1626 90.2612 1626 90.5C1626 90.7388 1625.81 90.933 1625.57 90.933H1625.57Z" fill="#0D0D0D" />
-				</svg>
 			</section>
 
-			<section data-section class="services section">
+			<section data-section class="services">
 				<div data-accordion class="services__container container">
 					<div class="services__col">
 						<div class="services__accordion-items">
 							<div class="services__accordion-item accordion-item">
 								<button data-accordion-el type="button" class="accordion-item__head">
-									<span class="accordion-item__number">03</span>
-									<span class="accordion-item__heading">разработка сайтов</span>
+									<span class="accordion-item__number">003</span>
+									<span data-scramble="разработка сайтов" class="accordion-item__heading">разработка сайтов</span>
 								</button>
 								<div data-accordion-body class="accordion-item__body">
 									<div class="accordion-item__inner">
@@ -2309,8 +2286,8 @@
 							</div>
 							<div class="services__accordion-item accordion-item">
 								<button data-accordion-el type="button" class="accordion-item__head">
-									<span class="accordion-item__number">04</span>
-									<span class="accordion-item__heading">seo-продвижение</span>
+									<span class="accordion-item__number">004</span>
+									<span data-scramble="seo-продвижение" class="accordion-item__heading">seo-продвижение</span>
 								</button>
 								<div data-accordion-body class="accordion-item__body">
 									<div class="accordion-item__inner">
@@ -2332,7 +2309,7 @@
 						</div>
 					</div>
 					<div class="services__center">
-						<h2 class="services__heading h-main">
+						<h2 data-gsap-opacity class="services__heading h-main">
 							<span class="h-main__txt">что мы делаем ?</span>
 						</h2>
 						<p class="services__text">
@@ -2349,8 +2326,8 @@
 						<div class="services__accordion-items">
 							<div class="services__accordion-item accordion-item">
 								<button data-accordion-el type="button" class="accordion-item__head">
-									<span class="accordion-item__number">01</span>
-									<span class="accordion-item__heading">поддержка</span>
+									<span class="accordion-item__number">001</span>
+									<span data-scramble="поддержка" class="accordion-item__heading">поддержка</span>
 								</button>
 								<div data-accordion-body class="accordion-item__body">
 									<div class="accordion-item__inner">
@@ -2371,8 +2348,8 @@
 							</div>
 							<div class="services__accordion-item accordion-item">
 								<button data-accordion-el type="button" class="accordion-item__head">
-									<span class="accordion-item__number">02</span>
-									<span class="accordion-item__heading">дизайн сайтов</span>
+									<span class="accordion-item__number">002</span>
+									<span data-scramble="дизайн сайтов" class="accordion-item__heading">дизайн сайтов</span>
 								</button>
 								<div data-accordion-body class="accordion-item__body">
 									<div class="accordion-item__inner">
@@ -2395,11 +2372,11 @@
 					</div>
 				</div>
 			</section>
-			<section data-section class="portfolio section">
+			<section data-section class="portfolio">
 				<div class="portfolio__container container">
 					<div class="portfolio__body">
 						<div class="portfolio__wrap">
-							<h2 class="portfolio__heading h-main">
+							<h2 data-gsap-opacity class="portfolio__heading h-main">
 								<span class="h-main__txt">портфолио</span>
 							</h2>
 							<p class="portfolio__text">
@@ -2407,20 +2384,20 @@
 							</p>
 							<div class="portfolio__group">
 								<svg viewBox="0 0 285 78" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M261 66V43.5H283.5L284 66H261Z" stroke="black" />
-									<path d="M273 61C276.314 61 279 58.3137 279 55C279 51.6863 276.314 49 273 49C269.686 49 267 51.6863 267 55C267 58.3137 269.686 61 273 61Z" fill="black" />
-									<rect x="0.5" y="0.5" width="283" height="11" stroke="black" />
-									<rect id="rect-1" width="30" height="12" fill="black" />
-									<rect x="0.5" y="22.5" width="283" height="11" stroke="black" />
-									<rect id="rect-2" y="22" width="280" height="12" fill="black" />
+									<path d="M261 66V43.5H283.5L284 66H261Z" stroke="#0d0d0d" />
+									<path d="M273 61C276.314 61 279 58.3137 279 55C279 51.6863 276.314 49 273 49C269.686 49 267 51.6863 267 55C267 58.3137 269.686 61 273 61Z" fill="#0d0d0d" />
+									<rect x="0.5" y="0.5" width="283" height="11" stroke="#0d0d0d" />
+									<rect id="rect-1" width="30" height="12" fill="#0d0d0d" />
+									<rect x="0.5" y="22.5" width="283" height="11" stroke="#0d0d0d" />
+									<rect id="rect-2" y="22" width="280" height="12" fill="#0d0d0d" />
 									<g style="overflow: hidden">
 										<g id="rect-3">
-											<path id="rect-3-c" d="M82.5 56.5C84.7091 56.5 86.5 54.7091 86.5 52.5C86.5 50.2909 84.7091 48.5 82.5 48.5C80.2909 48.5 78.5 50.2909 78.5 52.5C78.5 54.7091 80.2909 56.5 82.5 56.5Z" fill="black" />
-											<line id="rect-3-l" x1="1" y1="52.5" x2="127" y2="52.5" stroke="black" />
-											<line id="rect-3-ll" x1="82.5" y1="44" x2="82.5" y2="77" stroke="black" />
+											<path id="rect-3-c" d="M82.5 56.5C84.7091 56.5 86.5 54.7091 86.5 52.5C86.5 50.2909 84.7091 48.5 82.5 48.5C80.2909 48.5 78.5 50.2909 78.5 52.5C78.5 54.7091 80.2909 56.5 82.5 56.5Z" fill="#0d0d0d" />
+											<line id="rect-3-l" x1="1" y1="52.5" x2="127" y2="52.5" stroke="#0d0d0d" />
+											<line id="rect-3-ll" x1="82.5" y1="44" x2="82.5" y2="77" stroke="#0d0d0d" />
 										</g>
 
-										<rect x="1.5" y="44.5" width="125" height="32" stroke="black" />
+										<rect x="1.5" y="44.5" width="125" height="32" stroke="#0d0d0d" />
 									</g>
 								</svg>
 
@@ -2433,7 +2410,7 @@
 							<div class="portfolio__wrapper swiper-wrapper">
 								<div class="portfolio__card card-portfolio swiper-slide">
 									<a href="#" class="card-portfolio__inner">
-										<h3 class="card-portfolio__title">amkal esports</h3>
+										<h3 class="card-portfolio__title h-secondary">amkal esports</h3>
 										<div class="card-portfolio__image-wrap">
 											<img src="img/content/amkal.webp" alt="" />
 										</div>
@@ -2441,7 +2418,7 @@
 								</div>
 								<div class="portfolio__card card-portfolio swiper-slide">
 									<a href="#" class="card-portfolio__inner">
-										<h3 class="card-portfolio__title">
+										<h3 class="card-portfolio__title h-secondary">
 											сайт международного бизнес-клуба
 										</h3>
 										<div class="card-portfolio__image-wrap">
@@ -2456,8 +2433,13 @@
 											мы готовы воплотить ваши идеи в реальность. Поделитесь с нами
 											информацией, чтобы начать
 										</p>
-										<button type="button" class="project-portfolio-card__btn btn-main">
-											<span class="btn-main__txt">оставить заявку</span>
+
+										<button type="button" class="project-portfolio-card__btn btn-large">
+											<div class="btn-large__wrap">
+												<div class="btn-large__inner">
+													<span data-scramble="оставить заявку" class="btn-large__txt">оставить заявку</span>
+												</div>
+											</div>
 										</button>
 									</div>
 								</div>
@@ -2467,9 +2449,9 @@
 				</div>
 			</section>
 
-			<section data-section class="request section">
+			<section data-section class="request">
 				<div class="request__container container">
-					<h2 class="request__heading h-main">
+					<h2 data-gsap-opacity class="request__heading h-main">
 						<span class="h-main__txt">оставьте заявку</span>
 					</h2>
 					<p class="request__txt">
@@ -2483,8 +2465,8 @@
 					</div>
 				</div>
 			</section>
-			<section class="clients">
-				<h2 class="clients__heading">мы работаем с</h2>
+			<section data-section class="clients">
+				<h2 data-scramble="мы работаем с" class="clients__heading">мы работаем с</h2>
 				<div class="clients__body">
 					<div class="clients__slider swiper">
 						<div class="clients__wrapper swiper-wrapper">
@@ -2541,10 +2523,10 @@
 				</div>
 			</section>
 
-			<section data-section class="reviews section">
+			<section data-section class="reviews">
 				<div class="reviews__container container">
 					<div class="reviews__head section-head">
-						<h2 class="reviews__heading h-main">
+						<h2 data-gsap-opacity class="reviews__heading h-main">
 							<span class="h-main__txt">что клиенты говорят о нас</span>
 						</h2>
 						<span class="section-head__subtitle"> отзывы </span>
@@ -2553,8 +2535,8 @@
 					<div class="reviews__body">
 						<div class="reviews__slider swiper">
 							<div class="reviews__wrapper swiper-wrapper">
-								<div class="reviews__slide reviews-card swiper-slide">
-									<div class="reviews-card__inner">
+								<div class="reviews__slide reviews-card swiper-slide angle">
+									<div class="reviews-card__inner angle__inner">
 										<div class="reviews-card__content">
 											<p class="reviews-card__text h-secondary">
 												Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -2572,8 +2554,8 @@
 										</div>
 									</div>
 								</div>
-								<div class="reviews__slide reviews-card swiper-slide">
-									<div class="reviews-card__inner">
+								<div class="reviews__slide reviews-card swiper-slide angle">
+									<div class="reviews-card__inner angle__inner">
 										<div class="reviews-card__content">
 											<p class="reviews-card__text h-secondary">
 												Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -2591,8 +2573,8 @@
 										</div>
 									</div>
 								</div>
-								<div class="reviews__slide reviews-card swiper-slide">
-									<div class="reviews-card__inner">
+								<div class="reviews__slide reviews-card swiper-slide angle">
+									<div class="reviews-card__inner angle__inner">
 										<div class="reviews-card__content">
 											<p class="reviews-card__text h-secondary">
 												Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -2610,8 +2592,8 @@
 										</div>
 									</div>
 								</div>
-								<div class="reviews__slide reviews-card swiper-slide">
-									<div class="reviews-card__inner">
+								<div class="reviews__slide reviews-card swiper-slide angle">
+									<div class="reviews-card__inner angle__inner">
 										<div class="reviews-card__content">
 											<p class="reviews-card__text h-secondary">
 												Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -2656,11 +2638,11 @@
 					</div>
 				</div>
 			</section>
-			<section data-section class="blog section">
+			<section data-section class="blog">
 				<div class="blog__container container">
 					<div class="blog__head">
 						<div class="blog__row">
-							<h2 class="blog__heading h-main">
+							<h2 data-gsap-opacity class="blog__heading h-main">
 								<span class="h-main__txt">блог</span>
 							</h2>
 							<div class="blog__counter">
@@ -2671,7 +2653,9 @@
 						<form action="#" class="blog__row">
 							<div class="blog__filters-slider swiper">
 								<div class="blog__filters-wrapper swiper-wrapper">
-									<div class="blog__filters-slide label swiper-slide">все</div>
+									<div class="blog__filters-slide label swiper-slide _is-active">
+										все
+									</div>
 									<div class="blog__filters-slide label swiper-slide">дизайн</div>
 									<div class="blog__filters-slide label swiper-slide">разработка</div>
 									<div class="blog__filters-slide label swiper-slide">seo</div>
@@ -2693,9 +2677,10 @@
 										<img src="img/content/1137.webp" alt="" />
 									</a>
 									<div class="blog-card__row">
-										<h3 class="blog-card__heading h-secondary">
-											SEO с оплатой за лиды, позиции и трафик: в чём подвох, и могут
-											ли быть гарантии и KPI в поисковом продвижении
+										<h3 class="blog-card__heading">
+											<a href="#">
+												SEO с оплатой за лиды, позиции и трафик: в чём подвох, и могут
+												ли быть гарантии и KPI в поисковом продвижении</a>
 										</h3>
 										<span class="blog-card__date">18 января</span>
 									</div>
@@ -2705,9 +2690,10 @@
 										<img src="img/content/1137.webp" alt="" />
 									</a>
 									<div class="blog-card__row">
-										<h3 class="blog-card__heading h-secondary">
-											SEO с оплатой за лиды, позиции и трафик: в чём подвох, и могут
-											ли быть гарантии и KPI в поисковом продвижении
+										<h3 class="blog-card__heading">
+											<a href="#">
+												SEO с оплатой за лиды, позиции и трафик: в чём подвох, и могут
+												ли быть гарантии и KPI в поисковом продвижении</a>
 										</h3>
 										<span class="blog-card__date">18 января</span>
 									</div>
@@ -2717,9 +2703,10 @@
 										<img src="img/content/1137.webp" alt="" />
 									</a>
 									<div class="blog-card__row">
-										<h3 class="blog-card__heading h-secondary">
-											SEO с оплатой за лиды, позиции и трафик: в чём подвох, и могут
-											ли быть гарантии и KPI в поисковом продвижении
+										<h3 class="blog-card__heading">
+											<a href="#">
+												SEO с оплатой за лиды, позиции и трафик: в чём подвох, и могут
+												ли быть гарантии и KPI в поисковом продвижении</a>
 										</h3>
 										<span class="blog-card__date">18 января</span>
 									</div>
@@ -2729,9 +2716,10 @@
 										<img src="img/content/1137.webp" alt="" />
 									</a>
 									<div class="blog-card__row">
-										<h3 class="blog-card__heading h-secondary">
-											SEO с оплатой за лиды, позиции и трафик: в чём подвох, и могут
-											ли быть гарантии и KPI в поисковом продвижении
+										<h3 class="blog-card__heading">
+											<a href="#">
+												SEO с оплатой за лиды, позиции и трафик: в чём подвох, и могут
+												ли быть гарантии и KPI в поисковом продвижении</a>
 										</h3>
 										<span class="blog-card__date">18 января</span>
 									</div>
@@ -2741,9 +2729,10 @@
 										<img src="img/content/1137.webp" alt="" />
 									</a>
 									<div class="blog-card__row">
-										<h3 class="blog-card__heading h-secondary">
-											SEO с оплатой за лиды, позиции и трафик: в чём подвох, и могут
-											ли быть гарантии и KPI в поисковом продвижении
+										<h3 class="blog-card__heading">
+											<a href="#">
+												SEO с оплатой за лиды, позиции и трафик: в чём подвох, и могут
+												ли быть гарантии и KPI в поисковом продвижении</a>
 										</h3>
 										<span class="blog-card__date">18 января</span>
 									</div>
@@ -2753,9 +2742,10 @@
 										<img src="img/content/1137.webp" alt="" />
 									</a>
 									<div class="blog-card__row">
-										<h3 class="blog-card__heading h-secondary">
-											SEO с оплатой за лиды, позиции и трафик: в чём подвох, и могут
-											ли быть гарантии и KPI в поисковом продвижении
+										<h3 class="blog-card__heading">
+											<a href="#">
+												SEO с оплатой за лиды, позиции и трафик: в чём подвох, и могут
+												ли быть гарантии и KPI в поисковом продвижении</a>
 										</h3>
 										<span class="blog-card__date">18 января</span>
 									</div>
@@ -2788,10 +2778,10 @@
 				</div>
 			</section>
 
-			<section class="faq">
+			<section data-section class="faq">
 				<div class="faq__container container">
 					<div class="faq__head section-head">
-						<h2 class="section-head__heading h-main">
+						<h2 data-gsap-opacity class="section-head__heading h-main">
 							<span class="h-main__txt">частозадаваемые вопросы</span>
 						</h2>
 						<span class="section-head__subtitle">faq</span>
@@ -2985,10 +2975,10 @@
 					</div>
 				</div>
 			</div>
-			<section class="request-form">
+			<section data-section class="request-form">
 				<div class="request-form__container container">
 					<div class="request-form__head">
-						<h2 class="request-form__heading h-main">
+						<h2 data-gsap-opacity class="request-form__heading h-main">
 							<span class="h-main__txt">оставьте заявку</span>
 						</h2>
 						<p class="request-form__txt">
@@ -3126,9 +3116,12 @@
 									</div>
 								</div>
 							</div>
-							<button class="request-form__btn btn-large">
+
+							<button type="submit" class="request-form__btn btn-large">
 								<div class="btn-large__wrap">
-									<span class="btn-large__txt">отправить</span>
+									<div class="btn-large__inner">
+										<span data-scramble="отправить" class="btn-large__txt">отправить</span>
+									</div>
 								</div>
 							</button>
 						</form>
@@ -3177,8 +3170,24 @@
 		</footer>
 
 		<svg display="none">
-			<symbol id="arrow-svg" viewBox="0 0 21 20">
-				<path d="M11.0345 1H13.1592L20 8.64888V11.3519L13.1592 19H11.0345M14.4828 10.3333H0" stroke="#0D0D0D" stroke-width="1.5" fill="none" />
+			<symbol id="arrow-svg" viewBox="0 0 19 20">
+				<path d="M18.4 9H16V11.4H18.4V9Z" fill="#0d0d0d" />
+				<path d="M6.0001 9H3.6001V11.4H6.0001V9Z" fill="#0d0d0d" />
+				<path d="M2.70005 9H0.300049V11.4H2.70005V9Z" fill="#0d0d0d" />
+				<g clip-path="url(#clip0_60_26)">
+					<mask id="mask0_60_26" style="mask-type: luminance" maskUnits="userSpaceOnUse" x="4" y="0" width="11" height="20">
+						<path d="M14.616 0.5L4.38403 0.5L4.38403 19.623H14.616L14.616 0.5Z" fill="white" />
+					</mask>
+					<g mask="url(#mask0_60_26)">
+						<path d="M13.6083 6.93447L8.18195 1.50817H6.16528L6.16528 5.07057L10.0459 8.95117H13.6083V6.93447Z" fill="#0d0d0d" />
+						<path d="M13.6083 13.1879V11.1712H10.0459L6.16528 15.0518V18.6142L8.18195 18.6143L13.6083 13.1879Z" fill="#0d0d0d" />
+					</g>
+				</g>
+				<defs>
+					<clipPath id="clip0_60_26">
+						<rect width="20" height="11" fill="white" transform="matrix(0 -1 1 0 4 20)" />
+					</clipPath>
+				</defs>
 			</symbol>
 			<symbol id="whatsapp-svg" viewBox="0 0 26 25">
 				<path d="M16.3302 17.8024C11.392 17.8024 7.3744 13.7823 7.37305 8.84263C7.3744 7.59048 8.39367 6.57227 9.64274 6.57227C9.77117 6.57227 9.89823 6.58308 10.0199 6.60472C10.2875 6.64934 10.5417 6.73994 10.7756 6.87651C10.8094 6.8968 10.8323 6.92927 10.8377 6.96713L11.3595 10.257C11.3663 10.2963 11.3541 10.3341 11.3284 10.3625C11.0405 10.6816 10.6728 10.9115 10.2632 11.0265L10.0659 11.0819L10.1402 11.2725C10.8134 12.9872 12.1841 14.3569 13.8996 15.0331L14.0902 15.1088L14.1456 14.9114C14.2605 14.5016 14.4903 14.1338 14.8094 13.8458C14.8323 13.8242 14.8634 13.8134 14.8945 13.8134C14.9013 13.8134 14.9081 13.8134 14.9162 13.8147L18.2051 14.3367C18.2443 14.3434 18.2768 14.3651 18.297 14.3989C18.4322 14.6328 18.5228 14.8884 18.5688 15.1561C18.5904 15.2751 18.5998 15.4008 18.5998 15.532C18.5998 16.7828 17.5819 17.801 16.3302 17.8024Z" fill="currentColor" />
@@ -3188,7 +3197,39 @@
 				<path d="M0.656806 9.27607C0.714218 9.24832 0.771656 9.22194 0.827633 9.19697C1.80077 8.7613 2.78682 8.35337 3.77144 7.94545C3.82454 7.94545 3.91351 7.88577 3.96374 7.86635C4.03981 7.83444 4.1159 7.80392 4.19197 7.77201C4.33837 7.71096 4.48478 7.65129 4.62974 7.59024C4.92254 7.46953 5.21389 7.34883 5.50669 7.22812C6.09086 6.9867 6.67502 6.74527 7.25919 6.50246C8.42752 6.01961 9.59732 5.53535 10.7657 5.0525C11.934 4.56965 13.1037 4.08542 14.2721 3.60257C15.4404 3.11972 16.6102 2.63549 17.7785 2.15265C18.9468 1.6698 20.1166 1.18557 21.285 0.702718C21.5448 0.594493 21.8261 0.43354 22.1045 0.386365C22.3385 0.346127 22.5667 0.26844 22.8021 0.225427C23.2484 0.143565 23.7408 0.11026 24.1685 0.289247C24.3163 0.351684 24.4527 0.439079 24.5661 0.548691C25.1086 1.06761 25.0325 1.91956 24.9177 2.64938C24.1182 7.73594 23.3188 12.8239 22.5179 17.9105C22.4088 18.6084 22.2595 19.3743 21.6897 19.8155C21.2074 20.1887 20.5214 20.2303 19.9257 20.0722C19.3301 19.9126 18.8048 19.5782 18.2895 19.2494C16.1523 17.8813 14.0137 16.5132 11.8766 15.1452C11.3685 14.8205 10.803 14.3959 10.8087 13.8062C10.8116 13.451 11.0312 13.1347 11.2551 12.853C13.1124 10.5109 15.7921 8.90144 17.7857 6.66757C18.067 6.3526 18.2881 5.78374 17.902 5.60198C17.6723 5.49375 17.4082 5.6408 17.1986 5.78094C14.5634 7.54999 11.9297 9.32044 9.29447 11.0895C8.43473 11.6667 7.53336 12.2605 6.49707 12.4021C5.56987 12.5297 4.63693 12.28 3.73986 12.0247C2.98777 11.811 2.23708 11.5918 1.48929 11.3656C1.09171 11.2463 0.68121 11.1173 0.374056 10.8467C0.0669013 10.5761 -0.109617 10.1211 0.075537 9.7603C0.191796 9.53414 0.417143 9.39123 0.653967 9.27468L0.656806 9.27607Z" fill="currentColor" />
 			</symbol>
 		</svg>
+		<svg id="twinkle-bg" style="
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  " data-twinkle-anim viewBox="0 0 1920 990" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M1536.57 270.433H1531.43V275.567C1531.43 275.806 1531.24 276 1531 276C1530.76 276 1530.57 275.807 1530.57 275.567V270.433H1525.43C1525.19 270.433 1525 270.24 1525 270C1525 269.76 1525.19 269.567 1525.43 269.567H1530.57V264.433C1530.57 264.194 1530.76 264 1531 264C1531.24 264 1531.43 264.194 1531.43 264.433V269.567H1536.57C1536.81 269.567 1537 269.761 1537 270C1537 270.239 1536.81 270.433 1536.57 270.433H1536.57Z" fill="#0D0D0D" />
+			<path d="M1174.57 270.433H1169.43V275.567C1169.43 275.806 1169.24 276 1169 276C1168.76 276 1168.57 275.807 1168.57 275.567V270.433H1163.43C1163.19 270.433 1163 270.24 1163 270C1163 269.76 1163.19 269.567 1163.43 269.567H1168.57V264.433C1168.57 264.194 1168.76 264 1169 264C1169.24 264 1169.43 264.194 1169.43 264.433V269.567H1174.57C1174.81 269.567 1175 269.761 1175 270C1175 270.239 1174.81 270.433 1174.57 270.433H1174.57Z" fill="#0D0D0D" />
+			<path d="M815.566 91.433H810.432V96.567C810.432 96.8058 810.238 97 809.999 97C809.76 97 809.566 96.8068 809.566 96.567V91.433H804.433C804.194 91.433 804 91.2398 804 91C804 90.7602 804.194 90.567 804.433 90.567H809.567V85.433C809.567 85.1942 809.761 85 810 85C810.239 85 810.433 85.1942 810.433 85.433V90.567H815.567C815.806 90.567 816 90.7612 816 91C816 91.2388 815.806 91.433 815.567 91.433H815.566Z" fill="#0D0D0D" />
+			<path d="M996.566 451.433H991.432V456.567C991.432 456.806 991.238 457 990.999 457C990.76 457 990.566 456.807 990.566 456.567V451.433H985.433C985.194 451.433 985 451.24 985 451C985 450.76 985.194 450.567 985.433 450.567H990.567V445.433C990.567 445.194 990.761 445 991 445C991.239 445 991.433 445.194 991.433 445.433V450.567H996.567C996.806 450.567 997 450.761 997 451C997 451.239 996.806 451.433 996.567 451.433H996.566Z" fill="#0D0D0D" />
+			<path d="M906.566 631.433H901.432V636.567C901.432 636.806 901.238 637 900.999 637C900.76 637 900.566 636.807 900.566 636.567V631.433H895.433C895.194 631.433 895 631.24 895 631C895 630.76 895.194 630.567 895.433 630.567H900.567V625.433C900.567 625.194 900.761 625 901 625C901.239 625 901.433 625.194 901.433 625.433V630.567H906.567C906.806 630.567 907 630.761 907 631C907 631.239 906.806 631.433 906.567 631.433H906.566Z" fill="#0D0D0D" />
+			<path d="M1267.07 630.933H1261.93V636.067C1261.93 636.306 1261.74 636.5 1261.5 636.5C1261.26 636.5 1261.07 636.307 1261.07 636.067V630.933H1255.93C1255.69 630.933 1255.5 630.74 1255.5 630.5C1255.5 630.26 1255.69 630.067 1255.93 630.067H1261.07V624.933C1261.07 624.694 1261.26 624.5 1261.5 624.5C1261.74 624.5 1261.93 624.694 1261.93 624.933V630.067H1267.07C1267.31 630.067 1267.5 630.261 1267.5 630.5C1267.5 630.739 1267.31 630.933 1267.07 630.933H1267.07Z" fill="#0D0D0D" />
+			<path d="M1086.57 811.433H1081.43V816.567C1081.43 816.806 1081.24 817 1081 817C1080.76 817 1080.57 816.807 1080.57 816.567V811.433H1075.43C1075.19 811.433 1075 811.24 1075 811C1075 810.76 1075.19 810.567 1075.43 810.567H1080.57V805.433C1080.57 805.194 1080.76 805 1081 805C1081.24 805 1081.43 805.194 1081.43 805.433V810.567H1086.57C1086.81 810.567 1087 810.761 1087 811C1087 811.239 1086.81 811.433 1086.57 811.433H1086.57Z" fill="#0D0D0D" />
+			<path d="M1805.57 721.433H1800.43V726.567C1800.43 726.806 1800.24 727 1800 727C1799.76 727 1799.57 726.807 1799.57 726.567V721.433H1794.43C1794.19 721.433 1794 721.24 1794 721C1794 720.76 1794.19 720.567 1794.43 720.567H1799.57V715.433C1799.57 715.194 1799.76 715 1800 715C1800.24 715 1800.43 715.194 1800.43 715.433V720.567H1805.57C1805.81 720.567 1806 720.761 1806 721C1806 721.239 1805.81 721.433 1805.57 721.433H1805.57Z" fill="#0D0D0D" />
+			<path d="M545.566 630.433H540.432V635.567C540.432 635.806 540.238 636 539.999 636C539.76 636 539.566 635.807 539.566 635.567V630.433H534.433C534.194 630.433 534 630.24 534 630C534 629.76 534.194 629.567 534.433 629.567H539.567V624.433C539.567 624.194 539.761 624 540 624C540.239 624 540.433 624.194 540.433 624.433V629.567H545.567C545.806 629.567 546 629.761 546 630C546 630.239 545.806 630.433 545.567 630.433H545.566Z" fill="#0D0D0D" />
+			<path d="M186.378 270.433H181.549V275.567C181.549 275.806 181.367 276 181.142 276C180.918 276 180.735 275.807 180.735 275.567V270.433H175.907C175.683 270.433 175.5 270.24 175.5 270C175.5 269.76 175.683 269.567 175.907 269.567H180.736V264.433C180.736 264.194 180.918 264 181.143 264C181.368 264 181.55 264.194 181.55 264.433V269.567H186.379C186.603 269.567 186.786 269.761 186.786 270C186.786 270.239 186.603 270.433 186.379 270.433H186.378Z" fill="#0D0D0D" />
+			<path d="M455.566 811.933H450.432V817.067C450.432 817.306 450.238 817.5 449.999 817.5C449.76 817.5 449.566 817.307 449.566 817.067V811.933H444.433C444.194 811.933 444 811.74 444 811.5C444 811.26 444.194 811.067 444.433 811.067H449.567V805.933C449.567 805.694 449.761 805.5 450 805.5C450.239 805.5 450.433 805.694 450.433 805.933V811.067H455.567C455.806 811.067 456 811.261 456 811.5C456 811.739 455.806 811.933 455.567 811.933H455.566Z" fill="#0D0D0D" />
+			<path d="M725.566 361.433H720.432V366.567C720.432 366.806 720.238 367 719.999 367C719.76 367 719.566 366.807 719.566 366.567V361.433H714.433C714.194 361.433 714 361.24 714 361C714 360.76 714.194 360.567 714.433 360.567H719.567V355.433C719.567 355.194 719.761 355 720 355C720.239 355 720.433 355.194 720.433 355.433V360.567H725.567C725.806 360.567 726 360.761 726 361C726 361.239 725.806 361.433 725.567 361.433H725.566Z" fill="#0D0D0D" />
+			<path d="M95.566 539.433H90.432V544.567C90.432 544.806 90.2379 545 89.999 545C89.7602 545 89.566 544.807 89.566 544.567V539.433H84.433C84.1942 539.433 84 539.24 84 539C84 538.76 84.1942 538.567 84.433 538.567H89.567V533.433C89.567 533.194 89.7612 533 90 533C90.2388 533 90.433 533.194 90.433 533.433V538.567H95.567C95.8058 538.567 96 538.761 96 539C96 539.239 95.8058 539.433 95.567 539.433H95.566Z" fill="#0D0D0D" />
+			<path d="M1625.57 90.933H1620.43V96.067C1620.43 96.3058 1620.24 96.5 1620 96.5C1619.76 96.5 1619.57 96.3068 1619.57 96.067V90.933H1614.43C1614.19 90.933 1614 90.7398 1614 90.5C1614 90.2602 1614.19 90.067 1614.43 90.067H1619.57V84.933C1619.57 84.6942 1619.76 84.5 1620 84.5C1620.24 84.5 1620.43 84.6942 1620.43 84.933V90.067H1625.57C1625.81 90.067 1626 90.2612 1626 90.5C1626 90.7388 1625.81 90.933 1625.57 90.933H1625.57Z" fill="#0D0D0D" />
+		</svg>
 
+		<div class="preloader">
+			<div class="preloader__container container">
+				<div class="preloader__icons">
+					<i class="preloader__icon"></i>
+					<i class="preloader__icon"></i>
+					<i class="preloader__icon"></i>
+				</div>
+			</div>
+		</div>
 
 	</div>
 	<script src="js/app.js"></script>

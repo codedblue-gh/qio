@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  border-bottom: 1px solid var(--c--light-gray);
+  border-bottom: 1px solid var(--c-light-gray);
 
   &::after {
     content: var(--i-arrow-main);
@@ -24,5 +24,12 @@
 
   &__subtitle {
     font: var(--txt-small);
+
+    &::before {
+      content: '[ ';
+    }
+    &::after {
+      content: ' ]';
+    }
   }
 }

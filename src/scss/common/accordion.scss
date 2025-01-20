@@ -27,6 +27,18 @@
     align-items: center;
     width: 100%;
 
+    @media (any-hover: hover) {
+      &:hover {
+        .accordion-el__heading {
+          border-bottom: 1px dashed var(--c-primary);
+        }
+
+        &::after {
+          transform: rotate(-45deg) translate(1rem, -0.5rem);
+        }
+      }
+    }
+
     &::after {
       content: var(--i-arrow-main);
 
@@ -51,6 +63,8 @@
     border-bottom: 1px dashed var(--c-gray);
 
     font: var(--txt-semi);
+
+    transition: border-bottom 0.3s ease;
 
     &::before {
       content: '>> ';

@@ -4,7 +4,7 @@
   &__container {
     position: relative;
 
-    padding: 12rem 0;
+    padding-top: 12rem;
 
     display: flex;
     align-items: center;
@@ -74,6 +74,17 @@
 .card-portfolio {
   display: flex;
 
+  @media (any-hover: hover) {
+    &:hover {
+      .card-portfolio__title::after {
+        transform: translate(0.5rem, -0.5rem) rotate(-45deg);
+      }
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
   // .card-portfolio__inner
 
   &__inner {
@@ -117,6 +128,7 @@
       width: 2.5rem;
 
       transform: rotate(-45deg);
+      transition: transform 0.8s ease;
     }
   }
 
@@ -135,13 +147,17 @@
   &__image-wrap {
     width: 100%;
     height: 57rem;
+    border-radius: 0.5rem;
+
+    overflow: hidden;
 
     img {
       height: 100%;
-      border-radius: 0.5rem;
 
       object-fit: cover;
       object-position: top;
+
+      transition: transform 0.8s ease;
     }
   }
 }
@@ -152,7 +168,7 @@
   border: 1px solid var(--c-primary);
   border-radius: 0.6rem;
 
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.3);
 
   // .project-portfolio-card__inner
 
@@ -175,7 +191,7 @@
   // .project-portfolio-card__txt
 
   &__txt {
-    max-width: 35rem;
+    max-width: 42rem;
 
     text-align: justify;
   }
@@ -183,5 +199,6 @@
   // .project-portfolio-card__btn
 
   &__btn {
+    width: 50rem;
   }
 }

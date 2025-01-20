@@ -8,7 +8,7 @@
   border: 1px solid var(--c-primary);
   border-radius: 0.6rem;
 
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.3);
 
   overflow: hidden;
 
@@ -31,6 +31,9 @@
   // .clients__slider
 
   &__slider {
+    &.swiper {
+      overflow: visible;
+    }
   }
 
   // .clients__wrapper

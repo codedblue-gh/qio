@@ -26,9 +26,19 @@ window.addEventListener('load', function () {
       translateY: '1rem',
       duration: 1,
     });
-    gsap.timeline({ repeat: -1, yoyo: true }).to('#rect-3-ll, #rect-3-c', {
-      translateX: '-2rem',
-      duration: 1,
-    });
+    gsap
+      .timeline({ repeat: -1, yoyo: true })
+      .to('#rect-3-ll, #rect-3-c', {
+        translateX: '-2rem',
+        duration: 3,
+      })
+      .to('#rect-3-ll, #rect-3-c', {
+        translateX: '4rem',
+        duration: 3,
+      })
+      .to('#rect-3-ll, #rect-3-c', {
+        translateX: '-7rem',
+        duration: 3,
+      });
   }
 });

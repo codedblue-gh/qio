@@ -1,7 +1,7 @@
-<section class="request-form">
+<section data-section class="request-form">
   <div class="request-form__container container">
     <div class="request-form__head">
-      <h2 class="request-form__heading h-main">
+      <h2 data-gsap-opacity class="request-form__heading h-main">
         <span class="h-main__txt">оставьте заявку</span>
       </h2>
       <p class="request-form__txt">
@@ -251,9 +251,14 @@
             </div>
           </div>
         </div>
-        <button class="request-form__btn btn-large">
+
+        <button type="submit" class="request-form__btn btn-large">
           <div class="btn-large__wrap">
-            <span class="btn-large__txt">отправить</span>
+            <div class="btn-large__inner">
+              <span data-scramble="отправить" class="btn-large__txt"
+                >отправить</span
+              >
+            </div>
           </div>
         </button>
       </form>

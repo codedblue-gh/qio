@@ -120,8 +120,8 @@
 
   &__row {
     display: flex;
-    justify-content: space-between;
-    column-gap: 2rem;
+    flex-direction: column;
+    row-gap: 2rem;
   }
 
   // .blog-card__heading
@@ -132,6 +132,8 @@
   // .blog-card__date
 
   &__date {
+    font: var(--txt-small);
+    color: var(--c-gray);
   }
 
   // .blog-card__controls

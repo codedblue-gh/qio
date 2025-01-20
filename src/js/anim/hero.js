@@ -1,25 +1,40 @@
 import gsap from 'gsap';
 import Segment from 'segment-js';
 import { customEase } from '../common';
-import { chars } from '../common';
-import ScrambleText from 'scramble-text';
 
-gsap.set('[data-draw-el]', {
-  scale: 0,
-  opacity: 0,
-  transformOrigin: 'center',
-});
+const set = () => {
+  gsap.set('[data-draw-el]', {
+    scale: 0,
+    opacity: 0,
+    transformOrigin: 'center',
+  });
 
-gsap.set('[data-draw-line]', {
-  scaleX: 0,
-  transformOrigin: 'center',
-});
+  gsap.set('[data-draw-line]', {
+    scaleX: 0,
+    transformOrigin: 'center',
+  });
 
-gsap.set('.hero__logo, .hero__btn, .hero__title, .hero__text-wrap', {
-  opacity: 0,
-});
+  gsap.set('.header', {
+    translateY: '-150%',
+  });
 
-window.addEventListener('load', function () {
+  gsap.set('.hero__logo, .hero__btn, .hero__title, .hero__text-wrap', {
+    opacity: 0,
+  });
+
+  document.querySelectorAll('[data-draw-sc]').length &&
+    document.querySelectorAll('[data-draw-sc]').forEach((group, idx) => {
+      gsap.set(group, {
+        scaleY: group.dataset.drawSc === 'x' ? 1 : 0,
+        scaleX: group.dataset.drawSc === 'x' ? 0 : 1,
+        transformOrigin:
+          idx === 2 || idx === 3 ? 'top' : idx === 1 ? 'right' : 'left',
+      });
+    });
+};
+set();
+
+export const animateHero = () => {
   document.querySelectorAll('[data-draw-tb]').length &&
     document.querySelectorAll('[data-draw-tb]').forEach((group, idx) => {
       group.querySelectorAll('path').forEach(path => {
@@ -42,13 +57,6 @@ window.addEventListener('load', function () {
 
   document.querySelectorAll('[data-draw-sc]').length &&
     document.querySelectorAll('[data-draw-sc]').forEach((group, idx) => {
-      gsap.set(group, {
-        scaleY: group.dataset.drawSc === 'x' ? 1 : 0,
-        scaleX: group.dataset.drawSc === 'x' ? 0 : 1,
-        transformOrigin:
-          idx === 2 || idx === 3 ? 'top' : idx === 1 ? 'right' : 'left',
-      });
-
       gsap.to(group, {
         scaleY: 1,
         scaleX: 1,
@@ -82,11 +90,15 @@ window.addEventListener('load', function () {
       opacity: 1,
       duration: 1,
       stagger: 0.1,
+      onComplete: () => {
+        gsap.to('.header', {
+          translateY: 0,
+          ease: customEase,
+        });
+      },
     },
     2
   );
-
-  // this._dp._recent._targets[0];
 
   const nums = [1, -1];
 
@@ -97,4 +109,4 @@ window.addEventListener('load', function () {
       repeat: -1,
     });
   });
-});
+};
