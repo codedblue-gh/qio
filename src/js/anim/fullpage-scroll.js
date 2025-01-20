@@ -7,7 +7,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 
 // Initialize Lenis
-const lenis = new Lenis();
+export const lenis = new Lenis();
 
 // Use requestAnimationFrame to continuously update the scroll
 function raf(time) {

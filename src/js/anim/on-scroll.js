@@ -17,13 +17,10 @@ window.addEventListener('load', function () {
     });
   }
 
-  //   gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: '[data-gsap-opacity]',
-  //       start: 'top center',
-  //       onToggle: function (e) {
-  //         gsap.to('[data-gsap-opacity]', { opacity: 1 });
-  //       },
-  //     },
-  //   });
+  ScrollTrigger.create({
+    trigger: '.hero',
+    onToggle: function () {
+      document.documentElement.classList.toggle('_hide-bg');
+    },
+  });
 });

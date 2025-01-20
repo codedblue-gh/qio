@@ -1,6 +1,5 @@
 import gsap from 'gsap';
 
-const svgRef = document.querySelector('.globe-wrap');
 const tl = gsap.timeline({
   repeat: -1,
   defaults: { duration: 0.5, ease: 'none' },

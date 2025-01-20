@@ -3,7 +3,8 @@
 :root {
   // colors
   --c-primary: #0d0d0d;
-  --c-bg: #eef3ff;
+  // --c-bg: #f7fbff;
+  --c-bg: #e5eeff;
   --c-gray: #7e7e7e;
   --c-light-gray: #a3a3a3;
 
@@ -88,6 +89,7 @@
   flex: 1 1 auto;
 
   overflow-x: clip;
+  background-color: var(--c-bg);
 }
 
 .swiper-wrapper {
@@ -106,25 +108,46 @@ html:not(._page-loaded) {
 #twinkle-bg {
   transition: opacity 0.3s ease;
 }
-.lenis-scrolling #twinkle-bg {
+.lenis-scrolling #twinkle-bg,
+._hide-bg #twinkle-bg {
   opacity: 0;
+}
+
+.vjs_video_3-dimensions {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  video {
+    width: 100.5%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.vjs-modal-dialog,
+.vjs-loading-spinner {
+  display: none;
 }
 
 .bg {
   &::before {
     content: '';
     position: fixed;
-    z-index: -1;
+    z-index: 3;
     height: 300%;
     width: 300%;
     left: -100%;
     top: -100%;
-    background-image: url(@img/grain.webp);
+    background-image: url(@img/67058cdc24b90dd798e2fa73_grain-texture.webp);
     animation-name: grained;
     animation-iteration-count: infinite;
     animation-duration: 0.5s;
     animation-timing-function: steps(20);
-    opacity: 0.8;
+    opacity: 0.15;
+    pointer-events: none;
   }
 }
 

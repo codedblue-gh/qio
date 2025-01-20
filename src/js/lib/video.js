@@ -1,11 +1,11 @@
-import videojs from "video.js";
+import videojs from 'video.js';
 
 const initVideoJS = () => {
-  const videos = document.querySelectorAll("[data-videojs]");
-  videos.forEach((video) => {
+  const videos = document.querySelectorAll('[data-videojs]');
+  videos.forEach(video => {
     const player = videojs(video, {
-      autoplay: "muted",
-      loop: true,
+      autoplay: 'muted',
+      loop: video.closest('.hero') ? false : true,
       playsinline: true,
       normalizeAutoplay: true,
       noUITitleAttributes: true,
@@ -16,8 +16,6 @@ const initVideoJS = () => {
       titleBar: false,
       textTrackDisplay: false,
     });
-    
-    console.log(player)
 
     setTimeout(() => {
       player.ready(() => {
@@ -26,4 +24,4 @@ const initVideoJS = () => {
     }, 100);
   });
 };
-initVideoJS()
+window.addEventListener('load', initVideoJS);

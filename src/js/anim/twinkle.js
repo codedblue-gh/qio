@@ -1,6 +1,5 @@
 import gsap from 'gsap';
 import { RoughEase } from 'gsap/EasePack';
-import { getRandomInt } from '../common';
 
 gsap.registerPlugin(RoughEase);
 
