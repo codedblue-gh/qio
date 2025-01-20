@@ -2,9 +2,11 @@ import '../scss/style.scss';
 
 import './lib/video.js';
 import './lib/swiper.js';
+import './lib/inputmask.js';
 
 import './utils/script.js';
 import './utils/preloader.js';
+import './utils/forms.js';
 
 import './anim/hero.js';
 import './anim/fullpage-scroll.js';

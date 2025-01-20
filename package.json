@@ -41,7 +41,6 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
-    "fullpage.js": "^4.0.32",
     "gsap": "^3.12.5",
     "lenis": "^1.1.19",
     "scramble-text": "^0.0.9",

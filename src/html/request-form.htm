@@ -197,12 +197,13 @@
       </div>
     </div>
     <div class="request-form__body">
-      <form action="#" class="request-form__form">
+      <form data-form-validate action="#" class="request-form__form">
         <div class="request-form__fields">
-          <div class="request-form__field field">
+          <div data-field class="request-form__field field">
             <span class="field__label">имя или компания</span>
             <div class="field__wrap">
               <input
+                data-required
                 autocomplete="off"
                 data-name-mask
                 type="text"
@@ -232,10 +233,11 @@
               </div>
             </div>
           </div>
-          <div class="request-form__field field">
+          <div data-field class="request-form__field field">
             <span class="field__label">телефон</span>
             <div class="field__wrap">
               <input
+                data-required
                 autocomplete="off"
                 data-tel-mask
                 type="tel"
