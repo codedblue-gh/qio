@@ -1,5 +1,3 @@
-// import fullpage from 'fullpage.js';
-
 // new fullpage('main', {});
 import Lenis from 'lenis';
 import 'lenis/dist/lenis.css';
@@ -8,6 +6,8 @@ import { ScrollTrigger } from 'gsap/all';
 
 // Initialize Lenis
 export const lenis = new Lenis({});
+
+lenis.stop();
 
 // Use requestAnimationFrame to continuously update the scroll
 function raf(time) {
@@ -19,7 +19,7 @@ requestAnimationFrame(raf);
 
 // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
 lenis.on('scroll', e => {
-  ScrollTrigger.update;
+  ScrollTrigger.update();
 });
 
 // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker

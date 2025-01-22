@@ -35,25 +35,25 @@ const set = () => {
 set();
 
 export const animateHero = () => {
-  document.querySelectorAll('[data-draw-tb]').length &&
-    document.querySelectorAll('[data-draw-tb]').forEach((group, idx) => {
-      group.querySelectorAll('path').forEach(path => {
-        const segment = new Segment(path);
+  // document.querySelectorAll('[data-draw-tb]').length &&
+  //   document.querySelectorAll('[data-draw-tb]').forEach((group, idx) => {
+  //     group.querySelectorAll('path').forEach(path => {
+  //       const segment = new Segment(path);
 
-        segment.draw('0', '0', 0);
-        group.style.opacity = 1;
+  //       segment.draw('0', '0', 0);
+  //       group.style.opacity = 1;
 
-        gsap.to(path, {
-          strokeDasharray:
-            group.dataset.drawTb === 'reversed'
-              ? segment.strokeDasharray('-100%', '0')
-              : segment.strokeDasharray('0', '100%'),
-          delay: (idx + 1) / 100,
-          duration: 2,
-          ease: customEase,
-        });
-      });
-    });
+  //       gsap.to(path, {
+  //         strokeDasharray:
+  //           group.dataset.drawTb === 'reversed'
+  //             ? segment.strokeDasharray('-100%', '0')
+  //             : segment.strokeDasharray('0', '100%'),
+  //         delay: (idx + 1) / 100,
+  //         duration: 2,
+  //         ease: customEase,
+  //       });
+  //     });
+  //   });
 
   document.querySelectorAll('[data-draw-sc]').length &&
     document.querySelectorAll('[data-draw-sc]').forEach((group, idx) => {

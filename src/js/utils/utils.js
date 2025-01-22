@@ -1,4 +1,3 @@
-import { lenis } from '../anim/fullpage-scroll';
 import { randomWordInjector } from '../anim/scramble-text';
 import gsap from 'gsap';
 

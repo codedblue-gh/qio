@@ -19,8 +19,19 @@
     padding: 12rem 0;
 
     display: grid;
-    grid-template-columns: 85rem 1fr;
-    column-gap: 26rem;
+
+    @media (min-width: 767.1px) {
+      grid-template-columns: 85rem 1fr;
+      column-gap: 26rem;
+    }
+
+    @media (max-width: 767px) {
+      row-gap: 8rem;
+      &.container {
+        padding-top: 15.5rem;
+        padding-bottom: 15.5rem;
+      }
+    }
   }
 
   &__head {
@@ -35,17 +46,25 @@
 
   &__heading {
     margin-bottom: 5rem;
+
+    @media (max-width: 767px) {
+      margin-bottom: 3rem;
+    }
   }
 
   // .about__text
 
   &__text {
-    margin-bottom: 12rem;
-    padding-left: 14.8rem;
-
-    max-width: 54.7rem;
+    max-width: 62.7rem;
 
     text-align: justify;
+
+    @media (min-width: 767.1px) {
+      margin-bottom: 12rem;
+      padding-left: 14.8rem;
+
+      max-width: 54.7rem;
+    }
   }
 
   &__waves {
@@ -93,6 +112,10 @@
     display: flex;
     flex-direction: column;
     row-gap: 10rem;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
 
   // .about__item
@@ -129,9 +152,13 @@
 
     &::before {
       content: '[ ';
+
+      color: var(--c-gray);
     }
     &::after {
       content: ' ]';
+
+      color: var(--c-gray);
     }
   }
 
@@ -151,16 +178,40 @@
     grid-column: 2/3;
   }
 
-  // .about__stat
-
   &__stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__stat-text {
+    text-align: justify;
+  }
+
+  &__stat-description {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 10rem;
+
+    border-bottom: 0.5px dashed var(--c-gray);
+    @media (min-width: 767.1px) {
+      display: none;
+    }
+  }
+
+  // .about__stat-wrap
+
+  &__stat-wrap {
     position: relative;
 
     padding: 4.7rem 3.7rem 3.7rem 11.4rem;
 
     display: flex;
-    border-bottom: 1px solid var(--c-primary);
+    border-bottom: 0.5px dashed var(--c-primary);
     overflow: hidden;
+
+    @media (max-width: 767px) {
+      padding: 3rem 3.7rem 3rem 0;
+    }
 
     &::after {
       content: '';
@@ -182,6 +233,11 @@
     font-size: 11rem;
     line-height: 7.7rem;
     letter-spacing: -0.03em;
+
+    @media (max-width: 767px) {
+      font-size: 12rem;
+      line-height: 100%;
+    }
   }
 
   // .about__micro-heading
@@ -193,11 +249,21 @@
 
     transform: translateX(-3rem);
 
+    @media (max-width: 767px) {
+      font-size: 2rem;
+
+      transform: translate(-3rem, 1.5rem);
+    }
+
     &::before {
       content: '[ ';
+
+      color: var(--c-gray);
     }
     &::after {
       content: ' ]';
+
+      color: var(--c-gray);
     }
   }
 }

@@ -10,6 +10,7 @@
         </p>
         <div class="portfolio__group">
           <svg
+            class="portfolio__svg"
             viewBox="0 0 285 78"
             fill="none"
             xmlns="http://www.w3.org/2000/svg">
@@ -46,6 +47,22 @@
               <rect x="1.5" y="44.5" width="125" height="32" stroke="#0d0d0d" />
             </g>
           </svg>
+          <div class="portfolio__controls">
+            <button type="button" class="circ-btn circ-btn_prev">
+              <div class="circ-btn__icon">
+                <svg>
+                  <use href="#arrow-svg"></use>
+                </svg>
+              </div>
+            </button>
+            <button type="button" class="circ-btn circ-btn_next">
+              <div class="circ-btn__icon">
+                <svg>
+                  <use href="#arrow-svg"></use>
+                </svg>
+              </div>
+            </button>
+          </div>
 
           <a href="#" class="portfolio__btn angle-btn">
             <span class="angle-btn__txt">к портфолио</span>
@@ -58,6 +75,10 @@
             <a href="#" class="card-portfolio__inner">
               <h3 class="card-portfolio__title h-secondary">amkal esports</h3>
               <div class="card-portfolio__image-wrap">
+                <img
+                  class="_mobile-only"
+                  src="@img/content/amkal.webp"
+                  alt="" />
                 <img src="@img/content/amkal.webp" alt="" />
               </div>
             </a>
@@ -68,6 +89,10 @@
                 сайт международного бизнес-клуба
               </h3>
               <div class="card-portfolio__image-wrap">
+                <img
+                  class="_mobile-only"
+                  src="@img/content/atlanty.webp"
+                  alt="" />
                 <img src="@img/content/atlanty.webp" alt="" />
               </div>
             </a>
@@ -95,6 +120,11 @@
           </div>
         </div>
       </div>
+      <a href="#" class="portfolio__link btn">
+        <span class="btn__inner">
+          <span class="btn__txt"><span>к портфолио</span></span>
+        </span>
+      </a>
     </div>
   </div>
 </section>

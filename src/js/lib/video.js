@@ -1,6 +1,6 @@
 import videojs from 'video.js';
 import { animateHero } from '../anim/hero';
-import { dynamicDOM } from '../utils/utils';
+import { lenis } from '../anim/fullpage-scroll';
 
 const initVideoJS = () => {
   const videos = document.querySelectorAll('[data-videojs]');
@@ -61,6 +61,7 @@ window.addEventListener('load', function () {
       video.hidden = false;
       video.play();
 
+      lenis.start();
       document.documentElement.classList.add('_page-loaded');
       animateHero();
     });

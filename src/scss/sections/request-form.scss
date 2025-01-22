@@ -4,9 +4,12 @@
 
   &__container {
     display: grid;
-    grid-template-columns: 56rem 1fr;
     row-gap: 3rem;
     column-gap: 4rem;
+
+    @media (min-width: 767.1px) {
+      grid-template-columns: 56rem 1fr;
+    }
   }
 
   &__head {
@@ -29,6 +32,12 @@
     max-width: 40rem;
 
     text-align: justify;
+
+    @media (max-width: 767px) {
+      margin-bottom: 0;
+
+      max-width: 48rem;
+    }
   }
 
   &__globe {
@@ -103,8 +112,22 @@
 
   &__fields {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
+
+    @media (max-width: 767px) {
+      .field_options {
+        order: -1;
+      }
+    }
+
+    @media (min-width: 767.1px) {
+      grid-template-columns: repeat(2, 1fr);
+
+      .field_options {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+    }
   }
 
   &__btn {

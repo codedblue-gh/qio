@@ -5,12 +5,18 @@
   padding-top: 2rem;
   padding-bottom: 3rem;
 
-  border: 1px solid var(--c-primary);
+  border: 0.5px dashed var(--c-primary);
   border-radius: var(--b-radius);
 
   background-color: var(--c-bg);
 
   overflow: hidden;
+
+  @media (max-width: 767px) {
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+    margin-bottom: 15rem;
+  }
 
   // .clients__heading
 
@@ -70,16 +76,26 @@
   &__number {
     &::before {
       content: '[ ';
+
+      color: var(--c-gray);
     }
     &::after {
       content: ' ]';
+
+      color: var(--c-gray);
     }
+
+    font: var(--txt-small);
   }
 
   // .client-card__image-wrap
 
   &__image-wrap {
     width: 8rem;
+
+    @media (max-width: 767px) {
+      width: 10rem;
+    }
 
     &::before {
       content: '+';

@@ -19,6 +19,10 @@
 
     transform: rotate(5deg) translate(-3rem, -3rem);
 
+    .marquee__rail {
+      border: none;
+    }
+
     .marquee__txt {
       &::before {
         content: var(--i-globe-white);
@@ -35,8 +39,12 @@
     width: fit-content;
     flex: auto;
     flex-direction: row;
-    border-top: 1px solid var(--c-gray);
-    border-bottom: 1px solid var(--c-gray);
+    border-top: 0.5px dashed var(--c-gray);
+    border-bottom: 0.5px dashed var(--c-primary);
+
+    @media (max-width: 767px) {
+      padding: 3.2rem 0;
+    }
   }
 
   // .marquee__txt

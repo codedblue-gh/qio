@@ -11,9 +11,9 @@
     height: 2.2rem;
 
     @media (max-width: 767px) {
-      flex: 0 0 3.2rem;
-      width: 3.2rem;
-      height: 3.2rem;
+      flex: 0 0 3rem;
+      width: 3rem;
+      height: 3rem;
     }
   }
 }
@@ -145,9 +145,13 @@
     span {
       &::before {
         content: '[ ';
+
+        color: var(--c-gray);
       }
       &::after {
         content: ' ]';
+
+        color: var(--c-gray);
       }
     }
   }
@@ -171,6 +175,11 @@
     width: 1.9rem;
     height: 2.9rem;
     animation: arrows-m-down 3s ease-in-out 0s infinite;
+
+    @media (max-width: 767px) {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
   }
 }
 
@@ -183,6 +192,11 @@
   border-radius: 50%;
   width: 8rem;
   height: 8rem;
+
+  @media (max-width: 767px) {
+    width: 9.5rem;
+    height: 9.5rem;
+  }
 
   &::before {
     content: url('data:image/svg+xml,<svg viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="43" cy="43" r="40" stroke="%23A3A3A3" stroke-linecap="round" stroke-linejoin="round"/><line x1="43" x2="43" y2="5" stroke="%23A3A3A3"/><line x1="43" y1="80.5" x2="43" y2="85.5" stroke="%23A3A3A3"/><line x1="80.5" y1="43" x2="85.5" y2="43" stroke="%23A3A3A3"/><line y1="43.5" x2="5" y2="43.5" stroke="%23A3A3A3"/></svg>');
@@ -205,6 +219,14 @@
     height: 6.6rem;
     border-radius: 50%;
     border: 1px solid var(--c-gray);
+
+    @media (max-width: 767px) {
+      top: 1.15rem;
+      left: 1.15rem;
+
+      width: 7.2rem;
+      height: 7.2rem;
+    }
   }
 
   &__icon {
@@ -227,6 +249,10 @@
   svg {
     width: 2rem;
     height: 1.8rem;
+
+    @media (max-width: 767px) {
+      height: 2rem;
+    }
   }
 }
 
@@ -243,6 +269,10 @@
 
   transform-origin: center;
   transition: transform 0.3s ease;
+
+  @media (max-width: 767px) {
+    height: 3rem;
+  }
 }
 .angle-btn {
   position: relative;
@@ -305,25 +335,32 @@
   padding: 0.5rem 1rem;
 
   display: inline-flex;
-  border: 0.5px solid var(--c-primary);
-  border-radius: var(--b-radius);
+  border: 0.5px dashed var(--c-primary);
+  border-radius: 0.6rem;
 
   transition: background-color 0.3s ease, border 0.3s ease;
 
+  @media (max-width: 767px) {
+    padding: 1rem 2rem;
+  }
+
   &._is-active {
-    border: 0.5px solid var(--c-light-gray);
+    border: 0.5px dashed var(--c-gray);
     background-color: var(--c-bg);
   }
 
   @media (any-hover: hover) {
     &:hover {
-      border: 0.5px solid var(--c-light-gray);
+      border: 0.5px dashed var(--c-gray);
       background-color: var(--c-bg);
     }
   }
 
-  font: var(--txt-small);
   white-space: nowrap;
+
+  @media (min-width: 767.1px) {
+    font: var(--txt-small);
+  }
 
   &.swiper-slide {
     width: auto;
@@ -336,6 +373,15 @@
   column-gap: 2rem;
 
   font: var(--txt-small-sb);
+
+  @media (max-width: 767px) {
+    justify-content: space-between;
+    column-gap: 2.5rem;
+
+    span {
+      flex: 1 1 auto;
+    }
+  }
 
   @media (any-hover: hover) {
     &:hover {
@@ -359,19 +405,28 @@
     transition: flex 0.3s ease;
 
     &::before {
-      content: var(--i-arr-main);
+      content: var(--i-angle-arrow);
 
       position: absolute;
-      top: 0.35rem;
-      right: -0.7rem;
+      top: 0;
+      right: -0.2rem;
 
       width: 1.5rem;
-      height: 1.5rem;
+      height: 2.2rem;
 
       transform: rotate(-90deg);
       opacity: 0;
 
       transition: opacity 0.3s ease 0.2s;
+
+      @media (max-width: 767px) {
+        right: 0;
+
+        width: 2rem;
+        height: 3rem;
+
+        opacity: 1;
+      }
     }
   }
 
@@ -459,6 +514,11 @@
     height: 3.6rem;
 
     background: url(@img/vectors/angle.svg) top / contain no-repeat;
+
+    @media (max-width: 767px) {
+      width: 3rem;
+      height: 3rem;
+    }
   }
 
   &::before {
@@ -616,17 +676,7 @@
     transform: translateY(0rem) rotate(90deg);
   }
 }
-@keyframes circ {
-  0% {
-    transform: rotate(0);
-  }
-  50% {
-    transform: rotate(65deg);
-  }
-  100% {
-    transform: rotate(0);
-  }
-}
+
 @keyframes circ {
   0% {
     transform: rotate(0);

@@ -1,4 +1,7 @@
 .faq {
+  @media (max-width: 767px) {
+    margin-bottom: 9rem;
+  }
   // .faq__container
 
   &__container {
@@ -25,9 +28,13 @@
 
   &__accordion {
     display: grid;
-    gap: 3rem;
-    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
     width: 100%;
+
+    @media (min-width: 767.1px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
   }
 
   // .faq__item
