@@ -16,15 +16,36 @@
 	<div class="wrapper">
 		<header class="header">
 			<a href="/" class="header__logo"><img src="img/logo-sm.svg" alt="" /></a>
-			<nav class="header__nav">
-				<a href="#" data-scramble="услуги" class="header__link">услуги</a>
-				<a href="#" data-scramble="проекты" class="header__link">проекты</a>
-				<a href="#" data-scramble="цены" class="header__link">цены</a>
-				<a href="#" data-scramble="статьи" class="header__link">статьи</a>
-				<a href="#" data-scramble="о нас" class="header__link">о нас</a>
-				<a href="#" data-scramble="контакты" class="header__link">контакты</a>
+			<nav data-dd=".menu__container,0" class="header__nav">
+				<a href="#" data-idx="INDX.01" data-scramble="услуги" class="header__link">услуги</a>
+				<a href="#" data-idx="INDX.02" data-scramble="проекты" class="header__link">проекты</a>
+				<a href="#" data-idx="INDX.03" data-scramble="цены" class="header__link">цены</a>
+				<a href="#" data-idx="INDX.04" data-scramble="статьи" class="header__link">статьи</a>
+				<a href="#" data-idx="INDX.05" data-scramble="о нас" class="header__link">о нас</a>
+				<a href="#" data-idx="INDX.06" data-scramble="контакты" class="header__link">контакты</a>
 			</nav>
+			<button type="button" class="header__hamburger"></button>
 		</header>
+		<div class="menu">
+			<div class="menu__container container">
+				<ul class="menu__socials">
+					<li class="menu__socials-item">
+						<a href="#" target="_blank" class="menu__socials-item-inner"><svg>
+								<use href="#tg-svg"></use>
+							</svg></a>
+					</li>
+					<li class="menu__socials-item">
+						<a href="#" target="_blank" class="menu__socials-item-inner"><svg>
+								<use href="#whatsapp-svg"></use>
+							</svg></a>
+					</li>
+				</ul>
+				<div class="menu__footer">
+					<a href="#" target="_blank" class="menu__txt">политика конфиденциальности</a>
+					<span class="menu__txt">qio <span data-current-year></span> ©</span>
+				</div>
+			</div>
+		</div>
 
 		<main class="main">
 			<section data-section class="hero">
@@ -54,7 +75,7 @@
 					</div>
 				</div>
 				<div class="hero__bg">
-					<video data-videojs class="hero__video">
+					<video muted class="hero__video">
 						<source src="./files/hero.mp4" />
 					</video>
 				</div>

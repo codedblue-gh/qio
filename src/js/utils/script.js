@@ -1,8 +1,8 @@
 import { horizontalLoop } from './marquee';
 
 import gsap from 'gsap';
-import { removeClasses } from './utils';
-import { animateHero } from '../anim/hero';
+import { dynamicDOM, removeClasses } from './utils';
+import { lenis } from '../anim/fullpage-scroll';
 
 document.addEventListener('DOMContentLoaded', function () {
   if (document.querySelector('.header__item_menu')) {
@@ -53,11 +53,29 @@ document.addEventListener('DOMContentLoaded', function () {
       speed: 0.6,
     });
   }
+  if (document.querySelector('.header__hamburger')) {
+    const hamburger = document.querySelector('.header__hamburger');
+
+    hamburger.addEventListener('click', function () {
+      document.documentElement.classList.toggle('_show-menu');
+
+      if (document.documentElement.classList.contains('_show-menu')) {
+        lenis.stop();
+      } else {
+        lenis.start();
+      }
+    });
+  }
+  if (document.querySelectorAll('[data-current-year]').length) {
+    document.querySelectorAll('[data-current-year]').forEach(item => {
+      item.innerHTML = new Date().getFullYear();
+    });
+  }
 });
 window.addEventListener('load', function () {
-  document.documentElement.classList.add('_page-loaded');
+  dynamicDOM();
 
-  setTimeout(() => {
-    animateHero();
-  }, 300);
+  if (window.matchMedia('(max-width:767px)').matches) {
+    lenis.destroy();
+  }
 });

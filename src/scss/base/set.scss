@@ -123,10 +123,10 @@ input[type='number'] {
   margin: 0 auto;
 }
 
-@media (max-width: 46.5em) {
+@media (max-width: 767px) {
   html {
-    font-size: 8px;
-    font-size: 1.04vw;
+    font-size: 5px;
+    font-size: calc((100 / 375) * 5vw);
     -webkit-text-size-adjust: none;
   }
 
@@ -135,19 +135,12 @@ input[type='number'] {
   }
 
   .container {
-    padding: 0 4rem;
+    padding: 0 3.2rem;
     width: 100%;
   }
 }
 
-@media (max-width: 375px) {
-  html {
-    font-size: 5px;
-    font-size: calc((100 / 375) * 5vw);
-  }
-}
-
-// @media (min-width: 2000px) {
+// @media (min-width: 1920px) {
 //   html {
 //     font-size: 10px;
 //   }

@@ -33,3 +33,54 @@
     }
   }
 }
+.bg {
+  &::before {
+    content: '';
+    position: fixed;
+    z-index: 3;
+    height: 300%;
+    width: 300%;
+    left: -100%;
+    top: -100%;
+    background-image: url(@img/67058cdc24b90dd798e2fa73_grain-texture.webp);
+    animation-name: grained;
+    animation-iteration-count: infinite;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(20);
+    opacity: 0.18;
+    pointer-events: none;
+  }
+}
+
+@keyframes grained {
+  0% {
+    transform: translate(-10%, 10%);
+  }
+  10% {
+    transform: translate(-25%, 0%);
+  }
+  20% {
+    transform: translate(-30%, 10%);
+  }
+  30% {
+    transform: translate(-30%, 30%);
+  }
+  50% {
+    transform: translate(-15%, 10%);
+  }
+  60% {
+    transform: translate(-20%, 20%);
+  }
+  70% {
+    transform: translate(-5%, 20%);
+  }
+  80% {
+    transform: translate(-25%, 5%);
+  }
+  90% {
+    transform: translate(-30%, 25%);
+  }
+  100% {
+    transform: translate(-10%, 10%);
+  }
+}

@@ -1,3 +1,4 @@
+import { lenis } from '../anim/fullpage-scroll';
 import { randomWordInjector } from '../anim/scramble-text';
 import gsap from 'gsap';
 
@@ -23,4 +24,51 @@ export const scrambleText = (e, selector) => {
       },
     });
   }
+};
+
+export const dynamicDOM = () => {
+  const sortByNumber = (a, b) => a.targetIdx - b.targetIdx;
+
+  const elementsData = [];
+
+  // create
+  const mm = gsap.matchMedia();
+
+  if (document.querySelectorAll('[data-dd]').length) {
+    document.querySelectorAll('[data-dd]').forEach((element, idx) => {
+      const parent = element.parentElement;
+      const dataset = element.dataset.dd.trim().split(',');
+      const data = {
+        element,
+        parent,
+        target: document.querySelector(dataset[0]),
+        targetIdx: +dataset[1],
+        parentIdx: Array(parent.childNodes).indexOf(element),
+      };
+      elementsData.push(data);
+    });
+  }
+
+  // add a media query. When it matches, the associated function will run
+  mm.add('(max-width: 767px)', () => {
+    // this setup code only runs when viewport is at least 800px wide
+
+    elementsData.forEach(el => {
+      const { element, target, targetIdx } = el;
+
+      target.insertBefore(element, target.childNodes[targetIdx + 1]);
+    });
+
+    return () => {
+      // optional
+      // custom cleanup code here (runs when it STOPS matching)
+      elementsData.forEach(el => {
+        const { parent, element, parentIdx } = el;
+
+        parent.insertBefore(element, parent.childNodes[parentIdx + 1]);
+      });
+    };
+  });
+
+  elementsData.sort(sortByNumber);
 };

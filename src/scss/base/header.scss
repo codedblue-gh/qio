@@ -1,22 +1,90 @@
 .header {
   position: fixed;
   z-index: 100;
-  top: 1.5rem;
-  right: 1.5rem;
+  top: 3.2rem;
+  left: 3.2rem;
 
-  padding: 0.8rem 1rem;
+  padding: 1.6rem;
 
   display: flex;
   align-items: center;
   column-gap: 6rem;
-  min-width: 51rem;
-  border-radius: 0.6rem;
+  border-radius: var(--b-radius);
+  width: calc(100vw - 6.4rem);
 
   background-color: var(--c-primary);
+
+  @media (min-width: 767px) {
+    top: 1.5rem;
+    right: 1.5rem;
+    left: auto;
+
+    padding: 0.8rem 1rem;
+
+    min-width: 51rem;
+    width: auto;
+  }
+
+  &__hamburger {
+    margin-left: auto;
+    padding: 1.6rem;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.6rem;
+    flex: 0 0 10rem;
+    width: 10rem;
+
+    --line-tr-1: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+      rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    --line-tr-2: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+      rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+
+    ._show-menu & {
+      --line-tr-1: translate3d(0px, 4.5px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+        rotateY(0deg) rotateZ(-45deg) skew(0deg, 0deg);
+      --line-tr-2: translate3d(0px, -4px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+        rotateY(0deg) rotateZ(45deg) skew(0deg, 0deg);
+    }
+
+    &::before,
+    &::after {
+      content: '';
+
+      width: 80%;
+      height: 1px;
+
+      background-color: var(--c-bg);
+
+      transform-style: preserve-3d;
+      transition: transform 0.5s ease-in-out, background-color 1s ease-in-out;
+
+      ._show-menu & {
+        background-color: var(--c-light-gray);
+      }
+    }
+
+    &::before {
+      transform: var(--line-tr-1);
+    }
+    &::after {
+      transform: var(--line-tr-2);
+    }
+
+    @media (min-width: 767px) {
+      display: none;
+    }
+  }
 
   &__logo {
     flex: 0 0 4rem;
     width: 4rem;
+    order: -1;
+
+    @media (max-width: 767px) {
+      flex: 0 0 6rem;
+      width: 6rem;
+    }
   }
 
   // .header__nav
@@ -26,11 +94,135 @@
     column-gap: 2rem;
 
     color: var(--c-bg);
+
+    @media (max-width: 767px) {
+      margin-bottom: 10rem;
+
+      display: flex;
+      flex-direction: column;
+      row-gap: 5rem;
+      height: 74rem;
+
+      overflow: auto;
+    }
   }
 
   // .header__link
 
   &__link {
+    position: relative;
+
     font: var(--txt-x-small);
+
+    @media (max-width: 767px) {
+      padding-bottom: 1rem;
+
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+      border-bottom: 1px dashed var(--c-light-gray);
+
+      font: var(--txt-main);
+      font-size: 3rem;
+
+      &::before {
+        content: attr(data-idx);
+
+        font: var(--txt-x-small);
+        color: var(--c-light-gray);
+      }
+
+      &::after {
+        content: var(--i-arrow-main-white);
+
+        position: absolute;
+        bottom: 2rem;
+        right: 0;
+
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+  }
+}
+
+.menu {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+
+  background-color: var(--c-primary);
+
+  transform: translateX(-110%);
+  transition: transform 1s ease-in-out;
+
+  ._show-menu & {
+    transform: none;
+
+    .container {
+      opacity: 1;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+
+    &.container {
+      padding-top: 14rem;
+      padding-bottom: 4rem;
+    }
+  }
+
+  // .menu__socials
+
+  &__socials {
+    margin-bottom: 8rem;
+
+    display: flex;
+    column-gap: 4rem;
+  }
+
+  // .menu__socials-item
+
+  &__socials-item {
+  }
+
+  // .menu__socials-item-inner
+
+  &__socials-item-inner {
+    display: inline-flex;
+    border-radius: 50%;
+
+    svg {
+      width: 4.5rem;
+      height: 4.5rem;
+
+      color: var(--c-bg);
+    }
+  }
+
+  // .menu__footer
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // .menu__txt
+
+  &__txt {
+    font: var(--txt-small);
+    color: var(--c-light-gray);
   }
 }

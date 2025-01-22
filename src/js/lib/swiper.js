@@ -25,7 +25,7 @@ window.addEventListener('load', function () {
   if (document.querySelector('.blog__slider')) {
     new Swiper('.blog__slider', {
       modules: [Navigation],
-      speed: 1000,
+      speed: 1500,
       spaceBetween: 20,
       slidesPerView: 4,
       loop: true,
@@ -38,7 +38,7 @@ window.addEventListener('load', function () {
   if (document.querySelector('.reviews__slider')) {
     new Swiper('.reviews__slider', {
       modules: [Navigation],
-      speed: 1000,
+      speed: 1500,
       spaceBetween: 80,
       centeredSlidesBounds: true,
       centeredSlides: true,

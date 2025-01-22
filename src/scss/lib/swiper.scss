@@ -49,10 +49,7 @@
   z-index: 1;
   display: flex;
   transition-property: transform;
-  transition-timing-function: var(
-    --swiper-wrapper-transition-timing-function,
-    initial
-  );
+  transition-timing-function: var(ease-in-out, initial);
   box-sizing: content-box;
 }
 .swiper-android .swiper-slide,
@@ -258,3 +255,8 @@
   }
 }
 /* Slide styles end */
+
+.clients .swiper-wrapper {
+  -webkit-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+}
