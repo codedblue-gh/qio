@@ -1,10 +1,9 @@
-import { horizontalLoop } from './marquee';
-
 import gsap from 'gsap';
 import { dynamicDOM, removeClasses } from './utils';
 import { lenis } from '../anim/fullpage-scroll';
 import { ScrollTrigger } from 'gsap/all';
-import { por } from '../anim/horizontal-scroll';
+import { horizontalScroll } from '../anim/horizontal-scroll';
+import { horizontalLoop } from './marquee';
 
 document.addEventListener('DOMContentLoaded', function () {
   if (document.querySelector('.header__item_menu')) {
@@ -77,7 +76,9 @@ document.addEventListener('DOMContentLoaded', function () {
 window.addEventListener('load', function () {
   dynamicDOM();
   ScrollTrigger.refresh();
-  por();
+  horizontalScroll();
+
+  window.matchMedia('(max-width: 767px)').matches && lenis.destroy();
 
   !document.querySelector('.hero') && lenis.start();
 });

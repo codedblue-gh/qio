@@ -1,6 +1,8 @@
 .services {
   position: relative;
 
+  overflow: hidden;
+
   @media (max-width: 767px) {
     .services__col:last-child::after {
       transform: none;
@@ -51,7 +53,7 @@
         top: 0;
 
         width: 20rem;
-        height: 100%;
+        height: 136rem;
 
         background: url(@img/content/bg.svg) center / cover repeat;
         background-attachment: fixed;

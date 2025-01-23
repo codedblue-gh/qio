@@ -1,7 +1,6 @@
 import '../scss/style.scss';
 
 import './lib/video.js';
-import './lib/swiper.js';
 import './lib/inputmask.js';
 
 import './utils/script.js';
@@ -17,3 +16,5 @@ import './anim/scramble-text.js';
 import './anim/on-scroll.js';
 
 import './common.js';
+
+import './lib/swiper.js';

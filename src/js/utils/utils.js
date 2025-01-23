@@ -11,7 +11,6 @@ export const removeClasses = (className, items) => {
 };
 
 export const scrambleText = (e, selector) => {
-  console.log(e);
   if (e.querySelector(selector)) {
     const el = e.querySelector(selector);
     const txt = el.innerText;

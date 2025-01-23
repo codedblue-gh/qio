@@ -55,15 +55,15 @@ export const animateHero = () => {
   //     });
   //   });
 
-  document.querySelectorAll('[data-draw-sc]').length &&
-    document.querySelectorAll('[data-draw-sc]').forEach((group, idx) => {
-      gsap.to(group, {
-        scaleY: 1,
-        scaleX: 1,
-        duration: 2,
-        ease: customEase,
-      });
-    });
+  // document.querySelectorAll('[data-draw-sc]').length &&
+  //   document.querySelectorAll('[data-draw-sc]').forEach((group, idx) => {
+  //     gsap.to(group, {
+  //       scaleY: 1,
+  //       scaleX: 1,
+  //       duration: 2,
+  //       ease: customEase,
+  //     });
+  //   });
 
   gsap.to('[data-draw-el]', {
     scale: 1,
