@@ -87,6 +87,3 @@ window.addEventListener('load', function () {
 
   !document.querySelector('.hero') && lenis.start();
 });
-// window.onbeforeunload = function () {
-//   window.scrollTo(0, 0);
-// };
