@@ -20,6 +20,8 @@
 
     display: grid;
 
+    overflow: hidden;
+
     @media (min-width: 767.1px) {
       grid-template-columns: 85rem 1fr;
       column-gap: 26rem;

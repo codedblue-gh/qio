@@ -4,6 +4,9 @@ import { lenis } from '../anim/fullpage-scroll';
 import { ScrollTrigger } from 'gsap/all';
 import { horizontalScroll } from '../anim/horizontal-scroll';
 import { horizontalLoop } from './marquee';
+import { parallax } from '../anim/parallax';
+
+let mm = gsap.matchMedia();
 
 document.addEventListener('DOMContentLoaded', function () {
   if (document.querySelector('.header__item_menu')) {
@@ -75,10 +78,15 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 window.addEventListener('load', function () {
   dynamicDOM();
-  ScrollTrigger.refresh();
   horizontalScroll();
+  parallax();
+
+  ScrollTrigger.refresh();
 
   window.matchMedia('(max-width: 767px)').matches && lenis.destroy();
 
   !document.querySelector('.hero') && lenis.start();
 });
+// window.onbeforeunload = function () {
+//   window.scrollTo(0, 0);
+// };

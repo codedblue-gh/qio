@@ -66,12 +66,14 @@
     left: -100%;
     top: -100%;
     background-image: url(@img/67058cdc24b90dd798e2fa73_grain-texture.webp);
+    background-attachment: fixed;
     animation-name: grained;
     animation-iteration-count: infinite;
     animation-duration: 0.5s;
     animation-timing-function: steps(20);
     opacity: 0.18;
     pointer-events: none;
+    filter: grayscale(100%);
   }
 }
 

@@ -103,8 +103,6 @@
       }
       &::before {
         left: -12rem;
-
-        height: 118rem;
       }
     }
 
@@ -153,7 +151,6 @@
         height: 73rem;
 
         background: url(@img/content/bg.svg) center / contain repeat;
-        background-attachment: fixed;
         background-size: 72rem;
         background-position-x: left;
       }
@@ -170,7 +167,7 @@
   &__center {
     position: relative;
 
-    padding-top: 15rem;
+    margin-top: 15rem;
 
     display: flex;
     flex-direction: column;

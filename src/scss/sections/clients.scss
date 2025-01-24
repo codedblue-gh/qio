@@ -1,21 +1,28 @@
 .clients {
-  margin: 0 1.5rem;
-  padding-left: 5rem;
-  padding-right: 5rem;
-  padding-top: 2rem;
-  padding-bottom: 3rem;
+  &__wrap {
+    margin: 0 1.5rem;
+    border: 0.5px dashed var(--c-primary);
+    border-radius: var(--b-radius);
 
-  border: 0.5px dashed var(--c-primary);
-  border-radius: var(--b-radius);
+    background-color: var(--c-bg);
 
-  background-color: var(--c-bg);
+    overflow: hidden;
 
-  overflow: hidden;
+    @media (max-width: 767px) {
+      margin-bottom: 15rem;
+    }
+  }
 
-  @media (max-width: 767px) {
-    padding-top: 4rem;
-    padding-bottom: 6rem;
-    margin-bottom: 15rem;
+  &__container {
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+
+    @media (max-width: 767px) {
+      padding-top: 4rem;
+      padding-bottom: 6rem;
+    }
   }
 
   // .clients__heading

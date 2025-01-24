@@ -31,11 +31,11 @@
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    min-height: 99rem;
+    height: 99rem;
 
     @media (max-width: 767px) {
       grid-template: 1fr / 1fr;
-      min-height: 133.4rem;
+      height: 133.4rem;
     }
   }
 

@@ -29,6 +29,7 @@ body {
   color: var(--c-primary);
   background-color: var(--c-bg);
   -webkit-animation: bugfix infinite 1s;
+  overflow-x: clip;
 }
 
 input,
@@ -121,6 +122,11 @@ input[type='number'] {
 .container {
   width: 166rem;
   margin: 0 auto;
+}
+
+// safari fix
+svg {
+  -webkit-transform: translate3d(0, 0, 0);
 }
 
 @media (max-width: 767px) {

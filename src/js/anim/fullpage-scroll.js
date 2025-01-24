@@ -3,9 +3,22 @@ import Lenis from 'lenis';
 import 'lenis/dist/lenis.css';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
+import { pinAmount } from './horizontal-scroll';
+
+gsap.registerPlugin(ScrollTrigger);
 
 // Initialize Lenis
-export const lenis = new Lenis({});
+export const lenis = new Lenis({
+  duration: 1.2,
+  easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+  direction: 'vertical', // vertical, horizontal
+  gestureDirection: 'vertical', // vertical, horizontal, both
+  smooth: true,
+  mouseMultiplier: 1,
+  smoothTouch: false,
+  touchMultiplier: 2,
+  infinite: false,
+});
 
 lenis.stop();
 
@@ -30,3 +43,21 @@ gsap.ticker.add(time => {
 
 // Disable lag smoothing in GSAP to prevent any delay in scroll animations
 gsap.ticker.lagSmoothing(0);
+
+ScrollTrigger.addEventListener('refresh', () => lenis.resize());
+
+ScrollTrigger.scrollerProxy('.lenis', {
+  scrollTop(value) {
+    return arguments.length
+      ? lenis.scrollTo(value, 0, 0)
+      : lenis.animatedScroll;
+  }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+  getBoundingClientRect() {
+    return {
+      top: 0,
+      left: 0,
+      width: window.innerWidth,
+      height: window.innerHeight,
+    };
+  },
+});

@@ -48,7 +48,6 @@ window.addEventListener('load', function () {
       centeredSlidesBounds: true,
       centeredSlides: true,
       loop: true,
-      autoHeight: true,
       navigation: {
         prevEl: '.reviews .nav-btn_prev',
         nextEl: '.reviews .nav-btn_next',

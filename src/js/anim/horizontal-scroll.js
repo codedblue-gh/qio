@@ -5,25 +5,31 @@ import { Navigation } from 'swiper/modules';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const slides = gsap.utils.toArray('.portfolio .swiper-slide');
+const slidesAmount = slides ? slides.length : false;
+
 export const horizontalScroll = () => {
   if (document.querySelector('.portfolio')) {
     const mm = gsap.matchMedia();
 
     mm.add('(min-width: 767.1px)', () => {
-      const slides = gsap.utils.toArray('.portfolio .swiper-slide');
-      const slidesAmount = slides.length;
-
       gsap.to(slides, {
         ease: 'none',
-        duration: slides.length,
         xPercent: -(100 * (slidesAmount - 1)),
         scrollTrigger: {
+          id: 'portfolio',
           trigger: '.portfolio',
           start: 'center center',
-          end: '+=' + 50 * slidesAmount + '%',
+          end: '+=' + 100 * slidesAmount + '%',
           scrub: true,
           pin: '.wrapper',
           snap: 1 / (slidesAmount - 1),
+          // invalidateOnRefresh: true,
+
+          pinType: 'fixed',
+          // onLeave: () => {
+          //   ScrollTrigger.refresh();
+          // },
         },
       });
 
