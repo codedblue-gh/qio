@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation, Autoplay } from 'swiper/modules';
+import { Navigation, Autoplay, FreeMode } from 'swiper/modules';
 
 window.addEventListener('load', function () {
   if (document.querySelector('.clients__slider')) {
@@ -28,6 +28,7 @@ window.addEventListener('load', function () {
       },
     });
   }
+
   if (document.querySelector('.blog__slider')) {
     new Swiper('.blog__slider', {
       modules: [Navigation],

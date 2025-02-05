@@ -1,31 +1,40 @@
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
+import { removeClasses } from '../utils/utils';
 
-export const parallax = () => {
-  const mm = gsap.matchMedia();
+document.addEventListener('DOMContentLoaded', function () {
+  const sections = gsap.utils.toArray('[data-section]');
 
-  mm.add('(min-width: 767.1px)', () => {
-    const elements = gsap.utils.toArray('[data-parallax]');
+  if (sections) {
+    sections.forEach(section => {
+      const addClass = e => {
+        const el = document.querySelector(
+          `.nav [data-anchor=".${e.vars.trigger.dataset.section}"]`
+        );
+        removeClasses(document.querySelectorAll('.nav__item'), '_is-active');
+        el.parentElement.classList.add('_is-active');
+      };
 
-    elements.forEach(function (el, i) {
-      const parent = el.closest('[data-parallax-parent]');
-
-      const tl = gsap.from(el, {
-        translateY: (i, target) =>
-          el.dataset.parallax.length ? `${el.dataset.parallax}rem` : '5rem',
-        ease: 'none',
-        lazy: false,
-      });
-
-      ScrollTrigger.create({
-        animation: tl,
-        trigger: parent,
-        scrub: true,
-        pinnedContainer: '.wrapper',
-        start: `top center`,
-      });
+      const tl = gsap
+        .timeline({
+          ease: 'none',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top top',
+            end: '+=260rem top',
+            scrub: true,
+            onEnter: e => {
+              addClass(e);
+            },
+            onEnterBack: e => {
+              addClass(e);
+            },
+          },
+        })
+        .from(section.querySelectorAll('[data-parallax]'), {
+          translateY: section.dataset.section.length
+            ? section.dataset.section
+            : '4%',
+        });
     });
-
-    return () => {};
-  });
-};
+  }
+});

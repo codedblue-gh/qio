@@ -30,176 +30,6 @@ textarea {
   resize: none;
 }
 
-.input {
-  input {
-    padding: 0.8rem 1.2rem;
-
-    height: 4rem;
-    width: 19.5rem;
-    border: 0.5px solid var(--c-primary);
-    border-radius: 0.6rem;
-
-    transition: border 0.3s ease;
-
-    @media (max-width: 767px) {
-      padding: 1.6rem 2.4rem;
-
-      width: 100%;
-      height: 8rem;
-    }
-
-    &:hover,
-    &:focus {
-      border: 0.5px solid var(--c-gray);
-    }
-
-    @media (min-width: 767.1px) {
-      font: var(--txt-small);
-
-      &::placeholder {
-        font: var(--txt-small);
-      }
-    }
-  }
-}
-
-.field_textarea {
-  .field {
-    &__wrap {
-      height: 17rem;
-    }
-  }
-}
-
-.field {
-  position: relative;
-
-  padding: 0 3rem;
-
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-
-  &::before,
-  &::after,
-  .field__label::before,
-  .field__label::after {
-    content: '';
-
-    position: absolute;
-
-    width: 3.5rem;
-    height: 3.5rem;
-
-    background: url(@img/vectors/angle.svg) top / contain no-repeat;
-  }
-
-  &::before {
-    transform: translate(-100%, 0);
-  }
-
-  &::after {
-    right: 0;
-
-    transform: translate(0, 0) scaleX(-1);
-  }
-
-  &_options {
-    .field__label {
-      margin-bottom: 1.5rem;
-    }
-  }
-
-  &__wrap,
-  &__options {
-    position: relative;
-
-    &::after {
-      content: var(--i-squares);
-
-      position: absolute;
-      top: -2.5rem;
-      right: -1rem;
-
-      width: 0.8rem;
-      height: 1.5rem;
-
-      opacity: 0.7;
-    }
-  }
-
-  &__options {
-    padding-bottom: 3rem;
-
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-    justify-content: start;
-    align-content: start;
-    column-gap: 3rem;
-    row-gap: 2rem;
-    height: 100%;
-    border-bottom: 0.5px solid var(--c-primary);
-
-    &::after {
-      top: -4.2rem;
-    }
-  }
-
-  // .field__label
-
-  &__label {
-    padding-top: 1.5rem;
-
-    width: 100%;
-    border-top: 0.5px solid var(--c-primary);
-
-    font: var(--txt-x-small);
-
-    @media (max-width: 767px) {
-      padding-top: 2.5rem;
-
-      font: var(--txt-small);
-    }
-
-    &::before {
-      bottom: 0;
-
-      transform: translate(-100%, 0) scaleY(-1);
-    }
-
-    &::after {
-      right: 0;
-      bottom: 0;
-
-      transform: scale(-1, -1);
-    }
-  }
-
-  &__wrap {
-    padding-bottom: 3rem;
-
-    display: flex;
-    flex: 1 1 auto;
-    height: 7rem;
-    border-bottom: 0.5px solid var(--c-primary);
-
-    @media (max-width: 767px) {
-      height: 8rem;
-    }
-  }
-
-  // .field__input
-
-  &__input {
-    height: 100%;
-    width: 100%;
-
-    &::placeholder {
-      color: var(--c-gray);
-    }
-  }
-}
-
 .option {
   position: relative;
 
@@ -250,6 +80,28 @@ textarea {
       background-color: var(--c-primary);
 
       transition: clip-path 0.3s ease;
+    }
+  }
+}
+
+.field {
+  .field__input,
+  .field__input::placeholder {
+    color: var(--c-primary);
+  }
+
+  // .field__input
+
+  &__input {
+    padding: 2.5rem;
+
+    width: 100%;
+    border: 1px solid var(--c-primary);
+
+    transition: border 0.5s ease-in-out;
+
+    &:focus {
+      border: 1px solid var(--c-gray);
     }
   }
 }

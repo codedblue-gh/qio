@@ -6,7 +6,7 @@
   &::before {
     content: '(-';
 
-    margin-right: 8rem;
+    margin-right: 13rem;
   }
 
   &::after {
@@ -17,7 +17,7 @@
 .h-main,
 .h-main__txt {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
   column-gap: 1rem;
 
   @media (max-width: 767px) {
@@ -25,9 +25,20 @@
   }
 }
 .h-main {
+  &_large {
+    &::after,
+    .h-main__txt::after {
+      display: none;
+    }
+  }
   &__txt {
     font: var(--h-main);
     white-space: nowrap;
+  }
+
+  &::before,
+  &::after {
+    transform: translateY(0.5rem);
   }
 
   &::before,
@@ -45,6 +56,14 @@
       flex: 0 0 2.1rem;
       width: 2.1rem;
       height: 2.1rem;
+    }
+  }
+
+  &__txt {
+    align-items: flex-end;
+
+    &::after {
+      transform: translateY(-0.5rem);
     }
   }
 }

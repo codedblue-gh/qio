@@ -1,5 +1,22 @@
-import { randomWordInjector } from '../anim/scramble-text';
 import gsap from 'gsap';
+import CustomEase from 'gsap/CustomEase';
+
+export const randomNumber = () => {
+  Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+export const customEase = CustomEase.create(
+  'custom',
+  'M0,0 C0.02,0.04 0.137,0.017 0.224,0.031 0.289,0.041 0.37,0.053 0.442,0.067 0.476,0.073 0.529,0.086 0.57,0.095 0.621,0.106 0.656,0.148 0.686,0.184 0.843,0.37 0.734,1 1,1 '
+);
+
+export const shuffle = array => {
+  return Array(array.length)
+    .fill(null)
+    .map((_, i) => [Math.random(), i])
+    .sort(([a], [b]) => a - b)
+    .map(([, i]) => array[i]);
+};
 
 export const getOffset = element => {
   if (!element.getClientRects().length) {
@@ -14,7 +31,7 @@ export const getOffset = element => {
   };
 };
 
-export const removeClasses = (className, items) => {
+export const removeClasses = (items, className) => {
   if (items.length) {
     for (let i = 0; i < items.length; i++) {
       const element = items[i];

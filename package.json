@@ -45,7 +45,6 @@
     "inputmask": "^5.0.9",
     "lenis": "^1.1.19",
     "scramble-text": "^0.0.9",
-    "segment-js": "^1.1.2",
     "splitting": "^1.1.0",
     "swiper": "^11.2.1",
     "video.js": "^8.17.4"

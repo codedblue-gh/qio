@@ -179,20 +179,20 @@ module.exports = {
           },
         ],
       }),
-      new ImageminWebpWebpackPlugin({
-        config: [
-          {
-            test: /\.(jpe?g|png)/,
-            options: {
-              quality: 75,
-            },
-          },
-        ],
-        overrideExtension: true,
-        detailedLogs: false,
-        silent: false,
-        strict: true,
-      }),
+      // new ImageminWebpWebpackPlugin({
+      //   config: [
+      //     {
+      //       test: /\.(jpe?g|png)/,
+      //       options: {
+      //         quality: 75,
+      //       },
+      //     },
+      //   ],
+      //   overrideExtension: true,
+      //   detailedLogs: false,
+      //   silent: false,
+      //   strict: true,
+      // }),
     ],
   },
 

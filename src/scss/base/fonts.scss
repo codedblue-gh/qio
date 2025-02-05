@@ -1,6 +1,12 @@
 @font-face {
   font-family: 'Roobert SemiMono';
   font-style: normal;
+  font-weight: 400;
+  src: url(@fonts/ROOBERTSEMIMONOTRIAL-REGULAR.woff2);
+}
+@font-face {
+  font-family: 'Roobert SemiMono';
+  font-style: normal;
   font-weight: 500;
   src: url(@fonts/ROOBERTSEMIMONOTRIAL-MEDIUM.woff2);
 }
