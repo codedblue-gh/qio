@@ -106,6 +106,8 @@
 
     border-top: none;
     border-left: none;
+
+    display: none;
   }
 
   // .frame__inner
@@ -120,6 +122,8 @@
 
       border-left: none;
       border-bottom: none;
+
+      display: none;
     }
 
     &::after {

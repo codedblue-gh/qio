@@ -1,9 +1,12 @@
 .footer {
-  position: relative;
+  position: absolute;
+  left: 0;
+  bottom: 0;
   z-index: 10;
 
   padding: 2rem 0;
 
+  height: 6.5rem;
   border-top: 1px solid var(--c-gray);
 
   // .footer__container
@@ -14,7 +17,7 @@
     align-items: center;
 
     .mainpage & {
-      padding: 0 10rem;
+      padding: 0 8rem;
     }
   }
 
