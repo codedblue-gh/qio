@@ -2,6 +2,13 @@
   margin-bottom: 2rem;
 
   height: 100dvh;
+  min-height: 108rem;
+
+  @media (max-width: 767px) {
+    margin-bottom: 0;
+
+    min-height: 133.4rem;
+  }
   // .hero__container
 
   &__container {
@@ -28,13 +35,23 @@
   }
 
   &__bottom {
-    display: grid;
-    grid-template-columns: 60rem 1fr 60rem;
-    align-items: flex-end;
+    margin-bottom: 8rem;
+
+    @media (min-width: 767.1px) {
+      margin-bottom: 0;
+
+      display: grid;
+      grid-template-columns: 60rem 1fr 60rem;
+      align-items: flex-end;
+    }
   }
 
   &__scroll {
     justify-self: center;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
 
     font: var(--txt-main-sb);
     span {
@@ -90,36 +107,47 @@
     flex-direction: column;
     row-gap: 2rem;
 
-    &::before {
-      content: url('data:image/svg+xml,<svg viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.5173 15.8688C25.5173 20.753 21.5579 24.7125 16.6737 24.7125C11.7896 24.7125 7.83016 20.753 7.83016 15.8688C7.83016 10.9846 11.7896 7.02517 16.6737 7.02517C21.5579 7.02517 25.5173 10.9846 25.5173 15.8688Z" stroke="%231F1F1F" stroke-width="0.980031"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M11.8579 15.2611C12.1297 13.084 13.8435 11.3548 16.0132 11.0596V15.2611H11.8579ZM11.8343 16.2411C12.0079 18.5278 13.766 20.3717 16.0132 20.6775V16.2411H11.8343ZM16.9932 16.2411V20.7117C19.4014 20.5552 21.3308 18.6422 21.5131 16.2411H16.9932ZM21.4895 15.2611C21.2036 12.9711 19.3223 11.1768 16.9932 11.0254V15.2611H21.4895Z" fill="%231F1F1F"></path><line x1="16.5033" y1="11.0259" x2="16.5033" y2="0.560843" stroke="%231F1F1F" stroke-width="0.980031"></line><line x1="16.5033" y1="31.1777" x2="16.5033" y2="20.7127" stroke="%231F1F1F" stroke-width="0.980031"></line><line x1="21.5131" y1="15.7517" x2="32.6737" y2="15.7517" stroke="%231F1F1F" stroke-width="0.980031"></line><line x1="0.673706" y1="15.7517" x2="11.8343" y2="15.7517" stroke="%231F1F1F" stroke-width="0.980031"></line></svg>');
+    @media (min-width: 767.1px) {
+      &::before {
+        content: url('data:image/svg+xml,<svg viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.5173 15.8688C25.5173 20.753 21.5579 24.7125 16.6737 24.7125C11.7896 24.7125 7.83016 20.753 7.83016 15.8688C7.83016 10.9846 11.7896 7.02517 16.6737 7.02517C21.5579 7.02517 25.5173 10.9846 25.5173 15.8688Z" stroke="%231F1F1F" stroke-width="0.980031"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M11.8579 15.2611C12.1297 13.084 13.8435 11.3548 16.0132 11.0596V15.2611H11.8579ZM11.8343 16.2411C12.0079 18.5278 13.766 20.3717 16.0132 20.6775V16.2411H11.8343ZM16.9932 16.2411V20.7117C19.4014 20.5552 21.3308 18.6422 21.5131 16.2411H16.9932ZM21.4895 15.2611C21.2036 12.9711 19.3223 11.1768 16.9932 11.0254V15.2611H21.4895Z" fill="%231F1F1F"></path><line x1="16.5033" y1="11.0259" x2="16.5033" y2="0.560843" stroke="%231F1F1F" stroke-width="0.980031"></line><line x1="16.5033" y1="31.1777" x2="16.5033" y2="20.7127" stroke="%231F1F1F" stroke-width="0.980031"></line><line x1="21.5131" y1="15.7517" x2="32.6737" y2="15.7517" stroke="%231F1F1F" stroke-width="0.980031"></line><line x1="0.673706" y1="15.7517" x2="11.8343" y2="15.7517" stroke="%231F1F1F" stroke-width="0.980031"></line></svg>');
 
-      position: absolute;
-      top: -3.2rem;
-      left: 0;
+        position: absolute;
+        top: -3.2rem;
+        left: 0;
 
-      width: 3.2rem;
-      height: 3.2rem;
+        width: 3.2rem;
+        height: 3.2rem;
 
-      transform-origin: center center;
-      animation: rotate 15s linear 0s infinite;
+        transform-origin: center center;
+        animation: rotate 15s linear 0s infinite;
+      }
     }
   }
 
   &__text-wrap {
-    padding-left: 4rem;
-
     display: flex;
     flex-direction: column;
-    width: 55rem;
 
     line-height: 160%;
+
+    @media (max-width: 767px) {
+      margin-left: auto;
+    }
+
+    @media (min-width: 767.1px) {
+      padding-left: 4rem;
+
+      width: 55rem;
+    }
   }
 
   &__title {
-    position: absolute;
-    z-index: -10;
-    opacity: 0;
-    visibility: hidden;
+    @media (min-width: 767.1px) {
+      position: absolute;
+      z-index: -10;
+      opacity: 0;
+      visibility: hidden;
+    }
   }
 
   // .hero__bg

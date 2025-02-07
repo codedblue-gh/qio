@@ -24,7 +24,9 @@
   --fz-17: 1.7rem;
   --fz-18: 1.8rem;
   --fz-20: 2rem;
+  --fz-22: 2.2rem;
   --fz-24: 2.4rem;
+  --fz-25: 2.5rem;
   --fz-28: 2.8rem;
   --fz-30: 3rem;
   --fz-32: 3.2rem;
@@ -61,16 +63,16 @@
 
   @media (max-width: 48em) {
     // typo
-    --txt-large: 500 var(--fz-30) / 125% var(--ff-main);
-    --txt-main: 500 var(--fz-24) / 125% var(--ff-main);
-    --txt-main-sb: 600 var(--fz-24) / 4.1rem var(--ff-main);
-    --txt-small: 500 var(--fz-20) / 125% var(--ff-main);
-    --txt-small-sb: 600 var(--fz-24) / 125% var(--ff-main);
-    --txt-x-small: 500 var(--fz-17) / 125% var(--ff-main);
-    --txt-semi: 500 var(--fz-24) / 125% var(--ff-main);
+    --txt-large: 500 var(--fz-40) / 125% var(--ff-main);
+    --txt-main: 400 var(--fz-20) / 125% var(--ff-main);
+    --txt-main-sb: 500 var(--fz-20) / 125% var(--ff-main);
+    --txt-small: 400 var(--fz-20) / 125% var(--ff-main);
+    --txt-small-sb: 400 var(--fz-24) / 125% var(--ff-main);
+    --txt-x-small: 400 var(--fz-17) / 125% var(--ff-main);
+    --txt-semi: 500 var(--fz-22) / 125% var(--ff-main);
 
-    --h-heavy: 700 var(--fz-40) / 125% var(--ff-main);
-    --h-main: 700 var(--fz-30) / 125% var(--ff-main);
+    --h-heavy: 600 var(--fz-40) / 125% var(--ff-main);
+    --h-main: 500 var(--fz-25) / 125% var(--ff-main);
     --h-secondary: 500 var(--fz-24) / 125% var(--ff-main);
 
     // sizes

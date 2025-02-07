@@ -36,5 +36,5 @@ export const animateHero = () => {
   };
 
   waves();
-  animateSvg();
+  window.innerWidth > 767 && animateSvg();
 };

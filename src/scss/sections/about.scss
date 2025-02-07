@@ -5,6 +5,10 @@
   background-color: var(--c-bg);
   overflow: hidden;
 
+  @media (max-width: 767px) {
+    margin-bottom: 7.5rem;
+  }
+
   // .about__container
 
   &__container {
@@ -17,25 +21,32 @@
   // .about__content
 
   &__content {
-    padding: 0 10rem;
-
     display: grid;
-    grid-template-columns: auto 52rem;
     column-gap: 6rem;
     align-items: start;
     min-height: 40rem;
     width: 100%;
 
     overflow: hidden;
+
+    @media (min-width: 767.1px) {
+      padding: 0 10rem;
+
+      grid-template-columns: auto 52rem;
+    }
   }
 
   // .about__wrap
 
   &__wrap {
-    display: grid;
-    grid-template-columns: 1fr 40rem;
-    column-gap: 4rem;
-    width: 90.4rem;
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 767.1px) {
+      display: grid;
+      grid-template-columns: 1fr 40rem;
+      column-gap: 4rem;
+      width: 90.4rem;
+    }
   }
 
   // .about__heading
@@ -48,6 +59,14 @@
     .h-main__txt {
       white-space: wrap;
     }
+
+    @media (max-width: 767px) {
+      margin-bottom: 1rem;
+
+      + .about__txt {
+        margin-bottom: 5rem;
+      }
+    }
   }
 
   &__logo {
@@ -58,18 +77,37 @@
     width: 16rem;
   }
 
-  &__image-wrap {
+  &__btn {
+    @media (max-width: 767px) {
+      justify-content: center;
+    }
+  }
+
+  &__asset-wrap {
     position: relative;
+
+    margin: 0 auto;
+    margin-bottom: 4rem;
 
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 70rem;
-    height: 100%;
+    width: 59rem;
+    height: 25rem;
+    order: -1;
 
     background-color: var(--c-primary);
 
-    transform: translate(-30%, -3rem);
+    @media (min-width: 767.1px) {
+      margin: 0;
+      margin-bottom: 0;
+
+      width: 70rem;
+      height: 100%;
+      order: unset;
+
+      transform: translate(-30%, -3rem);
+    }
 
     img {
       width: 12rem;
@@ -80,12 +118,20 @@
       height: 100%;
 
       object-fit: cover;
+
+      @media (max-width: 767px) {
+        transform: translateX(-3rem);
+        width: 105%;
+      }
     }
   }
 
   // .about__txt
 
   &__txt {
+    @media (max-width: 767px) {
+      padding-left: 4rem;
+    }
   }
 
   // .about__text-wrap

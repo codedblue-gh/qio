@@ -35,6 +35,10 @@
     column-gap: 3.5rem;
 
     transform: translate(-50%, -50%);
+
+    @media (max-width: 767px) {
+      column-gap: 6.5rem;
+    }
   }
 
   &__icon {
@@ -48,6 +52,12 @@
     animation-duration: 1.8s;
     animation-timing-function: step-end;
     animation-iteration-count: infinite;
+
+    @media (max-width: 767px) {
+      flex: 0 0 4rem;
+      width: 4rem;
+      height: 4rem;
+    }
 
     &:first-child {
       animation-delay: 0ms;
@@ -78,6 +88,10 @@
   height: 100dvh;
 
   pointer-events: none;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 
   &::before,
   &::after,

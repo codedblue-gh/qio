@@ -1,4 +1,4 @@
-let s = document.getElementById('say-canvas');
+let s = document.querySelector('.footer-upper__canvas');
 let e = s.getContext('2d');
 s.width = window.innerWidth;
 s.height = 300;
@@ -43,5 +43,9 @@ new FontFace(
       (function () {
         for (let e = 0; e < i.length; e++) i[e].upd();
       })();
-  }),
-  window.innerWidth > 900;
+  });
+
+if (window.innerWidth <= 767) {
+  s.width = 1000;
+  s.height = 300;
+}

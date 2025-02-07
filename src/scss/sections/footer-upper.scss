@@ -7,6 +7,11 @@
 
   background-color: var(--c-bg);
 
+  @media (max-width: 767px) {
+    padding-bottom: 10rem;
+    padding-top: 10rem;
+  }
+
   &__fields-inner {
     grid-column: span 2;
   }
@@ -35,6 +40,10 @@
 
       transform: translateY(-50%);
     }
+
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
 
   // .footer-upper__container
@@ -47,7 +56,9 @@
     background-color: var(--c-bg);
 
     .mainpage & {
-      padding-right: 11rem;
+      @media (min-width: 767.1px) {
+        padding-right: 11rem;
+      }
     }
   }
 
@@ -56,27 +67,23 @@
 
     margin-bottom: 4rem;
 
-    &::before {
-      content: var(--i-plus);
-
-      position: absolute;
-      top: -4rem;
-      left: 50%;
-
-      width: 2.4rem;
-      height: 2.4rem;
-
-      transform: translate(-50%, -100%);
+    @media (max-width: 767px) {
+      margin-bottom: 10rem;
     }
   }
 
   &__heading {
     margin-bottom: 4rem;
+
+    @media (max-width: 767px) {
+      margin-bottom: 2rem;
+    }
   }
 
   // .footer-upper__canvas
 
   &__canvas {
+    width: 100%;
   }
 
   &__fields-wrap {
@@ -89,9 +96,11 @@
     flex-direction: column;
     width: 100%;
 
-    .field_textarea,
-    .btn-secondary {
-      grid-column: span 2;
+    @media (min-width: 767.1px) {
+      .field_textarea,
+      .btn-secondary {
+        grid-column: span 2;
+      }
     }
   }
 
@@ -114,14 +123,18 @@
     padding-bottom: 1rem;
 
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+
     border-bottom: 1px solid var(--c-gray);
+
+    @media (min-width: 767.1px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 
   &__contacts {
-    margin-top: 4rem;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -153,9 +166,13 @@
 
   &__fields {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 2rem;
     width: 100%;
+
+    @media (min-width: 767.1px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
   }
 
   // .footer-upper__field

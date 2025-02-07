@@ -15,6 +15,9 @@
 <body class="">
 	<header class="header">
 		<div class="header__container container">
+			<a href="/" class="header__logo">
+				<img src="img/logo-sm-dark.svg" alt="" />
+			</a>
 			<div class="header__svg">
 				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 84 12" preserveAspectRatio="xMidYMid meet" style="
           width: 100%;
@@ -123,7 +126,7 @@
 						</li>
 					</ul>
 				</li>
-				<li class="menu__ql-item-wrap">
+				<li class="menu__ql-item-wrap _desktop-only">
 					<div class="menu__subtitle">latest articles</div>
 					<ul class="menu__ql-sublist">
 						<li class="menu__ql-item">
@@ -179,14 +182,16 @@
 
 							<div class="hero__bottom">
 								<div class="hero__paragraph">
-									<h1 class="hero__title h-heavy">qio</h1>
+									<h1 class="hero__title h-heavy">
+										<span class="h-heavy__txt">qio</span>
+									</h1>
 
 									<div class="hero__text-wrap">
 										<p data-scramble class="hero__text">
-											effective promotion n' professional web development
+											©<span data-current-year></span> qio, fullcycle web studio
 										</p>
 										<p data-scramble class="hero__text">
-											©<span data-current-year></span> qio, fullcycle web studio
+											effective promotion n' professional web development
 										</p>
 									</div>
 								</div>
@@ -225,7 +230,7 @@
 									</button>
 								</div>
 							</div>
-							<div data-content class="about__image-wrap">
+							<div data-content class="about__asset-wrap">
 								<video data-videojs src="./files/logo.mp4"></video>
 							</div>
 							<!-- <ul data-content class="about__features">
@@ -283,8 +288,8 @@
 					<div class="footer-upper__container container">
 						<canvas data-parallax data-text="SAY HI" class="footer-upper__canvas" id="say-canvas"></canvas>
 						<h2 class="footer-upper__heading h-main">
-							<span data-scramble class="h-main__txt">
-								Let’s Bring YOUR VISIONS to REAL Life
+							<span class="h-main__txt">
+								<span data-scramble>Let’s Bring YOUR VISIONS to REAL Life</span>
 							</span>
 						</h2>
 						<div class="footer-upper__contacts">
@@ -294,7 +299,7 @@
 						<form action="#" class="footer-upper__form">
 							<div class="footer-upper__group">
 								<span class="footer-upper__hint"><span data-scramble>Let us know how we can help</span></span>
-								<div class="footer-upper__badges">
+								<div class="footer-upper__badges _hidden-scrollbar">
 									<div class="footer-upper__badge badge">
 										<input class="badge__input" checked type="radio" name="service" />
 										<span class="badge__text">all</span>
