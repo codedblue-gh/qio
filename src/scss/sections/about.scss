@@ -6,13 +6,13 @@
   overflow: hidden;
 
   @media (max-width: 767px) {
-    margin-bottom: 7.5rem;
+    margin-bottom: 15rem;
   }
 
   // .about__container
 
   &__container {
-    padding: 15rem 0 10rem 0;
+    padding: 15rem 0 0 0;
 
     display: flex;
     align-items: center;
@@ -21,7 +21,8 @@
   // .about__content
 
   &__content {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     column-gap: 6rem;
     align-items: start;
     min-height: 40rem;
@@ -32,6 +33,7 @@
     @media (min-width: 767.1px) {
       padding: 0 10rem;
 
+      display: grid;
       grid-template-columns: auto 52rem;
     }
   }
@@ -79,7 +81,7 @@
 
   &__btn {
     @media (max-width: 767px) {
-      justify-content: center;
+      margin: 0 auto;
     }
   }
 
@@ -92,7 +94,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 59rem;
+    width: calc(100dvw - 6.4rem);
+    overflow: hidden;
     height: 25rem;
     order: -1;
 

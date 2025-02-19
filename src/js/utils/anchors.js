@@ -6,7 +6,11 @@ if (document.querySelectorAll('[data-anchor]').length) {
     const el = document.querySelector(anchor.dataset.anchor);
 
     anchor.addEventListener('click', function () {
-      el && lenis.scrollTo(el);
+      el &&
+        lenis.scrollTo(el, {
+          force: true,
+          lock: true,
+        });
 
       if (anchor.closest('.nav')) {
         removeClasses(document.querySelectorAll('.nav__item'), '_is-active');

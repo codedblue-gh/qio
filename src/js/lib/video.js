@@ -1,3 +1,4 @@
+import { ScrollTrigger } from 'gsap/all';
 import videojs from 'video.js';
 
 const videos = document.querySelectorAll('[data-videojs]');
@@ -46,17 +47,29 @@ videos.forEach(video => {
     }
   );
 
-  setTimeout(() => {
-    // Do not jump ahead if user has paused the player
-    if (player.paused()) return;
+  // setTimeout(() => {
+  //   // Do not jump ahead if user has paused the player
+  //   if (player.paused()) return;
 
-    console.log('Attempting to jump ahead and catch up to live edge now...');
-    player.liveTracker.seekToLiveEdge();
-  }, 8 * 1000);
+  //   console.log('Attempting to jump ahead and catch up to live edge now...');
+  //   player.liveTracker.seekToLiveEdge();
+  // }, 8 * 1000);
 
   setTimeout(() => {
-    player.ready(() => {
-      player.play();
-    });
+    if (!player.el_.closest('.about')) {
+      player.ready(() => {
+        player.play();
+      });
+    } else {
+      ScrollTrigger.create({
+        trigger: '.about',
+        once: true,
+        onEnter: () => {
+          player.ready(() => {
+            player.play();
+          });
+        },
+      });
+    }
   }, 100);
 });

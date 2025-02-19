@@ -1,6 +1,7 @@
 import gsap from 'gsap';
 import { waves } from './waves';
 import { shuffle } from '../utils/utils';
+import { ScrollTrigger } from 'gsap/all';
 
 export const animateHero = () => {
   const animateSvg = () => {
