@@ -1,23 +1,29 @@
 .footer {
+  position: relative;
+  z-index: 10;
+
   padding: 2rem 0;
 
   width: 100%;
   border-top: 1px solid var(--c-gray);
 
-  @media (min-width: 767.1px) {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: 10;
+  background-color: var(--c-bg);
 
+  @media (min-width: 767.1px) {
     height: 6.5rem;
+
+    .mainpage & {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
   }
 
   // .footer__container
 
   &__container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
     row-gap: 2rem;
 
@@ -34,13 +40,10 @@
   // .footer__txt
 
   &__txt {
+    white-space: nowrap;
+
     &:last-child {
       justify-self: end;
-
-      @media (max-width: 767px) {
-        grid-row: 1 / 2;
-        grid-column: 2 / 3;
-      }
     }
   }
 
@@ -52,8 +55,6 @@
     column-gap: 2rem;
 
     @media (max-width: 767px) {
-      grid-column: span 2;
-      justify-self: start;
       column-gap: 3rem;
     }
   }

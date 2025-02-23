@@ -452,6 +452,35 @@ export class TypeShuffle {
 document.addEventListener('DOMContentLoaded', function () {
   const sections = gsap.utils.toArray('[data-section]');
 
+  document.querySelectorAll('[data-scramble]').forEach(text => {
+    if (text.hasAttribute('data-hover')) {
+      const type = text.dataset.hover.length ? +text.dataset.hover : 4;
+      const fx = new TypeShuffle(text);
+      text.addEventListener('pointerenter', () => {
+        switch (type) {
+          case 1:
+            fx.fx1();
+            break;
+          case 2:
+            fx.fx2();
+            break;
+          case 3:
+            fx.fx3();
+            break;
+          case 4:
+            fx.fx4();
+            break;
+
+          default:
+            break;
+        }
+      });
+      text.addEventListener('focus', () => {
+        fx.fx4();
+      });
+    }
+  });
+
   if (sections) {
     sections.forEach(section => {
       const texts = section.querySelectorAll('[data-scramble]');
@@ -467,35 +496,6 @@ document.addEventListener('DOMContentLoaded', function () {
               });
           },
         },
-      });
-
-      document.querySelectorAll('[data-scramble]').forEach(text => {
-        if (text.hasAttribute('data-hover')) {
-          const type = text.dataset.hover.length ? +text.dataset.hover : 4;
-          const fx = new TypeShuffle(text);
-          text.addEventListener('pointerenter', () => {
-            switch (type) {
-              case 1:
-                fx.fx1();
-                break;
-              case 2:
-                fx.fx2();
-                break;
-              case 3:
-                fx.fx3();
-                break;
-              case 4:
-                fx.fx4();
-                break;
-
-              default:
-                break;
-            }
-          });
-          text.addEventListener('focus', () => {
-            fx.fx4();
-          });
-        }
       });
     });
   }

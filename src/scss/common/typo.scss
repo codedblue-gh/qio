@@ -75,6 +75,10 @@
   }
 }
 
+.h-base {
+  font: var(--h-main);
+}
+
 .paragraph {
   &::before {
     content: '(!)';

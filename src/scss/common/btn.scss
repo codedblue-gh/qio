@@ -54,6 +54,23 @@
   }
 }
 
+.btn-primary {
+  padding: 0.2rem 0.55rem;
+
+  display: inline-flex;
+
+  border: 0.5px solid var(--c-primary);
+
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--c-bg);
+      background-color: var(--c-primary);
+    }
+  }
+}
+
 .btn-secondary {
   padding: 2.5rem;
 
@@ -95,15 +112,20 @@
     }
   }
 
+  &:not(&_static) {
+    &::before {
+      animation: br-l 5s ease-in-out 1.5s infinite;
+    }
+    &::after {
+      animation: br-r 5s ease-in-out 1.5s infinite;
+    }
+  }
+
   &::before {
     content: '[ ';
-
-    animation: br-l 5s ease-in-out 1.5s infinite;
   }
   &::after {
     content: ' ]';
-
-    animation: br-r 5s ease-in-out 1.5s infinite;
   }
 }
 

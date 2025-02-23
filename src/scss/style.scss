@@ -71,6 +71,10 @@ html:not(._page-loaded) {
   }
 }
 
+.pt {
+  padding-top: 14rem;
+}
+
 [data-section] {
   display: flex;
   align-items: center;
@@ -83,3 +87,5 @@ html:not(._page-loaded) {
 @import 'sections/hero';
 @import 'sections/about';
 @import 'sections/footer-upper';
+@import 'sections/portfolio';
+@import 'sections/all-projects';
