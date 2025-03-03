@@ -1,96 +1,271 @@
 import gsap from 'gsap';
-import { rgbKineticSlider } from '../lib/rgbKineticSlider';
 import { TypeShuffle } from './scramble-text';
 
 export const portfolioSlider = () => {
-  // images setup
-  const images = [];
-  document.querySelectorAll('.portfolio__image').forEach(slide => {
-    images.push(slide.getAttribute('src'));
-  });
+  const slides = gsap.utils.toArray(
+    document.querySelectorAll('.portfolio__slide')
+  );
+  const prevBtn = document.getElementById('prevBtnProject');
+  const nextBtn = document.getElementById('nextBtnProject');
+  let i = 0;
 
-  // content setup
-  // const texts = [
-  //   ['Earth', 'Surface gravity: 9.807 m/s²'],
-  //   ['Mars', 'Surface gravity: 3.711 m/s²'],
-  //   ['Venus', 'Surface gravity: 8.87 m/s²'],
-  // ];
+  const next = (cur, prev, callback) => {
+    gsap.to(slides[prev], {
+      scale: 0.8,
+      duration: 0.5,
+    });
+    gsap.to(slides[prev], {
+      translateY: '-100dvh',
+      delay: 0.5,
+      duration: 0.5,
+    });
+    gsap.to(slides[cur], {
+      translateY: 0,
+      delay: 0.5,
+      duration: 0.5,
+    });
+    gsap.to(slides[cur], {
+      scale: 1,
+      delay: 1,
+      duration: 0.5,
+      onComplete: () => {
+        if (callback) callback();
+      },
+    });
+  };
+  const prev = (cur, prev, callback) => {
+    gsap.to(slides[prev], {
+      scale: 0.8,
+      duration: 0.5,
+    });
+    gsap.to(slides[prev], {
+      translateY: '100dvh',
+      delay: 0.5,
+      duration: 0.5,
+    });
+    gsap.to(slides[cur], {
+      translateY: 0,
+      delay: 0.5,
+      duration: 0.5,
+    });
+    gsap.to(slides[cur], {
+      scale: 1,
+      delay: 1,
+      duration: 0.5,
+      onComplete: () => {
+        if (callback) callback();
+      },
+    });
+  };
 
-  // init plugin
-  new rgbKineticSlider({
-    // images and content sources
-    slideImages: images, // array of images >demo size : 1920 x 1080
-    // itemsTitles: texts, // array of titles / subtitles
+  if (slides.length) {
+    slides.forEach((slide, i) => {
+      if (i !== 0) gsap.set(slide, { scale: 0.8, translateY: '100dvh' });
 
-    // displacement images sources
+      // variables
+      const imageContainer = slide.querySelector('.portfolio__image-wrap');
+      const imageElement = slide.querySelector('img');
 
-    backgroundDisplacementSprite:
-      'https://thumbs.dreamstime.com/b/digital-glitch-background-grunge-computer-screen-error-retro-pixel-noise-abstract-design-photo-television-signal-fail-data-decay-226039600.jpg', // slide displacement image
-    cursorDisplacementSprite:
-      'https://images.unsplash.com/photo-1486551937199-baf066858de7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2133&q=80', // cursor displacement image
+      let canvasWidth = imageContainer.clientWidth;
+      let canvasHeight = imageContainer.clientHeight;
+      let renderWidth = Math.max(
+        document.documentElement.clientWidth,
+        window.innerWidth || 0
+      );
 
-    // cursor displacement effect
-    cursorImgEffect: true, // enable cursor effect
-    cursorTextEffect: false, // enable cursor text effect
-    cursorScaleIntensity: 0.65, // cursor effect intensity
-    cursorMomentum: 0.14, // lower is slower
+      let renderW, renderH;
 
-    // swipe
-    swipe: true, // enable swipe
-    swipeDistance: window.innerWidth * 0.4, // swipe distance - ex : 580
-    swipeScaleIntensity: 2, // scale intensity during swipping
+      if (renderWidth > canvasWidth) {
+        renderW = renderWidth;
+      } else {
+        renderW = canvasWidth;
+      }
 
-    // slide transition
-    slideTransitionDuration: 1, // transition duration
-    transitionScaleIntensity: 30, // scale intensity during transition
-    transitionScaleAmplitude: 160, // scale amplitude during transition
+      renderH = canvasHeight;
 
-    // regular navigation
-    nav: true, // enable navigation
-    navElement: '.main-nav', // set nav class
+      let scene, camera, renderer, planeMesh;
+      let isHovered = false;
+      let hoverDuration = 0;
 
-    // image rgb effect
-    imagesRgbEffect: true, // enable img rgb effect
-    imagesRgbIntensity: 0.9, // set img rgb intensity
-    navImagesRgbIntensity: 80, // set img rgb intensity for regular nav
+      const ANIMATION_CONFIG = {
+        updateFrequency: 0.1,
+        glitchIntensityMod: 0.5,
+      };
 
-    // texts settings
-    textsDisplay: true, // show title
-    textsSubTitleDisplay: true, // show subtitles
-    textsTiltEffect: true, // enable text tilt
-    googleFonts: ['Playfair Display:700', 'Roboto:400'], // select google font to use
-    buttonMode: false, // enable button mode for title
-    textsRgbEffect: true, // enable text rgb effect
-    textsRgbIntensity: 0.03, // set text rgb intensity
-    navTextsRgbIntensity: 15, // set text rgb intensity for regular nav
+      // shaders
+      const vertexShader = `
+    varying vec2 vUv;
+    void main() {
+       vUv = uv;
+       gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+   }
+`;
 
-    textTitleColor: 'white', // title color
-    textTitleSize: 125, // title size
-    mobileTextTitleSize: 125, // title size
-    textTitleLetterspacing: 3, // title letterspacing
+      const fragmentShader = `
+  uniform sampler2D tDiffuse;
+  uniform float glitchIntensity;
+  varying vec2 vUv;
 
-    textSubTitleColor: 'white', // subtitle color ex : 0x000000
-    textSubTitleSize: 21, // subtitle size
-    mobileTextSubTitleSize: 21, // mobile subtitle size
-    textSubTitleLetterspacing: 2, // subtitle letter spacing
-    textSubTitleOffsetTop: 90, // subtitle offset top
-    mobileTextSubTitleOffsetTop: 90, // mobile subtitle offset top
-  });
+  void main() {
+    vec2 uv = vUv;
+    vec4 baseState = texture2D(tDiffuse, uv);
 
-  const projectName = document.getElementById('project-name');
-  const projectLink = document.getElementById('project-link');
-  const projectBtn = document.getElementById('project-btn');
-  const type = document.getElementById('project-data-type');
-  const date = document.getElementById('project-data-date');
-  const description = document.getElementById('project-data-description');
-  const progress = document.getElementById('project-slider-progress');
-  const projects = document.querySelectorAll('.portfolio__image');
-  const thumbHeight = 120 / projects.length / 10;
+    if (glitchIntensity > 0.0) {
+        float segment = floor(uv.y * 12.0);
+        float randomValue = fract(sin(segment * 12345.6789 + glitchIntensity) * 43758.5453);
+        vec2 offset = vec2(randomValue * 0.03, 0.0) * glitchIntensity;
 
-  gsap.set(progress, {
-    '--height': `${thumbHeight}rem`,
-  });
+        vec4 redGlitch = texture2D(tDiffuse, uv + offset);
+        vec4 greenGlitch = texture2D(tDiffuse, uv - offset);
+        vec4 blueGlitch = texture2D(tDiffuse, uv);
 
+        if (mod(segment, 3.0) == 0.0) {
+            gl_FragColor = vec4(redGlitch.r, greenGlitch.g, baseState.b, 1.0);
+        } else if (mod(segment, 3.0) == 1.0) {
+            gl_FragColor = vec4(baseState.r, greenGlitch.g, blueGlitch.b, 1.0);
+        } else {
+            gl_FragColor = vec4(redGlitch.r, baseState.g, blueGlitch.b, 1.0);
+        }
+    } else {
+        gl_FragColor = baseState;
+    }
+}
+
+`;
+
+      function initializeScene(texture) {
+        //   camera setup
+        camera = new THREE.PerspectiveCamera(
+          80,
+          imageElement.offsetWidth / imageElement.offsetHeight,
+          0.01,
+          10
+        );
+        camera.position.z = 1;
+
+        //   scene creation
+        scene = new THREE.Scene();
+
+        //   uniforms
+        const shaderUniforms = {
+          tDiffuse: { value: texture },
+          glitchIntensity: { value: 0.0 },
+        };
+
+        texture.generateMipmaps = false;
+        texture.wrapS = texture.wrapT = THREE.ClampToEdgeWrapping;
+        texture.minFilter = THREE.LinearFilter;
+
+        //   creating a plane mesh with materials
+        planeMesh = new THREE.Mesh(
+          new THREE.PlaneGeometry(1.6, 1.6),
+          new THREE.ShaderMaterial({
+            uniforms: shaderUniforms,
+            vertexShader,
+            fragmentShader,
+            map: {
+              minFilter: THREE.LinearFilter,
+            },
+          })
+        );
+
+        //   add mesh to scene
+        scene.add(planeMesh);
+
+        //   render
+        renderer = new THREE.WebGLRenderer();
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(renderW, renderH);
+        renderer.setClearColor('#ffffff');
+
+        //   create a new canvas in imageContainer
+        imageContainer.appendChild(renderer.domElement);
+
+        //   if mouse is over the image, isHovered is true
+        imageContainer.addEventListener('mouseover', function () {
+          isHovered = true;
+        });
+
+        //   if mouse is out of the image, isHovered is false and glitchIntensity value is 0
+        imageContainer.addEventListener('mouseout', function () {
+          isHovered = false;
+          shaderUniforms.glitchIntensity.value = 0;
+        });
+      }
+
+      // use the existing image from html in the canvas
+      initializeScene(new THREE.TextureLoader().load(imageElement.src));
+
+      animateScene();
+
+      function animateScene() {
+        requestAnimationFrame(animateScene);
+
+        if (isHovered) {
+          hoverDuration += ANIMATION_CONFIG.updateFrequency;
+
+          if (hoverDuration >= 0.5) {
+            hoverDuration = 0;
+            planeMesh.material.uniforms.glitchIntensity.value =
+              Math.random() * ANIMATION_CONFIG.glitchIntensityMod;
+          }
+        }
+
+        renderer.render(scene, camera);
+      }
+    });
+
+    nextBtn.addEventListener('click', function () {
+      i += 1;
+
+      if (slides[i]) {
+        next(i, i - 1);
+      } else {
+        i = 0;
+
+        slides.forEach((slide, idx) => {
+          if (idx !== slides.length - 1) {
+            gsap.set(slide, {
+              scale: 0.8,
+              translateY: '100dvh',
+            });
+          }
+        });
+
+        next(i, slides.length - 1, () => {
+          gsap.set(slides[slides.length - 1], {
+            scale: 0.8,
+            translateY: '100dvh',
+          });
+        });
+      }
+    });
+    prevBtn.addEventListener('click', function () {
+      i -= 1;
+
+      if (slides[i]) {
+        prev(i, i + 1);
+      } else {
+        i = slides.length - 1;
+
+        slides.forEach((slide, idx) => {
+          if (idx !== 0) {
+            gsap.set(slide, {
+              scale: 0.8,
+              translateY: '-100dvh',
+            });
+          }
+        });
+
+        prev(i, 0, () => {
+          gsap.set(slides[0], {
+            scale: 0.8,
+            translateY: '-100dvh',
+          });
+        });
+      }
+    });
+  }
   const setProjectData = () => {
     const currentIdx =
       +document.querySelector('.portfolio').dataset.activeSlide;
@@ -123,9 +298,4 @@ export const portfolioSlider = () => {
       '--y': `${thumbHeight * currentIdx}rem`,
     });
   };
-  setProjectData();
-
-  document.addEventListener('kineticSliderTransitionStart', function () {
-    setProjectData();
-  });
 };

@@ -92,3 +92,47 @@
     }
   }
 }
+
+.bg-text {
+  position: relative;
+
+  padding-top: 6rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  height: 15rem;
+
+  font-size: 18rem;
+  white-space: nowrap;
+
+  opacity: 0.5;
+
+  &::before {
+    display: block;
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAMAAABFaP0WAAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAAA5JREFUCNdjYGRgYGQEAAAOAATa5WfvAAAAAElFTkSuQmCC);
+    background-size: 2px 2px;
+  }
+}
+
+.h-xl {
+  font: var(--h-xl);
+}
+
+.subtitle {
+  white-space: nowrap;
+  font: var(--h-subtitle);
+
+  &::before {
+    content: '[';
+  }
+  &::after {
+    content: ']';
+  }
+}

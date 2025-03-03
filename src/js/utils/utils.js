@@ -13,6 +13,34 @@ export const isTouchDevice = () => {
   );
 };
 
+export const invertColor = () => {
+  const elements = document.querySelectorAll('[data-invert-color]');
+
+  if (elements.length) {
+    elements.forEach(element => {
+      const color = '#' + element.getAttribute('style').split('#')[1];
+
+      if (color) {
+        if (color.length === 7) {
+          const rgb = [
+            parseInt(color.substring(1, 3), 16),
+            parseInt(color.substring(3, 5), 16),
+            parseInt(color.substring(5), 16),
+          ];
+          const luminance =
+            (0.2126 * rgb[0]) / 255 +
+            (0.7152 * rgb[1]) / 255 +
+            (0.0722 * rgb[2]) / 255;
+
+          if (luminance > 0.5) {
+            element.classList.add('_is-light-color');
+          }
+        }
+      }
+    });
+  }
+};
+
 export const customEase = CustomEase.create(
   'custom',
   'M0,0 C0.02,0.04 0.137,0.017 0.224,0.031 0.289,0.041 0.37,0.053 0.442,0.067 0.476,0.073 0.529,0.086 0.57,0.095 0.621,0.106 0.656,0.148 0.686,0.184 0.843,0.37 0.734,1 1,1 '

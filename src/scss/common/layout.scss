@@ -57,6 +57,81 @@ body::after {
   }
 }
 
+.divider {
+  position: relative;
+
+  display: flex;
+  column-gap: 0.4rem;
+  width: 100%;
+
+  &__heading {
+    white-space: nowrap;
+  }
+
+  @media (max-width: 48em) {
+    &:not(&_has-heading) {
+      column-gap: 0.8rem;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+
+  &::after,
+  span::before {
+    content: var(--i-squares);
+
+    width: 2.3rem;
+    height: 1rem;
+
+    @media (max-width: 48em) {
+      width: 3rem;
+      height: 2rem;
+    }
+  }
+
+  &_has-heading {
+    column-gap: 1.5rem;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    &::before {
+      flex: 0 0 2.3rem;
+
+      @media (max-width: 48em) {
+        flex: 0 0 3rem;
+      }
+    }
+
+    &::after {
+      content: '';
+
+      flex: 1 1 auto;
+      height: 0.5px;
+      border: 0.5px dashed var(--c-primary);
+
+      opacity: 0.5;
+    }
+
+    &:last-child {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
 @keyframes glitch-1 {
   0% {
     top: 0;
@@ -403,8 +478,15 @@ body::after {
   }
 }
 
+._desktop-only {
+  @media (max-width: 48em) {
+    display: none;
+  }
+}
 ._mobile-only {
-  display: none;
+  @media (min-width: 48.01em) {
+    display: none;
+  }
 }
 
 ._hidden-scrollbar {

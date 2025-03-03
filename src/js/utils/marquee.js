@@ -101,3 +101,11 @@ export const horizontalLoop = (items, config) => {
   }
   return tl;
 };
+window.addEventListener('load', function () {
+  if (document.querySelectorAll('.marquee .marquee__txt').length) {
+    horizontalLoop(document.querySelectorAll('.marquee .marquee__txt'), {
+      speed: 0.7,
+      repeat: -1,
+    });
+  }
+});

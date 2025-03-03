@@ -1,10 +1,8 @@
 .portfolio {
-  padding-top: 13.9rem;
+  // padding-top: 13.9rem;
 
   // display: flex;
   // align-items: center;
-
-  height: 100dvh;
 
   overflow: hidden;
 
@@ -25,6 +23,43 @@
 
   &__head {
     margin-bottom: 7rem;
+  }
+
+  // .portfolio__controls
+
+  &__controls {
+    position: absolute;
+    right: 36.6rem;
+    top: 50%;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+
+    transform: translateY(-50%);
+  }
+
+  // .portfolio__controls-btn
+
+  &__controls-btn {
+    display: inline-flex;
+    width: 1rem;
+
+    svg {
+      width: 100%;
+      height: 3rem;
+    }
+
+    // .portfolio__controls-btn_prev
+
+    &_prev {
+      transform: rotate(180deg) translateX(-100%);
+    }
+
+    // .portfolio__controls-btn_next
+
+    &_next {
+    }
   }
 
   &__head,
@@ -49,29 +84,58 @@
   &__heading {
   }
 
+  // .portfolio__slide
+
+  &__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 102rem;
+
+    overflow: hidden;
+
+    @media (any-hover: hover) {
+      &:hover {
+        canvas {
+          transform: scale(1.1);
+          transition: 5s transform linear;
+        }
+      }
+    }
+
+    canvas {
+      position: absolute;
+      inset: 0;
+      width: 101% !important;
+      height: 100% !important;
+      object-fit: cover;
+
+      transition: 0.3s transform linear;
+    }
+  }
+
+  &__image-wrap {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
   // .portfolio__image
 
   &__image {
-    display: none;
+    height: 100%;
+
+    object-fit: cover;
   }
 
   // .portfolio__all-btn
 
   &__all-btn {
-    display: inline-flex;
-    align-items: center;
-    column-gap: 1.3rem;
-
-    &::after {
-      content: var(--i-arrows-v);
-
-      flex: 0 0 0.9rem;
-      width: 0.9rem;
-      height: 1.5rem;
-
-      animation: down 4s ease-in-out infinite;
-      transform: translateY(-0.3rem);
-    }
   }
 
   &__all-btn,
@@ -84,6 +148,9 @@
 
   &__slider {
     position: relative;
+
+    height: 57.6rem;
+    width: 100%;
   }
 
   // .portfolio__project-link
@@ -123,19 +190,6 @@
     justify-self: start;
   }
 
-  .rgbKineticSlider {
-    position: relative;
-
-    height: 57.6rem;
-    width: 102.4rem;
-
-    canvas {
-      position: absolute;
-
-      transform: translate(-50%, -50%) !important;
-    }
-  }
-
   // .portfolio__projects
 
   &__projects {
@@ -164,37 +218,6 @@
   &__project {
   }
 
-  // .portfolio__progress
-
-  &__progress {
-    position: absolute;
-    right: 34.6rem;
-    top: 50%;
-
-    width: 2px;
-    height: 12rem;
-
-    background-color: rgba(16, 16, 16, 0.12);
-
-    transform: translateY(-50%);
-
-    --height: 0;
-    --y: 0;
-
-    &::before {
-      content: '';
-
-      position: absolute;
-      top: var(--y);
-      left: 0;
-
-      width: 100%;
-      height: var(--height);
-
-      background-color: var(--c-primary);
-    }
-  }
-
   // .portfolio__btn
 
   &__btn {
@@ -210,17 +233,16 @@
   &__footer-txt {
   }
 
-  // .portfolio__txt-canvas
+  // .portfolio__bg-text
 
-  &__txt-canvas {
+  &__bg-text {
     position: absolute;
     z-index: -1;
-    top: 14rem;
-    left: -67.1rem;
+    top: 24rem;
+    left: -46rem;
 
-    width: 147.1rem !important;
+    // width: 147.1rem !important;
 
-    opacity: 0.8;
     transform: rotate(90deg) scale(-1, -1);
   }
 }

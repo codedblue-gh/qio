@@ -15,7 +15,7 @@ export const lenis = new Lenis({
   infinite: false,
 });
 
-lenis.stop();
+// lenis.stop();
 
 // Use requestAnimationFrame to continuously update the scroll
 function raf(time) {

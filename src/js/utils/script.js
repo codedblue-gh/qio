@@ -1,18 +1,15 @@
 import gsap from 'gsap';
-import { dynamicDOM } from './utils';
+import { dynamicDOM, invertColor } from './utils';
 import { lenis } from '../anim/lenis';
 import { ScrollTrigger } from 'gsap/all';
-import { initFullpageScroll } from '../anim/fullpage-scroll';
 import { animateDots } from '../anim/dots';
 import { waves } from '../anim/waves';
 import { portfolioSlider } from '../anim/portfolio-slider';
+import { animNextProject } from '../anim/next-project';
 
-// window.onbeforeunload = function () {
 lenis.scrollTo(0, {
-  lock: true,
-  force: true,
+  duration: 0,
 });
-// };
 
 document.addEventListener('DOMContentLoaded', function () {
   if (document.querySelectorAll('[data-current-year]').length) {
@@ -21,15 +18,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  if (
-    !document.querySelector('.hero') &&
-    !document.querySelector('.portfolio')
-  ) {
-    lenis.start();
-  }
-  if (document.querySelector('.hero')) {
-    initFullpageScroll();
-  }
+  // if (
+  //   !document.querySelector('.hero') &&
+  //   !document.querySelector('.portfolio')
+  // ) {
+  //   lenis.start();
+  // }
+  // if (document.querySelector('.hero')) {
+  //   initFullpageScroll();
+  // }
 
   const onClickHandler = e => {
     if (
@@ -52,8 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 window.addEventListener('load', function () {
   dynamicDOM();
-
-  ScrollTrigger.refresh();
+  invertColor();
 
   document.documentElement.classList.add('_page-loaded');
 
@@ -66,5 +62,11 @@ window.addEventListener('load', function () {
   if (document.querySelector('.portfolio__image')) {
     portfolioSlider();
   }
+
+  if (document.querySelector('.next-project') && window.innerWidth > 768) {
+    animNextProject();
+  }
+
+  ScrollTrigger.refresh();
 });
 window.addEventListener('pageswap', function () {});

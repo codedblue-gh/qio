@@ -1,4 +1,4 @@
-<section data-active-slide="0" class="portfolio">
+<section data-section class="portfolio">
   <div class="portfolio__container container">
     <div class="portfolio__head">
       <h1 class="portfolio__heading h-main">
@@ -6,7 +6,12 @@
           <span data-scramble>our works</span>
         </span>
       </h1>
-      <button type="button" class="portfolio__all-btn">all projects</button>
+      <button
+        data-anchor=".all-projects"
+        type="button"
+        class="portfolio__all-btn arr-btn">
+        all projects
+      </button>
       <p class="portfolio__text">
         a selection of some of the projects we’ve worked on, that we’re most
         proud of. A few more coming soon(-ish).
@@ -18,45 +23,66 @@
       >
 
       <div class="portfolio__slider">
-        <div id="rgbKineticSlider" class="rgbKineticSlider"></div>
-        <a id="project-link" href="#" class="portfolio__project-link"></a>
+        <div class="portfolio__slide">
+          <a href="#" class="portfolio__image-wrap">
+            <img
+              data-project-name="amkal esports"
+              data-project-description="esports organization"
+              data-project-type="website"
+              data-project-date="september 2024, 2024-09"
+              data-project-link="#path-to-project"
+              data-slide="0"
+              src="@img/content/amkalesports.com_.png"
+              alt=""
+              class="portfolio__image"
+          /></a>
+        </div>
+        <div class="portfolio__slide">
+          <a href="#" class="portfolio__image-wrap">
+            <img
+              data-project-name="atlanty"
+              data-project-description="international business-club"
+              data-project-type="website"
+              data-project-date="january 2025, 2025-01"
+              data-project-link="#path-to-project-1"
+              data-slide="1"
+              src="@img/content/atlanty.webp"
+              alt=""
+              class="portfolio__image"
+          /></a>
+        </div>
+        <div class="portfolio__slide">
+          <a href="#" class="portfolio__image-wrap">
+            <img
+              data-project-name="ящики
+      "
+              data-project-type="website"
+              data-project-description="ящики
+        "
+              data-project-date="december 2024,2024-12"
+              data-project-link="#path-to-project-2"
+              data-slide="2"
+              src="@img/content/megaetkqiochurch.webp"
+              alt=""
+              class="portfolio__image"
+          /></a>
+        </div>
       </div>
 
-      <img
-        data-project-name="amkal esports"
-        data-project-description="esports organization"
-        data-project-type="website"
-        data-project-date="september 2024, 2024-09"
-        data-project-link="#path-to-project"
-        data-slide="0"
-        src="@img/content/amkal.webp"
-        alt=""
-        class="portfolio__image" />
-
-      <img
-        data-project-name="atlanty"
-        data-project-description="international business-club"
-        data-project-type="website"
-        data-project-date="january 2025, 2025-01"
-        data-project-link="#path-to-project-1"
-        data-slide="1"
-        src="@img/content/atlanty.webp"
-        alt=""
-        class="portfolio__image" />
-      <img
-        data-project-name="ящики
-      "
-        data-project-type="website"
-        data-project-description="ящики
-        "
-        data-project-date="december 2024,2024-12"
-        data-project-link="#path-to-project-2"
-        data-slide="2"
-        src="@img/content/megaetkqiochurch.webp"
-        alt=""
-        class="portfolio__image" />
-
-      <span id="project-slider-progress" class="portfolio__progress"></span>
+      <div class="portfolio__controls">
+        <button
+          id="prevBtnProject"
+          type="button"
+          class="portfolio__controls-btn portfolio__controls-btn_prev">
+          <svg><use href="#half-arr-svg"></use></svg>
+        </button>
+        <button
+          id="nextBtnProject"
+          type="button"
+          class="portfolio__controls-btn portfolio__controls-btn_next">
+          <svg><use href="#half-arr-svg"></use></svg>
+        </button>
+      </div>
       <a id="project-btn" href="#" class="portfolio__btn btn-primary"
         >watch case</a
       >
@@ -72,6 +98,6 @@
         ></span>
       </div>
     </div>
-    <canvas data-text="OUR WORKS" class="portfolio__txt-canvas"></canvas>
+    <div class="portfolio__bg-text bg-text">OUR WORKS</div>
   </div>
 </section>

@@ -78,7 +78,13 @@ html:not(._page-loaded) {
 [data-section] {
   display: flex;
   align-items: center;
+  min-height: 95rem;
   height: 100dvh;
+
+  @media (max-width: 48em) {
+    min-height: 90.4rem;
+    height: auto;
+  }
 }
 
 // --------------------------------------------------------------------------
@@ -89,3 +95,8 @@ html:not(._page-loaded) {
 @import 'sections/footer-upper';
 @import 'sections/portfolio';
 @import 'sections/all-projects';
+@import 'sections/project-hero';
+@import 'sections/about-project';
+@import 'sections/project-info';
+@import 'sections/project-overview';
+@import 'sections/next-project';
