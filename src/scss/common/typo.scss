@@ -17,7 +17,7 @@
 .h-main,
 .h-main__txt {
   display: inline-flex;
-  align-items: flex-start;
+  align-items: center;
   column-gap: 1rem;
 
   @media (max-width: 767px) {
@@ -37,20 +37,13 @@
   }
 
   &::before,
-  &::after {
-    transform: translateY(0.5rem);
-  }
-
-  &::before,
   &::after,
   &__txt::after {
-    content: var(--arrow-tr);
+    content: var(--i-arrow-tr);
 
     flex: 0 0 1.6rem;
     width: 1.6rem;
     height: 1.3rem;
-
-    line-height: 0;
 
     @media (max-width: 767px) {
       flex: 0 0 2.1rem;
@@ -60,10 +53,14 @@
   }
 
   &__txt {
-    align-items: flex-end;
+    align-items: center;
 
     &::after {
-      transform: translateY(-0.5rem);
+      line-height: 0;
+
+      @media (max-width: 48em) {
+        line-height: 2.1rem;
+      }
     }
   }
 }
@@ -90,6 +87,25 @@
     @media (max-width: 767px) {
       font-size: 2.8rem;
     }
+  }
+}
+
+.mark {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 1rem;
+
+  line-height: 1;
+  font: var(--txt-main-sb);
+
+  &::before {
+    content: '';
+
+    flex: 0 0 0.5rem;
+    width: 0.5rem;
+    height: 0.5rem;
+
+    background-color: var(--c-primary);
   }
 }
 

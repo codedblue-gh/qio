@@ -247,24 +247,6 @@
   }
 }
 
-.mark {
-  display: inline-flex;
-  align-items: center;
-  column-gap: 0.7rem;
-
-  line-height: 1;
-
-  &::before {
-    content: '';
-
-    flex: 0 0 1.1rem;
-    width: 1.1rem;
-    height: 1.1rem;
-
-    background-color: var(--c-primary);
-  }
-}
-
 @keyframes down {
   50% {
     transform: translateY(0.3rem);

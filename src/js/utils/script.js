@@ -34,11 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
       (!e.target.closest('.menu') || e.target.closest('.menu__close-btn'))
     ) {
       document.documentElement.classList.remove('_show-menu');
-      if (
-        !document.querySelector('.hero') &&
-        !document.querySelector('.portfolio')
-      )
-        lenis.start();
+
+      lenis.start();
     } else if (e.target.closest('.header__hamburger')) {
       document.documentElement.classList.add('_show-menu');
       lenis.stop();
