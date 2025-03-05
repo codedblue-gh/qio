@@ -267,6 +267,12 @@
 
     animation: down 4s ease-in-out infinite;
     transform: translateY(-0.3rem);
+
+    @media (max-width: 48em) {
+      flex: 0 0 1.4rem;
+      width: 1.4rem;
+      height: 1.4rem;
+    }
   }
 }
 

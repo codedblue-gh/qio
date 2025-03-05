@@ -7,6 +7,10 @@
 
   @media (min-width: 767.1px) {
     top: 3rem;
+
+    mix-blend-mode: difference;
+
+    color: var(--c-bg);
   }
 
   @media (max-width: 767px) {
@@ -33,6 +37,15 @@
     }
   }
 
+  &__btn {
+    margin-right: 3.2rem;
+    margin-left: auto;
+
+    @media (max-width: 48em) {
+      display: none;
+    }
+  }
+
   &__logo {
     width: 9.5rem;
 
@@ -44,12 +57,12 @@
   &__hamburger {
     position: relative;
 
-    margin-left: auto;
-
     width: 6rem;
     height: 1rem;
 
     @media (max-width: 767px) {
+      margin-left: auto;
+
       width: 11rem;
       height: 2rem;
       transform: translateY(0.5rem);
@@ -65,13 +78,15 @@
       width: 100%;
       height: 2px;
 
-      background-color: var(--c-primary);
+      background-color: var(--c-bg);
 
       transition: transform 0.5s ease-in-out;
       transform-style: preserve-3d;
 
       @media (max-width: 767px) {
         height: 1.5px;
+
+        background-color: var(--c-primary);
       }
     }
 
@@ -120,7 +135,7 @@
     width: 8rem;
 
     path {
-      fill: var(--c-gray-dark);
+      fill: var(--c-bg);
     }
 
     @media (max-width: 767px) {
@@ -381,6 +396,8 @@
     display: flex;
     flex-direction: column;
     row-gap: 2rem;
+
+    counter-reset: section;
   }
 
   // .menu__item
@@ -515,19 +532,26 @@
 
     display: flex;
 
-    &:not(:last-child) {
-      align-items: center;
+    &:not(:last-child, :first-child) {
+      justify-content: center;
+    }
 
-      &::after {
-        content: '</>';
-      }
+    @media (min-width: 48em) {
+      &:not(:last-child) {
+        align-items: center;
 
-      &:nth-child(2n) {
-        .menu__sc-item-inner {
-          margin: 0 auto;
+        &::after {
+          content: '</>';
+        }
+
+        &:nth-child(2n) {
+          .menu__sc-item-inner {
+            margin: 0 auto;
+          }
         }
       }
     }
+
     &:last-child {
       .menu__sc-item-inner {
         margin-right: 0;
@@ -539,8 +563,10 @@
   // .menu__sc-item-inner
 
   &__sc-item-inner {
-    margin-right: auto;
-
     white-space: nowrap;
+
+    @media (min-width: 48.01em) {
+      margin-right: auto;
+    }
   }
 }
