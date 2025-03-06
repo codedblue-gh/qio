@@ -96,6 +96,14 @@
 
   &__loadmore-btn {
     margin: 0 auto;
+
+    color: var(--c-bg);
+
+    mix-blend-mode: difference;
+
+    .btn__txt {
+      font-weight: 400;
+    }
   }
 }
 

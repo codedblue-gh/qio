@@ -2,9 +2,7 @@ import gsap from 'gsap';
 import { dynamicDOM, invertColor } from './utils';
 import { lenis } from '../anim/lenis';
 import { ScrollTrigger } from 'gsap/all';
-import { animateDots } from '../anim/dots';
 import { waves } from '../anim/waves';
-import { portfolioSlider } from '../anim/portfolio-slider';
 import { animNextProject } from '../anim/next-project';
 
 lenis.scrollTo(0, {
@@ -17,16 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
       item.innerHTML = new Date().getFullYear();
     });
   }
-
-  // if (
-  //   !document.querySelector('.hero') &&
-  //   !document.querySelector('.portfolio')
-  // ) {
-  //   lenis.start();
-  // }
-  // if (document.querySelector('.hero')) {
-  //   initFullpageScroll();
-  // }
 
   const onClickHandler = e => {
     if (
@@ -50,14 +38,8 @@ window.addEventListener('load', function () {
 
   document.documentElement.classList.add('_page-loaded');
 
-  window.innerWidth > 767 && animateDots();
-
   if (document.querySelector('.hero')) {
     waves();
-  }
-
-  if (document.querySelector('.portfolio__image')) {
-    portfolioSlider();
   }
 
   if (document.querySelector('.next-project') && window.innerWidth > 768) {

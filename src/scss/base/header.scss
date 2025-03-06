@@ -51,22 +51,30 @@
   }
 
   &__logo {
-    width: 9.5rem;
+    display: inline-flex;
 
-    @media (min-width: 767.1px) {
-      display: none;
+    svg {
+      width: 6rem;
+
+      color: var(--c-bg);
+
+      @media (max-width: 48em) {
+        width: 9.5rem;
+
+        color: var(--c-primary);
+      }
     }
   }
 
   &__hamburger {
     position: relative;
 
+    margin-left: auto;
+
     width: 6rem;
     height: 1rem;
 
     @media (max-width: 767px) {
-      margin-left: auto;
-
       width: 11rem;
       height: 2rem;
       transform: translateY(0.5rem);
@@ -135,24 +143,6 @@
     }
   }
 
-  &__svg {
-    width: 8rem;
-
-    path {
-      fill: var(--c-bg);
-    }
-
-    @media (max-width: 767px) {
-      display: none;
-    }
-  }
-
-  &__year {
-    @media (max-width: 767px) {
-      display: none;
-    }
-  }
-
   &__lang-item {
     position: relative;
 
@@ -190,52 +180,6 @@
     opacity: 0.6;
 
     transition: opacity 0.5s ease-in-out;
-  }
-}
-
-.year-header {
-  position: relative;
-  width: 13.8rem;
-  height: 8rem;
-
-  // .year-header__svg
-
-  &__svg {
-  }
-
-  // .year-header__content
-
-  &__content {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 11.3rem;
-    overflow: hidden;
-  }
-
-  // .year-header__inner
-
-  &__inner {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 8rem;
-    width: 18.6rem;
-    gap: 2rem;
-
-    font-weight: 400;
-
-    animation: yearMarquee 1.3s ease-in-out infinite;
-  }
-}
-
-@keyframes yearMarquee {
-  0% {
-    transform: translateX(calc(-50% + 1rem));
-  }
-  100% {
-    transform: translateX(0);
   }
 }
 
