@@ -25,6 +25,13 @@
   }
 }
 .h-main {
+  &:not(&.h-main_svg) {
+    &::before,
+    &::after,
+    .h-main__txt::after {
+      content: var(--i-arrow-tr);
+    }
+  }
   &_large {
     &::after,
     .h-main__txt::after {
@@ -48,16 +55,11 @@
       }
     }
   }
-  &__txt {
-    font: var(--h-main);
-    white-space: nowrap;
-  }
 
   &::before,
   &::after,
-  &__txt::after {
-    content: var(--i-arrow-tr);
-
+  .h-main__txt::after,
+  svg {
     flex: 0 0 1.6rem;
     width: 1.6rem;
     height: 1.3rem;
@@ -67,6 +69,11 @@
       width: 2.1rem;
       height: 2.1rem;
     }
+  }
+
+  &__txt {
+    font: var(--h-main);
+    white-space: nowrap;
   }
 
   &__txt {

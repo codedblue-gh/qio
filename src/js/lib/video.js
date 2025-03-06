@@ -1,12 +1,14 @@
 import { ScrollTrigger } from 'gsap/all';
 import videojs from 'video.js';
+import { removeClasses } from '../utils/utils';
 
 const videos = document.querySelectorAll('[data-videojs]');
 videos.forEach(video => {
+  const autoplay = video.closest('.item-projects') ? false : 'muted';
   let player = videojs(
     video,
     {
-      autoplay: 'muted',
+      autoplay,
       loop: true,
       muted: true,
       playsinline: true,
@@ -18,58 +20,56 @@ videos.forEach(video => {
       bigPlayButton: false,
       titleBar: false,
       textTrackDisplay: false,
+      paused: true,
     },
     function () {
-      // if (document.querySelector('.hero')) {
-      //   player.on('ready', function () {
-      //     player.vhs = null;
-      //     document.documentElement.classList.add('_page-loaded');
-      //     player.play();
-      //     setTimeout(animateHero, 300);
-      //   });
-      // }
-      // if (document.querySelectorAll('[data-project]').length) {
-      //   // document
-      //   //   .querySelector('.portfolio-chapter__body')
-      //   //   .addEventListener('mouseover', function ({ target }) {
-      //   //     if (target.closest('[data-project]')) {
-      //   //       player.play();
-      //   //     }
-      //   //   });
-      //   // document
-      //   //   .querySelector('.portfolio-chapter__body')
-      //   //   .addEventListener('mouseleave', function ({ target }) {
-      //   //     if (target.closest('[data-project]')) {
-      //   //       player.pause();
-      //   //     }
-      //   //   });
-      // }
+      console.log(autoplay);
     }
   );
 
-  // setTimeout(() => {
-  //   // Do not jump ahead if user has paused the player
-  //   if (player.paused()) return;
-
-  //   console.log('Attempting to jump ahead and catch up to live edge now...');
-  //   player.liveTracker.seekToLiveEdge();
-  // }, 8 * 1000);
-
   setTimeout(() => {
-    if (!player.el_.closest('.about')) {
+    if (!player.el_.closest('.item-projects')) {
       player.ready(() => {
         player.play();
       });
-    } else {
-      ScrollTrigger.create({
-        trigger: '.about',
-        once: true,
-        onEnter: () => {
-          player.ready(() => {
-            player.play();
-          });
-        },
-      });
     }
   }, 100);
+});
+window.addEventListener('load', function () {
+  if (document.querySelector('.projects')) {
+    document.addEventListener('mouseover', function (e) {
+      if (
+        e.target.closest('.item-projects__group') &&
+        window.innerWidth > 768
+      ) {
+        document.querySelectorAll('.item-projects video').forEach(video => {
+          videojs.getPlayer(video).pause();
+        });
+        document.querySelector('.projects').classList.add('_hover');
+        removeClasses(
+          document.querySelectorAll('.item-projects'),
+          '_is-active'
+        );
+        e.target.closest('.item-projects').classList.add('_is-active');
+        e.target
+          .closest('.item-projects')
+          .querySelectorAll('video')
+          .forEach(video => {
+            videojs.getPlayer(video).play();
+          });
+      } else if (window.innerWidth > 768) {
+        document.querySelector('.projects').classList.remove('_hover');
+        if (document.querySelector('.item-projects._is-active')) {
+          document
+            .querySelectorAll('.item-projects._is-active video')
+            .forEach(video => {
+              videojs.getPlayer(video).pause();
+            });
+          document
+            .querySelector('.item-projects._is-active')
+            .classList.remove('_is-active');
+        }
+      }
+    });
+  }
 });
