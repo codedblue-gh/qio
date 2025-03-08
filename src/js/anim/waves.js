@@ -13,7 +13,7 @@ export const waves = () => {
   animate();
 
   function init() {
-    container = document.querySelector('.hero__bg');
+    container = document.getElementById('waves-bg');
     camera = new THREE.PerspectiveCamera(
       75,
       window.innerWidth / window.innerHeight,

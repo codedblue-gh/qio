@@ -38,7 +38,7 @@ window.addEventListener('load', function () {
 
   document.documentElement.classList.add('_page-loaded');
 
-  if (document.querySelector('.hero')) {
+  if (document.getElementById('waves-bg')) {
     waves();
   }
 
