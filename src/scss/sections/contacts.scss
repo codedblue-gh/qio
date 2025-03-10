@@ -3,11 +3,6 @@
   align-items: center;
   min-height: 100dvh;
 
-  @media (min-width: 48.01em) {
-    height: calc(100dvh - 6.5rem);
-    min-height: 85rem;
-  }
-
   textarea {
     height: 18.9rem;
   }
