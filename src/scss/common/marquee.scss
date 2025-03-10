@@ -95,6 +95,16 @@
 
   overflow: hidden;
 
+  &_ol {
+    border: 1px solid var(--c-primary);
+    border-left: none;
+    border-right: none;
+
+    background-color: transparent;
+
+    color: var(--c-primary);
+  }
+
   // .marquee__inner
 
   &__inner {

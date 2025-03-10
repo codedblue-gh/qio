@@ -30,7 +30,7 @@
 
   // typography
   --txt-large: 400 var(--fz-30) / 1 var(--ff-main);
-  --txt-semi: 400 var(--fz-15) / 120% var(--ff-main);
+  --txt-semi: 500 var(--fz-15) / 120% var(--ff-main);
   --txt-semi-sb: 500 var(--fz-15) / 120% var(--ff-main);
   --txt-main: 400 var(--fz-12) / 120% var(--ff-main);
   --txt-main-sb: 500 var(--fz-12) / 120% var(--ff-main);
@@ -39,6 +39,7 @@
   --txt-x-small: 400 var(--fz-12) / 2.2rem var(--ff-main);
 
   --h-xl: 500 var(--fz-35) / 1 var(--ff-main);
+  --h-x: 500 var(--fz-18) / 120% var(--ff-main);
   --h-heavy: 500 var(--fz-28) / 2rem var(--ff-main);
   --h-main: 400 var(--fz-24) / 1 var(--ff-main);
   --h-secondary: 400 var(--fz-20) / 2.5rem var(--ff-main);
@@ -75,6 +76,7 @@
     --txt-semi-sb: 500 var(--fz-28) / 120% var(--ff-main);
 
     --h-xl: 500 var(--fz-40) / 1 var(--ff-main);
+    --h-x: 500 var(--fz-28) / 120% var(--ff-main);
     --h-heavy: 600 var(--fz-40) / 125% var(--ff-main);
     --h-main: 500 var(--fz-30) / 130% var(--ff-main);
     --h-secondary: 500 var(--fz-24) / 125% var(--ff-main);

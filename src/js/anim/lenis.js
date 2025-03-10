@@ -15,8 +15,6 @@ export const lenis = new Lenis({
   infinite: false,
 });
 
-// lenis.stop();
-
 // Use requestAnimationFrame to continuously update the scroll
 function raf(time) {
   lenis.raf(time);
@@ -38,3 +36,7 @@ gsap.ticker.add(time => {
 
 // Disable lag smoothing in GSAP to prevent any delay in scroll animations
 gsap.ticker.lagSmoothing(0);
+
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};

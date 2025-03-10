@@ -1,7 +1,116 @@
 import Swiper from 'swiper';
-import { Navigation, Autoplay, FreeMode } from 'swiper/modules';
+import { Navigation, Autoplay, Mousewheel } from 'swiper/modules';
+import { removeClasses, remToPx } from '../utils/utils';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+import { lenis } from '../anim/lenis';
+import { mm } from '../utils/script';
 
 window.addEventListener('load', function () {
+  if (document.querySelector('.progress__slider')) {
+    const setProgress = swiper => {
+      if (swiper.realIndex !== 0) {
+        swiper.el.closest('.progress').classList.add('_slide');
+      } else {
+        swiper.el.closest('.progress').classList.remove('_slide');
+      }
+
+      let val = parseInt((swiper.realIndex / (swiper.slides.length - 1)) * 100);
+      const $circle = document.querySelector('.progress__bar');
+
+      if (isNaN(val)) {
+        val = 100;
+      } else {
+        const r = $circle.getAttribute('r');
+        const c = Math.PI * (r * 2);
+
+        if (val < 0) {
+          val = 0;
+        }
+        if (val > 100) {
+          val = 100;
+        }
+
+        const pct = ((100 - val) / 100) * c;
+
+        $circle.style.strokeDashoffset = pct;
+      }
+    };
+    mm.add('(max-width: 48em)', context => {
+      document
+        .querySelectorAll('.progress__table-svg circle')
+        .forEach(circle => {
+          circle.setAttribute('r', remToPx(20));
+          circle.setAttribute('stroke-dasharray', remToPx(140));
+        });
+
+      new Swiper('.progress__slider', {
+        modules: [],
+        speed: 300,
+        slidesPerView: 'auto',
+        loop: true,
+        spaceBetween: remToPx(5),
+        on: {
+          slideChange: swiper => {
+            setProgress(swiper);
+          },
+        },
+      });
+    });
+    mm.add('(min-width: 48.01em)', context => {
+      document
+        .querySelectorAll('.progress__table-svg circle')
+        .forEach(circle => {
+          circle.setAttribute('r', remToPx(17.5));
+          circle.setAttribute('stroke-dasharray', remToPx(110));
+        });
+
+      new Swiper('.progress__slider', {
+        modules: [Mousewheel],
+        speed: 300,
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        mousewheel: {
+          releaseOnEdges: true,
+        },
+        on: {
+          reachEnd: () => {
+            document.querySelector('.progress').classList.remove('_is-in-view');
+
+            setTimeout(() => {
+              lenis.start();
+            }, 300);
+          },
+          reachBeginning: () => {
+            document.querySelector('.progress').classList.remove('_is-in-view');
+            setTimeout(() => {
+              lenis.start();
+            }, 300);
+          },
+          slideChange: swiper => {
+            setProgress(swiper);
+
+            gsap.to('.progress__text-content._is-active', {
+              opacity: 0,
+              display: 'none',
+            });
+            removeClasses(
+              document.querySelectorAll('.progress__text-content'),
+              '_is-active'
+            );
+            document
+              .querySelectorAll('.progress__text-content')
+              [swiper.realIndex].classList.add('_is-active');
+            gsap.to('.progress__text-content._is-active', {
+              opacity: 1,
+              display: 'block',
+            });
+          },
+        },
+      });
+    });
+    // mm.revert();
+  }
   if (document.querySelector('.clients__slider')) {
     new Swiper('.clients__slider', {
       modules: [Autoplay],

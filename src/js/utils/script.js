@@ -1,13 +1,85 @@
 import gsap from 'gsap';
-import { dynamicDOM, invertColor } from './utils';
+import { dynamicDOM, invertColor, removeClasses } from './utils';
 import { lenis } from '../anim/lenis';
 import { ScrollTrigger } from 'gsap/all';
 import { waves } from '../anim/waves';
 import { animNextProject } from '../anim/next-project';
 
-lenis.scrollTo(0, {
-  duration: 0,
-});
+export const mm = gsap.matchMedia();
+
+const observeServicesGroup = () => {
+  const addActiveClass = idx => {
+    removeClasses(
+      document.querySelectorAll('.services__list-item'),
+      '_is-active'
+    );
+    document
+      .querySelectorAll('.services__list-item')
+      [idx].classList.add('_is-active');
+  };
+
+  document.querySelectorAll('.services__list-item').forEach(item => {
+    removeClasses(
+      document.querySelectorAll('.services__list-item'),
+      '_is-active'
+    );
+    item.classList.add('_is-active');
+  });
+
+  document.querySelectorAll('.services__group').forEach((group, idx) => {
+    ScrollTrigger.create({
+      trigger: group,
+      start: 'top 1rem',
+      onEnter: () => {
+        addActiveClass(idx);
+      },
+      onEnterBack: () => {
+        addActiveClass(idx);
+      },
+    });
+  });
+};
+
+const observerProgressSlider = () => {
+  mm.add('(min-width: 48.01em)', context => {
+    ScrollTrigger.create({
+      trigger: '.progress',
+      start: 'top top',
+      end: 'bottom bottom',
+      onEnter: () => {
+        if (
+          Array.from(document.querySelectorAll('.progress__slide')).indexOf(
+            document.querySelector('.progress .swiper-slide-active')
+          ) !==
+          Array.from(document.querySelectorAll('.progress__slide')).length - 1
+        ) {
+          document.querySelector('.progress').classList.add('_is-in-view');
+          lenis.stop();
+        }
+      },
+      onLeave: () => {
+        if (
+          Array.from(document.querySelectorAll('.progress__slide')).indexOf(
+            document.querySelector('.progress .swiper-slide-active')
+          ) !== 0
+        ) {
+          document.querySelector('.progress').classList.remove('_is-in-view');
+          lenis.start();
+        }
+      },
+      onEnterBack: () => {
+        if (
+          Array.from(document.querySelectorAll('.progress__slide')).indexOf(
+            document.querySelector('.progress .swiper-slide-active')
+          ) !== 0
+        ) {
+          document.querySelector('.progress').classList.add('_is-in-view');
+          lenis.stop();
+        }
+      },
+    });
+  });
+};
 
 document.addEventListener('DOMContentLoaded', function () {
   if (document.querySelectorAll('[data-current-year]').length) {
@@ -47,5 +119,15 @@ window.addEventListener('load', function () {
   }
 
   ScrollTrigger.refresh();
+
+  window.scrollTo(0, 0);
+
+  if (document.querySelector('.services__group')) {
+    observeServicesGroup();
+  }
+
+  if (document.querySelector('.progress')) {
+    observerProgressSlider();
+  }
 });
 window.addEventListener('pageswap', function () {});
