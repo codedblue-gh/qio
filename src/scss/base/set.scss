@@ -152,3 +152,9 @@ svg {
 //     font-size: 10px;
 //   }
 // }
+@media (min-width: 2000px) {
+  .mainpage .container {
+    max-width: 170rem;
+    width: 100%;
+  }
+}

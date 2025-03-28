@@ -32,10 +32,6 @@
   &__item {
     cursor: pointer;
 
-    color: var(--c-gray);
-
-    transition: color 0.5s ease-in-out;
-
     &:last-child {
       position: relative;
 
@@ -62,14 +58,6 @@
         color: var(--c-primary);
       }
     }
-
-    &._is-active {
-      color: var(--c-primary);
-
-      &::after {
-        opacity: 0;
-      }
-    }
   }
 
   // .nav__item-content
@@ -77,6 +65,18 @@
   &__item-content {
     writing-mode: tb-rl;
     font: var(--txt-semi-sb);
+
+    color: var(--c-gray);
+
+    transition: color 0.5s ease-in-out;
+
+    &._is-active {
+      color: var(--c-primary);
+    }
+  }
+
+  &__item-ignore .nav__item-content {
+    color: var(--c-primary);
   }
 }
 

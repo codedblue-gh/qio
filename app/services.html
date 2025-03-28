@@ -64,10 +64,10 @@
 			<div class="menu__nav-wrap">
 				<span class="menu__subtitle">menu</span>
 				<nav class="menu__nav">
-					<span class="menu__item"><a href="#" data-hover="2" data-scramble class="menu__item-content">home</a></span>
-					<span class="menu__item"><a href="#" data-hover="2" data-scramble class="menu__item-content">works</a></span>
-					<span class="menu__item"><a href="#" data-hover="2" data-scramble class="menu__item-content">services</a></span>
-					<span class="menu__item"><a href="#" data-hover="2" data-scramble class="menu__item-content">contacts</a></span>
+					<span class="menu__item"><a href="#" class="menu__item-content" data-splitting>home</a></span>
+					<span class="menu__item"><a href="#" class="menu__item-content" data-splitting>works</a></span>
+					<span class="menu__item"><a href="#" class="menu__item-content" data-splitting>services</a></span>
+					<span class="menu__item"><a href="#" class="menu__item-content" data-splitting>contacts</a></span>
 				</nav>
 			</div>
 			<ul class="menu__quick-links">
@@ -126,7 +126,7 @@
 				<section class="services-hero">
 					<div class="services-hero__container container">
 						<h1 class="services-hero__heading h-main">
-							<span class="h-main__txt">what we do</span>
+							<span class="h-main__txt"><span data-scramble-text="what we do">what we do</span></span>
 						</h1>
 						<p class="services-hero__text">
 							Explore our services and discover how we can develop your digital presence
@@ -146,7 +146,10 @@
 					<div class="services__container container">
 						<div class="services__aside">
 							<div class="services__aside-content">
-								<h2 class="services__heading">our services</h2>
+								<h2 class="services__heading" data-scramble-text="our services">
+									our services
+								</h2>
+
 								<ul class="services__list">
 									<li class="services__list-item _is-active">
 										<button data-anchor="#web-dev-group" type="button" class="services__list-item-content">
@@ -168,293 +171,286 @@
 						</div>
 						<div class="services__body">
 							<div id="web-dev-group" class="services__group">
-								<span class="services__group-heading">WEB DEVELOPMENT</span>
-								<div class="services__wrap">
-									<p class="services__text">
-										Our Web Development expertise goes beyond the conventional. we
-										specialise in transforming concepts into dynamic Web Applications,
-										engaging Marketing Websites, and seamless E-commerce platforms.
-									</p>
-									<div class="services__mess">
-										<span class="services__subtitle">our tech stack</span>
-										<ul class="services__sublist">
-											<li class="services__sublist-item">
-												<div class="services__sublist-item-icon">
-													<img src="img/logos/html5.svg" alt="" />
-												</div>
-												<span class="services__sublist-item-txt">html5</span>
-											</li>
-											<li class="services__sublist-item">
-												<div class="services__sublist-item-icon">
-													<img src="img/logos/css3.svg" alt="" />
-												</div>
-												<span class="services__sublist-item-txt">css3</span>
-											</li>
-											<li class="services__sublist-item">
-												<div class="services__sublist-item-icon">
-													<img src="img/logos/sass.svg" alt="" />
-												</div>
-												<span class="services__sublist-item-txt">sass/scss</span>
-											</li>
-											<li class="services__sublist-item">
-												<div class="services__sublist-item-icon">
-													<img src="img/logos/javascript.svg" alt="" />
-												</div>
-												<span class="services__sublist-item-txt">javascript</span>
-											</li>
-											<li class="services__sublist-item">
-												<div class="services__sublist-item-icon">
-													<img src="img/logos/jquery.svg" alt="" />
-												</div>
-												<span class="services__sublist-item-txt">jquery</span>
-											</li>
-											<li class="services__sublist-item">
-												<div class="services__sublist-item-icon">
-													<img src="img/logos/react.svg" alt="" />
-												</div>
-												<span class="services__sublist-item-txt">react</span>
-											</li>
-											<li class="services__sublist-item">
-												<div class="services__sublist-item-icon">
-													<img src="img/logos/php.svg" alt="" />
-												</div>
-												<span class="services__sublist-item-txt">php</span>
-											</li>
-											<li class="services__sublist-item">
-												<div class="services__sublist-item-icon">
-													<img src="img/logos/MySQL.svg" alt="" />
-												</div>
-												<span class="services__sublist-item-txt">MySQL</span>
-											</li>
-											<li class="services__sublist-item">
-												<div class="services__sublist-item-icon">
-													<img src="img/logos/PostgreSQL.svg" alt="" />
-												</div>
-												<span class="services__sublist-item-txt">PostgreSQL</span>
-											</li>
-										</ul>
+								<div class="services__group-inner">
+									<span class="services__group-heading"><a href="#" class="services__group-heading-txt" data-scramble-text="web development">WEB DEVELOPMENT</a>
+									</span>
+
+									<div class="services__wrap">
+										<p class="services__text">
+											Our Web Development expertise goes beyond the conventional. we
+											specialise in transforming concepts into dynamic Web Applications,
+											engaging Marketing Websites, and seamless E-commerce platforms.
+										</p>
+										<a href="#" class="services__group-btn btn-primary"><span class="btn-primary__txt">learn more</span></a>
+										<div class="services__mess">
+											<span class="services__subtitle" data-scramble-text="our tech stack">our tech stack</span>
+											<ul class="services__sublist">
+												<li class="services__sublist-item">
+													<div class="services__sublist-item-icon">
+														<img src="img/logos/html5.svg" alt="" />
+													</div>
+													<span class="services__sublist-item-txt">html5</span>
+												</li>
+												<li class="services__sublist-item">
+													<div class="services__sublist-item-icon">
+														<img src="img/logos/css3.svg" alt="" />
+													</div>
+													<span class="services__sublist-item-txt">css3</span>
+												</li>
+												<li class="services__sublist-item">
+													<div class="services__sublist-item-icon">
+														<img src="img/logos/sass.svg" alt="" />
+													</div>
+													<span class="services__sublist-item-txt">sass/scss</span>
+												</li>
+												<li class="services__sublist-item">
+													<div class="services__sublist-item-icon">
+														<img src="img/logos/javascript.svg" alt="" />
+													</div>
+													<span class="services__sublist-item-txt">javascript</span>
+												</li>
+												<li class="services__sublist-item">
+													<div class="services__sublist-item-icon">
+														<img src="img/logos/jquery.svg" alt="" />
+													</div>
+													<span class="services__sublist-item-txt">jquery</span>
+												</li>
+												<li class="services__sublist-item">
+													<div class="services__sublist-item-icon">
+														<img src="img/logos/react.svg" alt="" />
+													</div>
+													<span class="services__sublist-item-txt">react</span>
+												</li>
+												<li class="services__sublist-item">
+													<div class="services__sublist-item-icon">
+														<img src="img/logos/php.svg" alt="" />
+													</div>
+													<span class="services__sublist-item-txt">php</span>
+												</li>
+												<li class="services__sublist-item">
+													<div class="services__sublist-item-icon">
+														<img src="img/logos/MySQL.svg" alt="" />
+													</div>
+													<span class="services__sublist-item-txt">MySQL</span>
+												</li>
+												<li class="services__sublist-item">
+													<div class="services__sublist-item-icon">
+														<img src="img/logos/PostgreSQL.svg" alt="" />
+													</div>
+													<span class="services__sublist-item-txt">PostgreSQL</span>
+												</li>
+											</ul>
+										</div>
 									</div>
+									<ul class="services__group-list">
+										<li class="services__group-list-item">online store</li>
+										<li class="services__group-list-item">corporate site</li>
+										<li class="services__group-list-item">brand site</li>
+										<li class="services__group-list-item">promo site</li>
+										<li class="services__group-list-item">landing page</li>
+										<li class="services__group-list-item">web application</li>
+									</ul>
 								</div>
-								<ul class="services__group-list">
-									<li class="services__group-list-item">online store</li>
-									<li class="services__group-list-item">corporate site</li>
-									<li class="services__group-list-item">brand site</li>
-									<li class="services__group-list-item">promo site</li>
-									<li class="services__group-list-item">landing page</li>
-									<li class="services__group-list-item">web application</li>
-								</ul>
 							</div>
 							<div id="web-design-group" class="services__group">
-								<span class="services__group-heading">Digital Product Design</span>
-								<div class="services__wrap">
-									<p class="services__text">
-										Our Digital Product Design services are geared towards transforming
-										ideas into market-ready products. We provide research, intuitive UX
-										designs, rapid design prototyping, and development-ready UI designs.
-										We craft solutions that seamlessly blend creativity, functionality,
-										and technology.
-									</p>
-									<div class="services__mess">
-										<span class="services__subtitle">design tools we use</span>
-										<ul class="services__sublist">
-											<li class="services__sublist-item">
-												<div class="services__sublist-item-icon">
-													<img src="img/logos/figma.svg" alt="" />
-												</div>
-												<span class="services__sublist-item-txt">figma</span>
-											</li>
-											<li class="services__sublist-item">
-												<div class="services__sublist-item-icon">
-													<img src="img/logos/AdobePhotoshop.svg" alt="" />
-												</div>
-												<span class="services__sublist-item-txt">Adobe Photoshop</span>
-											</li>
-											<li class="services__sublist-item">
-												<div class="services__sublist-item-icon">
-													<img src="img/logos/AdobeIllustrator.svg" alt="" />
-												</div>
-												<span class="services__sublist-item-txt">Adobe Illustrator</span>
-											</li>
-											<li class="services__sublist-item">
-												<div class="services__sublist-item-icon">
-													<img src="img/logos/blender.svg" alt="" />
-												</div>
-												<span class="services__sublist-item-txt">blender</span>
-											</li>
-											<li class="services__sublist-item">
-												<div class="services__sublist-item-icon">
-													<img src="img/logos/aftereffects.svg" alt="" />
-												</div>
-												<span class="services__sublist-item-txt">after effects</span>
-											</li>
-										</ul>
+								<div class="services__group-inner">
+									<span class="services__group-heading"><a href="#" class="services__group-heading-txt" data-scramble-text="digital product design">Digital Product Design</a>
+									</span>
+									<div class="services__wrap">
+										<p class="services__text">
+											Our Digital Product Design services are geared towards
+											transforming ideas into market-ready products. We provide
+											research, intuitive UX designs, rapid design prototyping, and
+											development-ready UI designs. We craft solutions that seamlessly
+											blend creativity, functionality, and technology.
+										</p>
+										<a href="#" class="services__group-btn btn-primary"><span class="btn-primary__txt">learn more</span></a>
+										<div class="services__mess">
+											<span class="services__subtitle" data-scramble-text="design tools we use">design tools we use</span>
+											<ul class="services__sublist">
+												<li class="services__sublist-item">
+													<div class="services__sublist-item-icon">
+														<img src="img/logos/figma.svg" alt="" />
+													</div>
+													<span class="services__sublist-item-txt">figma</span>
+												</li>
+												<li class="services__sublist-item">
+													<div class="services__sublist-item-icon">
+														<img src="img/logos/AdobePhotoshop.svg" alt="" />
+													</div>
+													<span class="services__sublist-item-txt">Adobe Photoshop</span>
+												</li>
+												<li class="services__sublist-item">
+													<div class="services__sublist-item-icon">
+														<img src="img/logos/AdobeIllustrator.svg" alt="" />
+													</div>
+													<span class="services__sublist-item-txt">Adobe Illustrator</span>
+												</li>
+												<li class="services__sublist-item">
+													<div class="services__sublist-item-icon">
+														<img src="img/logos/blender.svg" alt="" />
+													</div>
+													<span class="services__sublist-item-txt">blender</span>
+												</li>
+												<li class="services__sublist-item">
+													<div class="services__sublist-item-icon">
+														<img src="img/logos/aftereffects.svg" alt="" />
+													</div>
+													<span class="services__sublist-item-txt">after effects</span>
+												</li>
+											</ul>
+										</div>
 									</div>
+									<ul class="services__group-list">
+										<li class="services__group-list-item">UX Research (UX)</li>
+										<li class="services__group-list-item">UX Design (UX)</li>
+										<li class="services__group-list-item">Usability Testing</li>
+										<li class="services__group-list-item">Heuristic Analysis</li>
+										<li class="services__group-list-item">Information Architecture</li>
+									</ul>
 								</div>
-								<ul class="services__group-list">
-									<li class="services__group-list-item">UX Research (UX)</li>
-									<li class="services__group-list-item">UX Design (UX)</li>
-									<li class="services__group-list-item">Usability Testing</li>
-									<li class="services__group-list-item">Heuristic Analysis</li>
-									<li class="services__group-list-item">Information Architecture</li>
-								</ul>
 							</div>
 							<div id="seo-group" class="services__group">
-								<span class="services__group-heading">seo</span>
-								<div class="services__wrap">
-									<p class="services__text">
-										Our SEO services focus on optimising online presence, enhancing
-										visibility, increasing organic traffic, and propelling your website
-										to the forefront of search engine results.
-									</p>
+								<div class="services__group-inner">
+									<span class="services__group-heading"><a href="#" class="services__group-heading-txt" data-scramble-text="seo">seo</a></span>
+									<div class="services__wrap">
+										<p class="services__text">
+											Our SEO services focus on optimising online presence, enhancing
+											visibility, increasing organic traffic, and propelling your
+											website to the forefront of search engine results.
+										</p>
+										<a href="#" class="services__group-btn btn-primary"><span class="btn-primary__txt">learn more</span></a>
+									</div>
+									<ul class="services__group-list">
+										<li class="services__group-list-item">Keyword research</li>
+										<li class="services__group-list-item">SEO Content Generation</li>
+										<li class="services__group-list-item">Analytics and reporting</li>
+										<li class="services__group-list-item">Technical Implementation</li>
+										<li class="services__group-list-item">Continuous optimisation</li>
+									</ul>
 								</div>
-								<ul class="services__group-list">
-									<li class="services__group-list-item">Keyword research</li>
-									<li class="services__group-list-item">SEO Content Generation</li>
-									<li class="services__group-list-item">Analytics and reporting</li>
-									<li class="services__group-list-item">Technical Implementation</li>
-									<li class="services__group-list-item">Continuous optimisation</li>
-								</ul>
 							</div>
 						</div>
 					</div>
 				</section>
 				<section class="progress">
 					<div class="progress__container container">
-						<div class="progress__inner">
-							<div class="progress__table">
-								<div class="progress__logo-wrap">
-									<img src="img/logo-sm-dark.svg" class="progress__logo" alt="" />
-								</div>
-								<svg class="progress__table-svg" viewPort="0 0 350 350" version="1.1" xmlns="http://www.w3.org/2000/svg">
-									<circle r="175" cx="50%" cy="50%" fill="transparent" stroke-dasharray="1100" stroke-dashoffset="0"></circle>
-									<circle class="progress__bar" r="175" cx="50%" cy="50%" fill="transparent" stroke-dasharray="1100" stroke-dashoffset="0"></circle>
-								</svg>
-							</div>
-							<div class="progress__slider swiper">
-								<div class="progress__wrapper swiper-wrapper">
-									<div class="progress__slide swiper-slide">
-										<span class="progress__slide-heading">analyze</span>
-										<p class="progress__slide-text _is-active">
-											Lets kick things off! We facilitate workshops to understand your
-											goals, target audience, and specific requirements for your
-											project.
-										</p>
+						<h1 class="services-hero__heading h-main">
+							<span class="h-main__txt"><span data-scramble-text="learn the way we work">learn the way we work</span></span>
+						</h1>
+						<div class="progress__timeline">
+							<ul class="progress__list">
+								<li class="progress__group group-progress">
+									<div class="group-progress__head">
+										<span class="group-progress__heading" data-scramble-text="analyse">analyse</span>
+										<span class="group-progress__number"></span>
 									</div>
-									<div class="progress__slide swiper-slide">
-										<span class="progress__slide-heading">specify</span>
-										<p class="progress__slide-text">
-											During the specification phase, we translate the insights gathered
-											from the analysis into clear, actionable project requirements and
-											objectives. We’ll work on roadmaps, and set timelines and budget
-											estimates.
-										</p>
+									<div class="group-progress__icon-wrap">
+										<img src="img/icons/visualization.gif" class="group-progress__icon" aria-hidden="true" alt="" />
 									</div>
-									<div class="progress__slide swiper-slide">
-										<span class="progress__slide-heading">design</span>
-										<p class="progress__slide-text">
-											Our design teams bring your ideas to life by creating user-centric
-											designs. Every curve, every shade, every pixel tells a story- so
-											we’ll be sure to write yours in the best way possible that meet
-											your expectations.
-										</p>
+									<p class="group-progress__text">
+										We facilitate workshops to understand your goals, target audience,
+										and specific requirements for your project.
+									</p>
+								</li>
+								<li class="progress__group group-progress">
+									<div class="group-progress__head">
+										<span class="group-progress__heading" data-scramble-text="specify">specify</span>
+										<span class="group-progress__number"></span>
 									</div>
-									<div class="progress__slide swiper-slide">
-										<span class="progress__slide-heading">develop</span>
-										<p class="progress__slide-text">
-											Our team translates the specifications into tangible digital
-											products. We offer ongoing optimisation and support focussing on
-											security and performance, ensuring ultimate satisfaction.
-										</p>
+									<div class="group-progress__icon-wrap">
+										<img src="img/icons/process.gif" class="group-progress__icon" aria-hidden="true" alt="" />
 									</div>
-									<div class="progress__slide swiper-slide">
-										<span class="progress__slide-heading">test</span>
-										<p class="progress__slide-text">
-											Now it’s time to put our creations to the test! Our team will test
-											and iterate meticulously to ensure users a delightful experience.
-										</p>
+									<p class="group-progress__text">
+										During the specification phase, we translate the insights gathered
+										from the analysis into clear, actionable project requirements and
+										objectives. We’ll work on roadmaps, and set timelines and budget
+										estimates.
+									</p>
+								</li>
+								<li class="progress__group group-progress">
+									<div class="group-progress__head">
+										<span class="group-progress__heading" data-scramble-text="design">design</span>
+										<span class="group-progress__number"></span>
 									</div>
-									<div class="progress__slide swiper-slide">
-										<span class="progress__slide-heading">Market</span>
-										<p class="progress__slide-text">
-											We create bespoke campaigns to engage your audience across all
-											online channels. From strategic planning to SEO optimisation,
-											we’ll navigate the digital landscape with expertise.
-										</p>
+									<div class="group-progress__icon-wrap">
+										<img src="img/icons/prototype.gif" class="group-progress__icon" aria-hidden="true" alt="" />
 									</div>
-									<div class="progress__slide swiper-slide">
-										<span class="progress__slide-heading">Support</span>
-										<p class="progress__slide-text">
-											Our ongoing service agreements and retainers are structured
-											according to your unique needs. We are here for you!
-										</p>
+									<p class="group-progress__text">
+										Our design teams bring your ideas to life by creating user-centric
+										designs. Every curve, every shade, every pixel tells a story- so
+										we’ll be sure to write yours in the best way possible that meet your
+										expectations.
+									</p>
+								</li>
+								<li class="progress__group group-progress">
+									<div class="group-progress__head">
+										<span class="group-progress__heading" data-scramble-text="develop">develop</span>
+										<span class="group-progress__number"></span>
 									</div>
-									<div class="progress__slide swiper-slide">
-										<span class="progress__slide-heading">Iterate</span>
-										<p class="progress__slide-text">
-											The journey never ends. We gather feedback, analyse performance,
-											and seek opportunities for enhancement and innovation.
-										</p>
+									<div class="group-progress__icon-wrap">
+										<img src="img/icons/responsive.gif" class="group-progress__icon" aria-hidden="true" alt="" />
 									</div>
-								</div>
-							</div>
-							<div class="progress__text">
-								<p class="progress__text-content _is-active">
-									Lets kick things off! We facilitate workshops to understand your
-									goals, target audience, and specific requirements for your project.
-								</p>
-								<p class="progress__text-content">
-									During the specification phase, we translate the insights gathered
-									from the analysis into clear, actionable project requirements and
-									objectives. We’ll work on roadmaps, and set timelines and budget
-									estimates.
-								</p>
-								<p class="progress__text-content">
-									Our design teams bring your ideas to life by creating user-centric
-									designs. Every curve, every shade, every pixel tells a story- so we’ll
-									be sure to write yours in the best way possible that meet your
-									expectations.
-								</p>
-								<p class="progress__text-content">
-									Our team translates the specifications into tangible digital products.
-									We offer ongoing optimisation and support focussing on security and
-									performance, ensuring ultimate satisfaction.
-								</p>
-								<p class="progress__text-content">
-									Now it’s time to put our creations to the test! Our team will test and
-									iterate meticulously to ensure users a delightful experience.
-								</p>
-								<p class="progress__text-content">
-									We create bespoke campaigns to engage your audience across all online
-									channels. From strategic planning to SEO optimisation, we’ll navigate
-									the digital landscape with expertise.
-								</p>
-								<p class="progress__text-content">
-									Our ongoing service agreements and retainers are structured according
-									to your unique needs. We are here for you!
-								</p>
-								<p class="progress__text-content">
-									The journey never ends. We gather feedback, analyse performance, and
-									seek opportunities for enhancement and innovation.
-								</p>
-							</div>
-							<div class="progress__marquee marquee marquee_ol">
-								<div class="marquee__inner">
-									<span class="marquee__txt">AMKAL ESPORTS</span>
-									<span class="marquee__txt">AMKAL ESPORTS</span>
-									<span class="marquee__txt">AMKAL ESPORTS</span>
-									<span class="marquee__txt">AMKAL ESPORTS</span>
-									<span class="marquee__txt">AMKAL ESPORTS</span>
-									<span class="marquee__txt">AMKAL ESPORTS</span>
-									<span class="marquee__txt">AMKAL ESPORTS</span>
-									<span class="marquee__txt">AMKAL ESPORTS</span>
-									<span class="marquee__txt">AMKAL ESPORTS</span>
-									<span class="marquee__txt">AMKAL ESPORTS</span>
-									<span class="marquee__txt">AMKAL ESPORTS</span>
-									<span class="marquee__txt">AMKAL ESPORTS</span>
-									<span class="marquee__txt">AMKAL ESPORTS</span>
-									<span class="marquee__txt">AMKAL ESPORTS</span>
-								</div>
-							</div>
+									<p class="group-progress__text">
+										Our team translates the specifications into tangible digital
+										products. We offer ongoing optimisation and support focussing on
+										security and performance, ensuring ultimate satisfaction.
+									</p>
+								</li>
+								<li class="progress__group group-progress">
+									<div class="group-progress__head">
+										<span class="group-progress__heading">test</span>
+										<span class="group-progress__number"></span>
+									</div>
+									<div class="group-progress__icon-wrap">
+										<img src="img/icons/testing.gif" class="group-progress__icon" aria-hidden="true" alt="" />
+									</div>
+									<p class="group-progress__text">
+										Our team will test and iterate meticulously to ensure users a
+										delightful experience.
+									</p>
+								</li>
+								<li class="progress__group group-progress">
+									<div class="group-progress__head">
+										<span class="group-progress__heading">market</span>
+										<span class="group-progress__number"></span>
+									</div>
+									<div class="group-progress__icon-wrap">
+										<img src="img/icons/market-research.gif" class="group-progress__icon" aria-hidden="true" alt="" />
+									</div>
+									<p class="group-progress__text">
+										We create bespoke campaigns to engage your audience across all
+										online channels. From strategic planning to SEO optimisation, we’ll
+										navigate the digital landscape with expertise.
+									</p>
+								</li>
+								<li class="progress__group group-progress">
+									<div class="group-progress__head">
+										<span class="group-progress__heading">support</span>
+										<span class="group-progress__number"></span>
+									</div>
+									<div class="group-progress__icon-wrap">
+										<img src="img/icons/support.gif" class="group-progress__icon" aria-hidden="true" alt="" />
+									</div>
+									<p class="group-progress__text">
+										Our ongoing service agreements and retainers are structured
+										according to your unique needs. We are here for you!
+									</p>
+								</li>
+								<li class="progress__group group-progress">
+									<div class="group-progress__head">
+										<span class="group-progress__heading">iterate</span>
+										<span class="group-progress__number"></span>
+									</div>
+									<div class="group-progress__icon-wrap">
+										<img src="img/icons/management.gif" class="group-progress__icon" aria-hidden="true" alt="" />
+									</div>
+									<p class="group-progress__text">
+										The journey never ends. We gather feedback, analyse performance, and
+										seek opportunities for enhancement and innovation.
+									</p>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</section>
@@ -464,7 +460,7 @@
 						<div class="footer-upper__bg-text bg-text">SAY HI</div>
 						<h2 class="footer-upper__heading h-main">
 							<span class="h-main__txt">
-								<span data-scramble>Let’s Bring YOUR VISIONS to REAL Life</span>
+								<span data-scramble-text="Let’s Bring YOUR VISIONS to REAL Life">Let’s Bring YOUR VISIONS to REAL Life</span>
 							</span>
 						</h2>
 						<div class="footer-upper__contacts">
@@ -473,27 +469,27 @@
 						</div>
 						<form action="#" class="footer-upper__form">
 							<div class="footer-upper__group">
-								<span class="footer-upper__hint"><span>Let us know how we can help</span></span>
+								<span class="footer-upper__hint"><span data-scramble-text="Let us know how we can help">Let us know how we can help</span></span>
 								<div class="footer-upper__badges _hidden-scrollbar">
 									<div class="footer-upper__badge badge">
 										<input class="badge__input" checked type="radio" name="service" />
-										<span class="badge__text">all</span>
+										<span data-scramble-text="all" class="badge__text">all</span>
 									</div>
 									<div class="footer-upper__badge badge">
 										<input class="badge__input" type="radio" name="service" />
-										<span class="badge__text">webdesign</span>
+										<span data-scramble-text="webdesign" class="badge__text">webdesign</span>
 									</div>
 									<div class="footer-upper__badge badge">
 										<input class="badge__input" type="radio" name="service" />
-										<span class="badge__text">seo</span>
+										<span data-scramble-text="seo" class="badge__text">seo</span>
 									</div>
 									<div class="footer-upper__badge badge">
 										<input class="badge__input" type="radio" name="service" />
-										<span class="badge__text">branding</span>
+										<span data-scramble-text="branding" class="badge__text">branding</span>
 									</div>
 									<div class="footer-upper__badge badge">
 										<input class="badge__input" type="radio" name="service" />
-										<span class="badge__text">optimisation</span>
+										<span data-scramble-text="optimisation" class="badge__text">optimisation</span>
 									</div>
 								</div>
 							</div>
@@ -570,7 +566,10 @@
 
 		</div>
 	</div>
-	<script src="js/app.js"></script>
+
+	<script defer src="https://cdn.jsdelivr.net/gh/google/diff-match-patch@master/javascript/diff_match_patch.js"></script>
+	<script defer src="js/app.js"></script>
+
 </body>
 
 </html>

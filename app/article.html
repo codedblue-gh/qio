@@ -64,10 +64,10 @@
 			<div class="menu__nav-wrap">
 				<span class="menu__subtitle">menu</span>
 				<nav class="menu__nav">
-					<span class="menu__item"><a href="#" data-hover="2" data-scramble class="menu__item-content">home</a></span>
-					<span class="menu__item"><a href="#" data-hover="2" data-scramble class="menu__item-content">works</a></span>
-					<span class="menu__item"><a href="#" data-hover="2" data-scramble class="menu__item-content">services</a></span>
-					<span class="menu__item"><a href="#" data-hover="2" data-scramble class="menu__item-content">contacts</a></span>
+					<span class="menu__item"><a href="#" class="menu__item-content" data-splitting>home</a></span>
+					<span class="menu__item"><a href="#" class="menu__item-content" data-splitting>works</a></span>
+					<span class="menu__item"><a href="#" class="menu__item-content" data-splitting>services</a></span>
+					<span class="menu__item"><a href="#" class="menu__item-content" data-splitting>contacts</a></span>
 				</nav>
 			</div>
 			<ul class="menu__quick-links">
@@ -130,9 +130,11 @@
 								<span class="h-main__txt">The born of QIO: crafting the metaphor behind our brand</span>
 							</h1>
 							<div class="article-hero__row">
-								<time datetime="2024-09-02" class="article-hero__txt">september 2, 2024</time>
-								<span class="article-hero__txt">(©)</span>
-								<span class="article-hero__txt arr-btn">scroll down</span>
+								<time datetime="2024-09-02" class="article-hero__txt" data-scramble-text="september 2, 2024">september 2, 2024</time>
+								<span class="article-hero__txt" data-scramble-text="(©)">(©)</span>
+								<button type="button" class="article-hero__txt arr-btn"></button>
+								<span data-scramble-text="scroll down" data-splitting>scroll down</span>
+								</button>
 							</div>
 						</div>
 						<div class="article-hero__bg-wrap">
@@ -263,9 +265,9 @@
 					<div class="other__container container">
 						<div class="other__head">
 							<h2 class="other__heading h-main">
-								<span class="h-main__txt">Other selected articles</span>
+								<span class="h-main__txt"><span data-scramble-text="Other selected articles">Other selected articles</span></span>
 							</h2>
-							<a href="#" class="other__btn btn btn_static"><span class="btn__txt">view blog</span></a>
+							<a href="#" class="other__btn btn"><span data-splitting class="btn__txt" data-scramble-text="view blog">view blog</span></a>
 						</div>
 						<div class="other__body">
 							<ul class="other__items">
@@ -274,8 +276,8 @@
 										<img src="img/content/69FAB8701C27.webp" class="item-articles__image" alt="" />
 									</a>
 									<div class="item-articles__info">
-										<span class="item-articles__info-txt item-articles__info-txt_time">5 min</span>
-										<time datetime="2024-09" class="item-articles__info-txt">september 2024</time>
+										<span class="item-articles__info-txt item-articles__info-txt_time" data-scramble-text="5 min">5 min</span>
+										<time datetime="2024-09" class="item-articles__info-txt" data-scramble-text="september 2024">september 2024</time>
 									</div>
 									<span class="item-articles__heading">latest article NAME</span>
 									<p class="item-articles__text">
@@ -293,8 +295,8 @@
 										<img src="img/content/994.webp" class="item-articles__image" alt="" />
 									</a>
 									<div class="item-articles__info">
-										<span class="item-articles__info-txt item-articles__info-txt_time">5 min</span>
-										<time datetime="2024-09" class="item-articles__info-txt">september 2024</time>
+										<span class="item-articles__info-txt item-articles__info-txt_time" data-scramble-text="5 min">5 min</span>
+										<time datetime="2024-09" class="item-articles__info-txt" data-scramble-text="september 2024">september 2024</time>
 									</div>
 									<span class="item-articles__heading">latest article NAME</span>
 									<p class="item-articles__text">
@@ -312,8 +314,8 @@
 										<img src="img/content/683A1990.webp" class="item-articles__image" alt="" />
 									</a>
 									<div class="item-articles__info">
-										<span class="item-articles__info-txt item-articles__info-txt_time">5 min</span>
-										<time datetime="2024-09" class="item-articles__info-txt">september 2024</time>
+										<span class="item-articles__info-txt item-articles__info-txt_time" data-scramble-text="5 min">5 min</span>
+										<time datetime="2024-09" class="item-articles__info-txt" data-scramble-text="september 2024">september 2024</time>
 									</div>
 									<span class="item-articles__heading">latest article NAME</span>
 									<p class="item-articles__text">
@@ -387,7 +389,10 @@
 
 		</div>
 	</div>
-	<script src="js/app.js"></script>
+
+	<script defer src="https://cdn.jsdelivr.net/gh/google/diff-match-patch@master/javascript/diff_match_patch.js"></script>
+	<script defer src="js/app.js"></script>
+
 </body>
 
 </html>

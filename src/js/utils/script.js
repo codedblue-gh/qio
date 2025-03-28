@@ -4,81 +4,52 @@ import { lenis } from '../anim/lenis';
 import { ScrollTrigger } from 'gsap/all';
 import { waves } from '../anim/waves';
 import { animNextProject } from '../anim/next-project';
+import { scramble } from '../anim/scramble-text';
+import Splitting from 'splitting';
 
 export const mm = gsap.matchMedia();
 
-const observeServicesGroup = () => {
-  const addActiveClass = idx => {
-    removeClasses(
-      document.querySelectorAll('.services__list-item'),
-      '_is-active'
-    );
-    document
-      .querySelectorAll('.services__list-item')
-      [idx].classList.add('_is-active');
-  };
+const observeWorkflow = () => {
+  mm.add('(min-width: 48.01em)', () => {
+    const slides = gsap.utils.toArray('.progress__group');
+    const slidesAmount = slides.length;
 
-  document.querySelectorAll('.services__list-item').forEach(item => {
-    removeClasses(
-      document.querySelectorAll('.services__list-item'),
-      '_is-active'
-    );
-    item.classList.add('_is-active');
-  });
-
-  document.querySelectorAll('.services__group').forEach((group, idx) => {
-    ScrollTrigger.create({
-      trigger: group,
-      start: 'top 1rem',
-      onEnter: () => {
-        addActiveClass(idx);
-      },
-      onEnterBack: () => {
-        addActiveClass(idx);
+    gsap.to(slides, {
+      ease: 'none',
+      duration: slides.length,
+      xPercent: -(100 * (slidesAmount - 3.7)),
+      scrollTrigger: {
+        trigger: '.progress',
+        start: 'center center',
+        end: '+=' + 10 * slidesAmount + '%',
+        scrub: true,
+        pin: true,
+        snap: 1 / (slidesAmount - 1),
       },
     });
   });
 };
 
-const observerProgressSlider = () => {
-  mm.add('(min-width: 48.01em)', context => {
-    ScrollTrigger.create({
-      trigger: '.progress',
-      start: 'top top',
-      end: 'bottom bottom',
-      onEnter: () => {
-        if (
-          Array.from(document.querySelectorAll('.progress__slide')).indexOf(
-            document.querySelector('.progress .swiper-slide-active')
-          ) !==
-          Array.from(document.querySelectorAll('.progress__slide')).length - 1
-        ) {
-          document.querySelector('.progress').classList.add('_is-in-view');
-          lenis.stop();
-        }
-      },
-      onLeave: () => {
-        if (
-          Array.from(document.querySelectorAll('.progress__slide')).indexOf(
-            document.querySelector('.progress .swiper-slide-active')
-          ) !== 0
-        ) {
-          document.querySelector('.progress').classList.remove('_is-in-view');
-          lenis.start();
-        }
-      },
-      onEnterBack: () => {
-        if (
-          Array.from(document.querySelectorAll('.progress__slide')).indexOf(
-            document.querySelector('.progress .swiper-slide-active')
-          ) !== 0
-        ) {
-          document.querySelector('.progress').classList.add('_is-in-view');
-          lenis.stop();
-        }
-      },
+const observe = (anchors, triggers, start) => {
+  if (anchors && triggers) {
+    const addActiveClass = idx => {
+      removeClasses(anchors, '_is-active');
+      anchors[idx].classList.add('_is-active');
+    };
+    triggers.forEach((trigger, idx) => {
+      ScrollTrigger.create({
+        trigger,
+        start,
+        end: 'bottom top',
+        onEnter: () => {
+          addActiveClass(idx);
+        },
+        onLeaveBack: () => {
+          addActiveClass(idx);
+        },
+      });
     });
-  });
+  }
 };
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -98,11 +69,46 @@ document.addEventListener('DOMContentLoaded', function () {
       lenis.start();
     } else if (e.target.closest('.header__hamburger')) {
       document.documentElement.classList.add('_show-menu');
+
       lenis.stop();
     }
   };
 
+  const hoverItems = gsap.utils.toArray('[data-splitting]');
+
   document.addEventListener('click', onClickHandler);
+
+  if (hoverItems) {
+    hoverItems.forEach(el => {
+      el.addEventListener('mouseenter', function () {
+        el.removeAttribute('data-scramble-text');
+
+        gsap.to(el.querySelectorAll('.char'), {
+          opacity: 0,
+          duration: 0.3,
+          'clip-path': 'inset(0% 100% 0% 100%)',
+        });
+        gsap.to(el.querySelectorAll('.char'), {
+          opacity: 1,
+          stagger: 0.05,
+          'clip-path': 'inset(0% 0% 0% 0%)',
+          delay: 0.3,
+        });
+      });
+      if (!el.hasAttribute('data-scramble-text')) {
+        Splitting({ target: el });
+      }
+    });
+  }
+
+  // document.addEventListener('mouseover', function (e) {
+  //   console.log(e.target);
+  //   // if (e.target && e.target.hasAttribute('data-scramble-hover')) {
+  //   //   console.log('log');
+  //   //   e.target.innerHTML = ' ';
+  //   //   scramble(e.target);
+  //   // }
+  // });
 });
 window.addEventListener('load', function () {
   dynamicDOM();
@@ -120,14 +126,32 @@ window.addEventListener('load', function () {
 
   ScrollTrigger.refresh();
 
-  window.scrollTo(0, 0);
-
   if (document.querySelector('.services__group')) {
-    observeServicesGroup();
+    ScrollTrigger.create({
+      trigger: '.services',
+      start: `${
+        (70 / document.querySelector('.services__group').offsetHeight) * 100
+      }% center`,
+      onEnter: () => {
+        observe(
+          gsap.utils.toArray('.services__list-item'),
+          gsap.utils.toArray('.services__group'),
+          'center center'
+        );
+      },
+    });
   }
 
-  if (document.querySelector('.progress')) {
-    observerProgressSlider();
+  if (document.querySelector('.progress__group')) {
+    observeWorkflow();
+  }
+
+  if (document.querySelector('.mainpage')) {
+    observe(
+      gsap.utils.toArray('.nav [data-anchor]'),
+      gsap.utils.toArray('[data-section]'),
+      'center center'
+    );
   }
 });
 window.addEventListener('pageswap', function () {});

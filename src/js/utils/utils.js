@@ -76,20 +76,6 @@ export const removeClasses = (items, className) => {
   }
 };
 
-export const scrambleText = (e, selector) => {
-  if (e.querySelector(selector)) {
-    const el = e.querySelector(selector);
-    const txt = el.innerText;
-
-    gsap.to(el.parentElement, {
-      opacity: 1,
-      onStart: () => {
-        randomWordInjector(el, txt, 50, 300);
-      },
-    });
-  }
-};
-
 export const dynamicDOM = () => {
   const sortByNumber = (a, b) => a.targetIdx - b.targetIdx;
 

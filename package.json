@@ -41,11 +41,9 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
-    "ev-emitter": "^2.1.2",
     "gsap": "^3.12.5",
     "inputmask": "^5.0.9",
     "lenis": "^1.1.19",
-    "scramble-text": "^0.0.9",
     "splitting": "^1.1.0",
     "swiper": "^11.2.1",
     "video.js": "^8.17.4"

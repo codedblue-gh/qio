@@ -64,10 +64,10 @@
 			<div class="menu__nav-wrap">
 				<span class="menu__subtitle">menu</span>
 				<nav class="menu__nav">
-					<span class="menu__item"><a href="#" data-hover="2" data-scramble class="menu__item-content">home</a></span>
-					<span class="menu__item"><a href="#" data-hover="2" data-scramble class="menu__item-content">works</a></span>
-					<span class="menu__item"><a href="#" data-hover="2" data-scramble class="menu__item-content">services</a></span>
-					<span class="menu__item"><a href="#" data-hover="2" data-scramble class="menu__item-content">contacts</a></span>
+					<span class="menu__item"><a href="#" class="menu__item-content" data-splitting>home</a></span>
+					<span class="menu__item"><a href="#" class="menu__item-content" data-splitting>works</a></span>
+					<span class="menu__item"><a href="#" class="menu__item-content" data-splitting>services</a></span>
+					<span class="menu__item"><a href="#" class="menu__item-content" data-splitting>contacts</a></span>
 				</nav>
 			</div>
 			<ul class="menu__quick-links">
@@ -135,7 +135,7 @@
 									</svg>
 								</div>
 								<button type="button" class="hero__btn btn">
-									<span data-hover>discuss a project</span>
+									<span data-scramble-text="discuss a project" data-splitting>discuss a project</span>
 								</button>
 							</div>
 
@@ -146,27 +146,21 @@
 									</h1>
 
 									<div class="hero__text-wrap">
-										<p data-scramble class="hero__text">
-											©<span data-current-year></span> qio, fullcycle web studio
+										<p data-scramble-text="©2025 qio, fullcycle web studio" class="hero__text">
+											©2025 qio, fullcycle web studio
 										</p>
-										<p data-scramble class="hero__text">
+										<p data-scramble-text="effective promotion n' professional web development" class="hero__text">
 											effective promotion n' professional web development
 										</p>
 									</div>
 								</div>
 								<button data-anchor=".about" type="button" class="hero__scroll">
-									scroll <span>down</span>
+									<span data-scramble-text="scroll down">scroll down</span>
 								</button>
 							</div>
 						</div>
 						<div id="waves-bg" class="hero__bg"></div>
 					</div>
-					<!-- <div class="marquee">
-    <div class="marquee__rail">
-      <span class="marquee__txt">seo продвижение</span>
-      <span class="marquee__txt">веб-разработка</span>
-    </div>
-  </div> -->
 				</section>
 				<section data-section="about" class="about">
 					<div class="about__container container">
@@ -176,7 +170,7 @@
 									<span class="h-main__txt">The name "Qio" is a symphony of three letters, each unveiling key
 										aspects of a progressive technological world</span>
 								</h2>
-								<span data-scramble class="about__txt">©<span data-current-year></span>, QIO WEB STUDIO</span>
+								<span data-scramble-text="©2025, QIO WEB STUDIO" class="about__txt">©2025, QIO WEB STUDIO</span>
 								<div class="about__text-wrap">
 									<div class="about__paragraphs">
 										<p class="about__txt">
@@ -191,7 +185,7 @@
 										</p>
 									</div>
 									<button type="button" class="about__btn btn">
-										<span data-hover data-scramble class="btn__txt">got a project in mind?</span>
+										<span data-splitting data-scramble-text="got a project in mind?" class="btn__txt">got a project in mind?</span>
 									</button>
 								</div>
 							</div>
@@ -207,7 +201,7 @@
 						<div class="footer-upper__bg-text bg-text">SAY HI</div>
 						<h2 class="footer-upper__heading h-main">
 							<span class="h-main__txt">
-								<span data-scramble>Let’s Bring YOUR VISIONS to REAL Life</span>
+								<span data-scramble-text="Let’s Bring YOUR VISIONS to REAL Life">Let’s Bring YOUR VISIONS to REAL Life</span>
 							</span>
 						</h2>
 						<div class="footer-upper__contacts">
@@ -216,27 +210,27 @@
 						</div>
 						<form action="#" class="footer-upper__form">
 							<div class="footer-upper__group">
-								<span class="footer-upper__hint"><span>Let us know how we can help</span></span>
+								<span class="footer-upper__hint"><span data-scramble-text="Let us know how we can help">Let us know how we can help</span></span>
 								<div class="footer-upper__badges _hidden-scrollbar">
 									<div class="footer-upper__badge badge">
 										<input class="badge__input" checked type="radio" name="service" />
-										<span class="badge__text">all</span>
+										<span data-scramble-text="all" class="badge__text">all</span>
 									</div>
 									<div class="footer-upper__badge badge">
 										<input class="badge__input" type="radio" name="service" />
-										<span class="badge__text">webdesign</span>
+										<span data-scramble-text="webdesign" class="badge__text">webdesign</span>
 									</div>
 									<div class="footer-upper__badge badge">
 										<input class="badge__input" type="radio" name="service" />
-										<span class="badge__text">seo</span>
+										<span data-scramble-text="seo" class="badge__text">seo</span>
 									</div>
 									<div class="footer-upper__badge badge">
 										<input class="badge__input" type="radio" name="service" />
-										<span class="badge__text">branding</span>
+										<span data-scramble-text="branding" class="badge__text">branding</span>
 									</div>
 									<div class="footer-upper__badge badge">
 										<input class="badge__input" type="radio" name="service" />
-										<span class="badge__text">optimisation</span>
+										<span data-scramble-text="optimisation" class="badge__text">optimisation</span>
 									</div>
 								</div>
 							</div>
@@ -260,8 +254,8 @@
 						<li class="nav__item-ignore">
 							<a href="#" class="nav__item-content">portfolio*</a>
 						</li>
-						<li class="nav__item _is-active">
-							<span data-anchor=".hero" class="nav__item-content">top</span>
+						<li class="nav__item">
+							<span data-anchor=".hero" class="nav__item-content _is-active">top</span>
 						</li>
 						<li class="nav__item">
 							<span data-anchor=".about" class="nav__item-content">about</span>
@@ -328,7 +322,9 @@
 
 		</div>
 	</div>
-	<script src="js/app.js"></script>
+	<script defer src="https://cdn.jsdelivr.net/gh/google/diff-match-patch@master/javascript/diff_match_patch.js"></script>
+	<script defer src="js/app.js"></script>
+
 </body>
 
 </html>

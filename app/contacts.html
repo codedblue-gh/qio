@@ -64,10 +64,10 @@
 			<div class="menu__nav-wrap">
 				<span class="menu__subtitle">menu</span>
 				<nav class="menu__nav">
-					<span class="menu__item"><a href="#" data-hover="2" data-scramble class="menu__item-content">home</a></span>
-					<span class="menu__item"><a href="#" data-hover="2" data-scramble class="menu__item-content">works</a></span>
-					<span class="menu__item"><a href="#" data-hover="2" data-scramble class="menu__item-content">services</a></span>
-					<span class="menu__item"><a href="#" data-hover="2" data-scramble class="menu__item-content">contacts</a></span>
+					<span class="menu__item"><a href="#" class="menu__item-content" data-splitting>home</a></span>
+					<span class="menu__item"><a href="#" class="menu__item-content" data-splitting>works</a></span>
+					<span class="menu__item"><a href="#" class="menu__item-content" data-splitting>services</a></span>
+					<span class="menu__item"><a href="#" class="menu__item-content" data-splitting>contacts</a></span>
 				</nav>
 			</div>
 			<ul class="menu__quick-links">
@@ -129,7 +129,7 @@
 						<div class="contacts__head">
 							<div class="contacts__heading-wrap">
 								<h1 class="contacts__heading h-main">
-									<span class="h-main__txt">DROP US A LINE</span>
+									<span class="h-main__txt"><span data-scramble-text="DROP US A LINE">DROP US A LINE</span></span>
 								</h1>
 								<p class="contacts__text">
 									Have a collaboration in mind, or just want to talk? Fill out the form,
@@ -138,7 +138,7 @@
 							</div>
 							<ul class="contacts__list">
 								<li class="contacts__list-item">
-									<span class="contacts__subtitle">contact us</span>
+									<span class="contacts__subtitle" data-scramble-text="contact us">contact us</span>
 									<ul class="contacts__sublist">
 										<li class="contacts__sublist-item">
 											<a href="mailto:qio@gmail.com" class="contacts__list-txt">qio@gmail.com</a>
@@ -149,7 +149,7 @@
 									</ul>
 								</li>
 								<li class="contacts__list-item">
-									<span class="contacts__subtitle">find us in</span>
+									<span class="contacts__subtitle" data-scramble-text="find us in">find us in</span>
 									<ul class="contacts__sublist">
 										<li class="contacts__sublist-item">
 											<a href="#" target="_blank" class="contacts__list-txt">WHATSAPP</a>
@@ -163,27 +163,27 @@
 						</div>
 						<form action="#" class="footer-upper__form">
 							<div class="footer-upper__group">
-								<span class="footer-upper__hint"><span>Let us know how we can help</span></span>
+								<span class="footer-upper__hint"><span data-scramble-text="Let us know how we can help">Let us know how we can help</span></span>
 								<div class="footer-upper__badges _hidden-scrollbar">
 									<div class="footer-upper__badge badge">
 										<input class="badge__input" checked type="radio" name="service" />
-										<span class="badge__text">all</span>
+										<span class="badge__text" data-scramble-text="all">all</span>
 									</div>
 									<div class="footer-upper__badge badge">
 										<input class="badge__input" type="radio" name="service" />
-										<span class="badge__text">webdesign</span>
+										<span class="badge__text" data-scramble-text="webdesign">webdesign</span>
 									</div>
 									<div class="footer-upper__badge badge">
 										<input class="badge__input" type="radio" name="service" />
-										<span class="badge__text">seo</span>
+										<span class="badge__text" data-scramble-text="seo">seo</span>
 									</div>
 									<div class="footer-upper__badge badge">
 										<input class="badge__input" type="radio" name="service" />
-										<span class="badge__text">branding</span>
+										<span class="badge__text" data-scramble-text="branding">branding</span>
 									</div>
 									<div class="footer-upper__badge badge">
 										<input class="badge__input" type="radio" name="service" />
-										<span class="badge__text">optimisation</span>
+										<span class="badge__text" data-scramble-text="optimisation">optimisation</span>
 									</div>
 								</div>
 							</div>
@@ -260,7 +260,10 @@
 
 		</div>
 	</div>
-	<script src="js/app.js"></script>
+
+	<script defer src="https://cdn.jsdelivr.net/gh/google/diff-match-patch@master/javascript/diff_match_patch.js"></script>
+	<script defer src="js/app.js"></script>
+
 </body>
 
 </html>

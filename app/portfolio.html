@@ -64,10 +64,10 @@
 			<div class="menu__nav-wrap">
 				<span class="menu__subtitle">menu</span>
 				<nav class="menu__nav">
-					<span class="menu__item"><a href="#" data-hover="2" data-scramble class="menu__item-content">home</a></span>
-					<span class="menu__item"><a href="#" data-hover="2" data-scramble class="menu__item-content">works</a></span>
-					<span class="menu__item"><a href="#" data-hover="2" data-scramble class="menu__item-content">services</a></span>
-					<span class="menu__item"><a href="#" data-hover="2" data-scramble class="menu__item-content">contacts</a></span>
+					<span class="menu__item"><a href="#" class="menu__item-content" data-splitting>home</a></span>
+					<span class="menu__item"><a href="#" class="menu__item-content" data-splitting>works</a></span>
+					<span class="menu__item"><a href="#" class="menu__item-content" data-splitting>services</a></span>
+					<span class="menu__item"><a href="#" class="menu__item-content" data-splitting>contacts</a></span>
 				</nav>
 			</div>
 			<ul class="menu__quick-links">
@@ -130,7 +130,8 @@
 								<svg>
 									<use href="#arrow-svg"></use>
 								</svg>
-								<span class="h-main__txt">portfolio <svg>
+								<span class="h-main__txt"><span data-scramble-text="portfolio">portfolio</span>
+									<svg>
 										<use href="#arrow-svg"></use>
 									</svg></span>
 								<svg>
@@ -244,7 +245,7 @@
 							</li>
 						</ul>
 						<button type="button" class="projects__loadmore-btn btn">
-							<span class="btn__txt">load more</span>
+							<span data-scramble-text="load more" data-splitting class="btn__txt">load more</span>
 						</button>
 					</div>
 				</section>
@@ -305,21 +306,8 @@
 		</div>
 	</div>
 
-	<script src="https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider/js/libs/TweenMax.min.js" defer></script>
-	<!-- <script
-  src="https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider/js/libs/imagesLoaded.pkgd.min.js"
-  defer></script> -->
-	<!-- <script
-  src="https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider/js/libs/pixi.min.js"
-  defer></script> -->
-	<!-- <script
-  src="https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider/js/libs/pixi-filters.min.js"
-  defer></script> -->
-	<!-- <script
-  src="https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider/js/rgbKineticSlider.js"
-  defer></script> -->
-
-	<script src="js/app.js"></script>
+	<script defer src="https://cdn.jsdelivr.net/gh/google/diff-match-patch@master/javascript/diff_match_patch.js"></script>
+	<script defer src="js/app.js"></script>
 
 </body>
 

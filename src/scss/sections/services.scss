@@ -1,4 +1,6 @@
 .services {
+  margin-bottom: 20rem;
+
   // .services__container
 
   &__container {
@@ -21,10 +23,6 @@
     display: flex;
     flex-direction: column;
     row-gap: 3rem;
-
-    @media (max-width: 48em) {
-      display: none;
-    }
   }
 
   // .services__aside
@@ -33,6 +31,10 @@
     position: relative;
 
     padding-bottom: 10rem;
+
+    @media (max-width: 48em) {
+      display: none;
+    }
   }
 
   // .services__heading
@@ -78,26 +80,30 @@
     flex-direction: column;
   }
 
-  // .services__group
+  // .services__group-inner
 
-  &__group {
+  &__group-inner {
     padding: 10rem 0;
-
-    &:first-child {
-      padding-top: 0;
-    }
 
     display: flex;
     align-items: flex-start;
     column-gap: 3rem;
 
-    &:not(:last-child) {
-      border-bottom: 1px solid var(--c-gray);
-    }
-
     @media (max-width: 48em) {
       flex-direction: column;
       row-gap: 7rem;
+    }
+  }
+
+  // .services__group
+
+  &__group {
+    &:first-child .services__group-inner {
+      padding-top: 0;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--c-gray);
     }
   }
 
@@ -107,7 +113,6 @@
     font: var(--h-x);
 
     @media (min-width: 48.01em) {
-      flex: 0 0 29.3rem;
       width: 29.3rem;
     }
 
@@ -123,20 +128,35 @@
 
     display: flex;
     flex-direction: column;
-    row-gap: 5rem;
+    align-items: flex-start;
 
     @media (min-width: 48.01em) {
       flex: 0 0 62.5rem;
       width: 62.5rem;
-      row-gap: 7rem;
     }
   }
 
   // .services__text
 
   &__text {
+    margin-bottom: 2rem;
+
     text-align: justify;
     line-height: 140%;
+
+    @media (max-width: 48em) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__group-btn {
+    &:not(:last-child) {
+      margin-bottom: 5rem;
+
+      @media (max-width: 48em) {
+        margin-bottom: 7rem;
+      }
+    }
   }
 
   // .services__mess
@@ -187,6 +207,14 @@
     align-items: center;
     column-gap: 1.5rem;
 
+    @media (any-hover: hover) {
+      &:hover {
+        img {
+          filter: grayscale(0);
+        }
+      }
+    }
+
     @media (max-width: 48em) {
       column-gap: 2.5rem;
     }
@@ -220,6 +248,8 @@
       width: 1.8rem;
 
       filter: grayscale(1);
+
+      transition: filter 0.3s ease-in-out;
     }
   }
 
@@ -234,6 +264,8 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+
+    width: 42rem;
 
     @media (max-width: 48em) {
       width: 100%;
