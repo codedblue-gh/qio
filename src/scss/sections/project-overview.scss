@@ -16,7 +16,8 @@
   &__main {
     padding-top: 8rem;
 
-    display: grid;
+    display: flex;
+    flex-direction: column;
     column-gap: 1.2rem;
     row-gap: 1rem;
     height: 96rem;
@@ -24,6 +25,7 @@
     @media (min-width: 48.01em) {
       padding-top: 2rem;
 
+      display: grid;
       grid-template-columns: 56.7rem 1fr;
       height: 75.3rem;
     }
@@ -37,6 +39,10 @@
     // .project-overview__video_mob
 
     &_mob {
+    }
+
+    @media (max-width: 48em) {
+      flex: 1 1 auto;
     }
   }
 
@@ -98,6 +104,18 @@
 
     @media (max-width: 48em) {
       width: 91%;
+    }
+  }
+
+  &__main-bg {
+    img {
+      height: 100%;
+
+      object-fit: cover;
+    }
+
+    @media (max-width: 48em) {
+      height: 39rem;
     }
   }
 

@@ -14,6 +14,9 @@
     min-height: 90rem;
     height: calc(100dvh - 3.5rem);
 
+    mix-blend-mode: difference;
+    color: white;
+
     @media (max-width: 48em) {
       &.container {
         padding-bottom: 5rem;

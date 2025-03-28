@@ -156,6 +156,12 @@
 
     flex: 1 1 auto;
 
+    @media (min-width: 48.01em) {
+      &:last-child {
+        text-align: center;
+      }
+    }
+
     @media (max-width: 48em) {
       height: 12rem;
 
@@ -166,12 +172,12 @@
   // .about-project__logo
 
   &__logo {
-    flex: 0 0 9.4rem;
-    width: 9.4rem;
+    flex: 0 0 13rem;
+    width: 13rem;
 
     @media (max-width: 48em) {
-      flex: 0 0 7.4rem;
-      width: 7.4rem;
+      flex: 0 0 10rem;
+      width: 10rem;
     }
   }
 
