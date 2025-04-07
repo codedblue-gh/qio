@@ -10,6 +10,7 @@ if (document.querySelectorAll('[data-anchor]').length) {
         lenis.scrollTo(el, {
           force: true,
           lock: true,
+          offset: anchor.dataset.offset ? +anchor.dataset.offset : 0,
         });
 
       if (anchor.closest('.nav')) {

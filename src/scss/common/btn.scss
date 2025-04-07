@@ -69,6 +69,20 @@
       background-color: var(--c-primary);
     }
   }
+
+  &_black {
+    background-color: var(--c-primary);
+
+    color: var(--c-bg);
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: transparent;
+
+        color: var(--c-primary);
+      }
+    }
+  }
 }
 
 .btn-secondary {
@@ -265,7 +279,7 @@
     width: 0.9rem;
     height: 1.5rem;
 
-    animation: down 4s ease-in-out infinite;
+    animation: arrows-m-down 4s ease-in-out infinite;
     transform: translateY(-0.3rem);
 
     @media (max-width: 48em) {

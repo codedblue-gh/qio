@@ -29,20 +29,20 @@
   --fz-40: 4rem;
 
   // typography
-  --txt-large: 400 var(--fz-30) / 1 var(--ff-main);
+  --txt-large: 500 var(--fz-30) / 1 var(--ff-main);
   --txt-semi: 500 var(--fz-15) / 120% var(--ff-main);
   --txt-semi-sb: 500 var(--fz-15) / 120% var(--ff-main);
-  --txt-main: 400 var(--fz-12) / 120% var(--ff-main);
+  --txt-main: 500 var(--fz-12) / 120% var(--ff-main);
   --txt-main-sb: 500 var(--fz-12) / 120% var(--ff-main);
-  --txt-small: 400 var(--fz-11) / 120% var(--ff-main);
+  --txt-small: 500 var(--fz-11) / 120% var(--ff-main);
   --txt-small-sb: 500 var(--fz-14) / 2.2rem var(--ff-main);
   --txt-x-small: 400 var(--fz-12) / 2.2rem var(--ff-main);
 
   --h-xl: 500 var(--fz-35) / 1 var(--ff-main);
   --h-x: 500 var(--fz-18) / 120% var(--ff-main);
   --h-heavy: 500 var(--fz-28) / 2rem var(--ff-main);
-  --h-main: 400 var(--fz-24) / 1 var(--ff-main);
-  --h-secondary: 400 var(--fz-20) / 2.5rem var(--ff-main);
+  --h-main: 500 var(--fz-24) / 1 var(--ff-main);
+  --h-secondary: 500 var(--fz-20) / 2.5rem var(--ff-main);
   --h-subtitle: 600 var(--fz-13) / 140% var(--ff-main);
 
   // svg
@@ -55,6 +55,7 @@
   --i-arrows-v: url('data:image/svg+xml,<svg viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.30769 15.5L0.5 8.35714H1.88462L5 13.7867L8.11539 8.35714H9.5L5.69231 15.5H4.30769Z" fill="%23101010"/><path d="M4.30769 7.64286L0.5 0.5H1.88462L5 5.92954L8.11539 0.5H9.5L5.69231 7.64286H4.30769Z" fill="%23101010"/></svg>');
   --i-line: url('data:image/svg+xml,<svg viewBox="0 0 192 7" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="188.5" y1="6.75427" x2="188.5" y2="0.754272" stroke="black"/><line x1="0.00127982" y1="3.25427" x2="192.003" y2="3.74573" stroke="black"/></svg>');
   --i-squares: url('data:image/svg+xml,<svg viewBox="0 0 23 11" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="0.5" width="10" height="10" fill="%23101010"/><rect x="13" y="0.5" width="10" height="10" fill="%23101010"/></svg>');
+  --i-rect: url('data:image/svg+xml,<svg viewBox="0 0 61 70" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M37.901 5.49356L30.1199 1L22.3389 5.49356" stroke="black"/><path d="M38.5621 64.5064L30.781 69L23 64.5064" stroke="black"/><path d="M8.78305 12.8956L1 17.3892L1 26.3743" stroke="black"/><path d="M53.0002 13L60.7832 17.4936L60.7832 26.4787" stroke="black"/><path d="M1 43.1833L1 52.1685L8.78305 56.6621" stroke="black"/><path d="M60.7832 43L60.7832 51.9852L53.0002 56.4787" stroke="black"/></svg>');
 
   // sizes
   --b-radius: 0.6rem;
@@ -67,11 +68,11 @@
   @media (max-width: 48em) {
     // typo
     --txt-large: 500 var(--fz-40) / 125% var(--ff-main);
-    --txt-main: 400 var(--fz-20) / 125% var(--ff-main);
+    --txt-main: 500 var(--fz-20) / 125% var(--ff-main);
     --txt-main-sb: 500 var(--fz-20) / 125% var(--ff-main);
-    --txt-small: 400 var(--fz-20) / 125% var(--ff-main);
-    --txt-small-sb: 400 var(--fz-24) / 125% var(--ff-main);
-    --txt-x-small: 400 var(--fz-17) / 125% var(--ff-main);
+    --txt-small: 500 var(--fz-20) / 125% var(--ff-main);
+    --txt-small-sb: 500 var(--fz-24) / 125% var(--ff-main);
+    --txt-x-small: 500 var(--fz-17) / 125% var(--ff-main);
     --txt-semi: 500 var(--fz-22) / 125% var(--ff-main);
     --txt-semi-sb: 500 var(--fz-28) / 120% var(--ff-main);
 

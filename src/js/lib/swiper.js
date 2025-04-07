@@ -1,12 +1,35 @@
 import Swiper from 'swiper';
-import { Navigation, Autoplay, Mousewheel } from 'swiper/modules';
+import {
+  Navigation,
+  Autoplay,
+  Mousewheel,
+  Scrollbar,
+  FreeMode,
+} from 'swiper/modules';
 import { removeClasses, remToPx } from '../utils/utils';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
 import { lenis } from '../anim/lenis';
 import { mm } from '../utils/script';
 
 window.addEventListener('load', function () {
+  if (document.querySelector('.prices__slider')) {
+    mm.add('(max-width: 48em)', () => {
+      const slider = new Swiper('.prices__slider', {
+        speed: 1200,
+        spaceBetween: remToPx(8),
+        slidesPerView: 'auto',
+        breakpoints: {
+          768: {
+            spaceBetween: remToPx(5),
+          },
+        },
+      });
+
+      return () => {
+        slider.destroy();
+      };
+    });
+  }
   if (document.querySelector('.progress__slider')) {
     const setProgress = swiper => {
       if (swiper.realIndex !== 0) {
@@ -134,6 +157,45 @@ window.addEventListener('load', function () {
         767: {
           spaceBetween: 8,
         },
+      },
+    });
+  }
+  if (document.querySelector('.approach__slider')) {
+    new Swiper('.approach__slider', {
+      modules: [Navigation, Autoplay],
+      speed: 1200,
+      spaceBetween: remToPx(5),
+      centeredSlides: true,
+      loop: true,
+      autoplay: {
+        delay: 7500,
+      },
+      navigation: {
+        prevEl: '.approach .controls__btn_prev',
+        nextEl: '.approach .controls__btn_next',
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 'auto',
+        },
+      },
+    });
+  }
+  if (document.querySelector('.cases__slider')) {
+    new Swiper('.cases__slider', {
+      modules: [Navigation, Scrollbar, FreeMode],
+      speed: 1200,
+      spaceBetween: remToPx(4),
+      slidesPerView: 'auto',
+      freeMode: true,
+      autoplay: {
+        delay: 7500,
+      },
+      scrollbar: {
+        el: '.cases .swiper-scrollbar',
+        hide: false,
+        draggable: true,
+        dragSize: remToPx(5.6),
       },
     });
   }

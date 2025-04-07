@@ -11,6 +11,71 @@
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/88/three.min.js" defer></script>
+	<script type="x-shader/x-vertex" id="vertexshader1">
+
+		precision highp float;
+
+    attribute float size;
+    uniform vec4 planet1;
+    uniform vec4 planet2;
+
+    varying float vDisplay;
+    varying float vColor;
+
+    vec4 distanceTo(vec3 p1, vec4 p2){ // simple function that returns a vec4 of the distance between 3d points.  each position being that axis' distance.  the 4th position being the overall distance
+    	vec3 d = vec3(p2.x - p1.x, p2.y - p1.y, p2.z - p1.z);
+
+    	return vec4(abs(d.x),
+    			  abs(d.y),
+    			  abs(d.z),
+    			  sqrt(d.x*d.x + d.y*d.y + d.z*d.z));
+    }
+
+    void main() {
+    	vec3 p = position;
+
+    	float g = 5000.; // constant rate of gravity, I treat it sort of like a scaler
+
+    	vec4 distP1 = distanceTo(p, planet1); // get distance from point to planet
+    	//vec4 distP2 = distanceTo(p, planet2);
+
+    	vec3 vp1 = vec3(p.x - planet1.x, p.y - planet1.y, p.z - planet1.z); // find vector between point and planet (kind of like the angle between the two points)
+    	//vec3 vp2 = vec3(p.x - planet2.x, p.y - planet2.y, p.z - planet2.z);
+
+    	float pull = (g*planet1.w) / (distP1.w * distP1.w); // find the amount gravity is effecting this point
+    	vec3 newp = p.xyz + (-pull * vp1.xyz); // push the point towards the planet with the "angle" vector we made above, with the amount set in the pull variable
+
+    	//pull = (g*planet2.w) / (distP2.w * distP2.w);
+    	//newp = newp.xyz + (-pull * vp2.xyz);
+
+
+    	gl_PointSize = 1.;
+    	gl_Position = projectionMatrix * modelViewMatrix * vec4(newp, 1.0);
+
+    	vDisplay = 0.;
+    	if(pull < 1.){ vDisplay = 1.; } // hide overly-pulled vertex's
+
+    	vColor = clamp(pull, 0.133333333, 1.);
+    }
+  </script>
+
+	<script type="x-shader/x-fragment" id="fragmentshader1">
+		uniform sampler2D texture;
+    uniform vec2 resolution;
+
+    varying float vDisplay;
+    varying float vColor;
+
+    void main() {
+    	vec2 st = gl_FragCoord.xy/resolution.xy;
+    	st.x *= resolution.x/resolution.y;
+
+
+    	float c = clamp(vColor, 0.0, 0.4);
+
+    	gl_FragColor = vec4(c, c, c, vDisplay );
+    }
+  </script>
 	<script defer type="x-shader/x-vertex" id="vertexshader">
 		attribute float scale;
     void main() {
@@ -302,6 +367,9 @@
 				<symbol id="arrow-svg" viewBox="0 0 11 10">
 					<path d="M4.59699 7.81378L6.53505 10L11 4.99999L6.53505 0L4.59699
     2.18621L5.73068 3.45668H0V6.54332H5.7322L4.59699 7.81378Z" fill="currentColor" />
+				</symbol>
+				<symbol viewBox="0 0 14 13" id="arr-svg">
+					<path d="M0 6.5H13M13 6.5L7.52711 12M13 6.5L7.52711 1" stroke="#27282C" stroke-width="1.5" stroke-linejoin="bevel" />
 				</symbol>
 				<symbol id="whatsapp-svg" viewBox="0 0 26 25">
 					<path d="M16.3302 17.8024C11.392 17.8024 7.3744 13.7823 7.37305 8.84263C7.3744 7.59048 8.39367 6.57227 9.64274 6.57227C9.77117 6.57227 9.89823 6.58308 10.0199 6.60472C10.2875 6.64934 10.5417 6.73994 10.7756 6.87651C10.8094 6.8968 10.8323 6.92927 10.8377 6.96713L11.3595 10.257C11.3663 10.2963 11.3541 10.3341 11.3284 10.3625C11.0405 10.6816 10.6728 10.9115 10.2632 11.0265L10.0659 11.0819L10.1402 11.2725C10.8134 12.9872 12.1841 14.3569 13.8996 15.0331L14.0902 15.1088L14.1456 14.9114C14.2605 14.5016 14.4903 14.1338 14.8094 13.8458C14.8323 13.8242 14.8634 13.8134 14.8945 13.8134C14.9013 13.8134 14.9081 13.8134 14.9162 13.8147L18.2051 14.3367C18.2443 14.3434 18.2768 14.3651 18.297 14.3989C18.4322 14.6328 18.5228 14.8884 18.5688 15.1561C18.5904 15.2751 18.5998 15.4008 18.5998 15.532C18.5998 16.7828 17.5819 17.801 16.3302 17.8024Z" fill="currentColor" />

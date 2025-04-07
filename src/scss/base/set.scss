@@ -16,10 +16,11 @@ html {
   line-height: 1.2;
   -webkit-animation: bugfix infinite 1s;
   user-select: none;
+  overflow-x: clip;
 }
 
 body {
-  font: var(--txt-main);
+  font: var(--txt-main-sb);
   text-transform: uppercase;
   margin: 0;
   padding: 0;

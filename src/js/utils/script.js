@@ -1,10 +1,9 @@
 import gsap from 'gsap';
-import { dynamicDOM, invertColor, removeClasses } from './utils';
+import { dynamicDOM, getRange, invertColor, removeClasses } from './utils';
 import { lenis } from '../anim/lenis';
 import { ScrollTrigger } from 'gsap/all';
 import { waves } from '../anim/waves';
 import { animNextProject } from '../anim/next-project';
-import { scramble } from '../anim/scramble-text';
 import Splitting from 'splitting';
 
 export const mm = gsap.matchMedia();
@@ -152,6 +151,81 @@ window.addEventListener('load', function () {
       gsap.utils.toArray('[data-section]'),
       'center center'
     );
+  }
+
+  if (document.querySelector('.process__table-head')) {
+    let len = document.querySelectorAll('.process__table-head').length;
+    const rows = gsap.utils.toArray('.process__row');
+
+    const arr = [];
+
+    gsap.set('.process__table', {
+      gridTemplateColumns: `repeat(${len}, minmax(${
+        window.innerWidth < 768 ? 30 : 15
+      }rem, 1fr))`,
+    });
+
+    rows.forEach(rowItem => {
+      const col = rowItem.dataset.column;
+      const row = rowItem.dataset.row;
+
+      arr.push(`${col},${row}`);
+
+      if (rowItem.classList.contains('process__row_large')) {
+        gsap.set(rowItem, {
+          gridColumn: `${col}/${col + (len - +col)}`,
+          gridRowStart: `${row}`,
+        });
+      } else {
+        gsap.set(rowItem, {
+          gridColumnStart: `${col}`,
+          gridRowStart: `${row}`,
+        });
+      }
+    });
+
+    const rowsCount = arr[arr.length - 1].split(',')[1];
+    const rowsRange = getRange(1, rowsCount);
+    const columnsRange = getRange(1, len);
+
+    rowsRange.forEach((row, rowI) => {
+      columnsRange.forEach((col, colI) => {
+        const c = colI + 1;
+        const r = rowI + 1;
+        if (!arr.includes(`${c},${r}`)) {
+          const el = document.createElement('div');
+          el.classList.add('process__row');
+          document.querySelector('.process__table').appendChild(el);
+          gsap.set(el, {
+            gridColumnStart: `${c}`,
+            gridRowStart: `${r === 1 ? 2 : r}`,
+          });
+        }
+      });
+    });
+  }
+
+  if (document.querySelector('.info .option-btn__input')) {
+    const groups = gsap.utils.toArray('.info__group');
+
+    setTimeout(() => {
+      gsap.set('.info__content', {
+        height: `${groups[0].offsetHeight + 40}px`,
+      });
+    }, 0);
+
+    document
+      .querySelectorAll('.info .option-btn__input')
+      .forEach((input, idx) => {
+        input.addEventListener('change', function () {
+          if (input.checked && groups[idx]) {
+            removeClasses(groups, '_is-active');
+            groups[idx].classList.add('_is-active');
+
+            gsap.to('.info__content', { height: groups[idx].offsetHeight });
+          }
+        });
+      });
   }
 });
 window.addEventListener('pageswap', function () {});

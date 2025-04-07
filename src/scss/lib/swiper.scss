@@ -260,3 +260,22 @@
   -webkit-transition-timing-function: linear !important;
   transition-timing-function: linear !important;
 }
+
+.swiper-scrollbar {
+  height: 0.7rem;
+
+  background: url(@img/vectors/bar.svg) center / contain repeat-x;
+
+  .swiper-scrollbar-drag {
+    position: relative;
+    z-index: 2;
+    bottom: 0.7rem;
+
+    display: inline-flex;
+    height: 2.5rem;
+
+    background: url(@img/vectors/handle.svg) center / contain no-repeat;
+
+    cursor: grab;
+  }
+}

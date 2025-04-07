@@ -29,6 +29,7 @@
 @import 'common/layout';
 @import 'common/nav';
 @import 'common/marquee';
+@import 'common/controls';
 
 .portfolio-chapter__smth {
   background-color: var(--c-gray);
@@ -132,3 +133,11 @@ html:not(._page-loaded) {
 @import 'sections/services-hero';
 @import 'sections/services';
 @import 'sections/progress';
+@import 'sections/service';
+@import 'sections/approach';
+@import 'sections/process';
+@import 'sections/stack';
+@import 'sections/cases';
+@import 'sections/prices';
+@import 'sections/info';
+@import 'sections/faq';

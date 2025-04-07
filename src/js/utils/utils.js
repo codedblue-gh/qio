@@ -5,6 +5,14 @@ export const randomNumber = () => {
   Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
+export const getRange = (min, max) => {
+  const range = [];
+  for (let count = min; count <= max; count++) {
+    range.push(count);
+  }
+  return range;
+};
+
 export const isTouchDevice = () => {
   return (
     'ontouchstart' in window ||
@@ -122,30 +130,6 @@ export const dynamicDOM = () => {
 
   elementsData.sort(sortByNumber);
 };
-
-const pxInput = document.getElementById('px-input');
-
-const remresult = document.getElementById('rem-result');
-
-const remInput = document.getElementById('rem-input');
-
-const pxresult = document.getElementById('px-result');
-
-var remcopy = document.querySelector('#rem-copy-btn');
-
-var pxcopy = document.querySelector('#px-copy-btn');
-
-//converter px to rem
-
-function pxToRem(px) {
-  const baseFontSize = parseFloat(
-    getComputedStyle(document.documentElement).fontSize
-  );
-
-  const rem = px / baseFontSize;
-
-  return rem;
-}
 
 export const remToPx = rem => {
   const baseFontSize = parseFloat(
