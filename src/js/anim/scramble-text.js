@@ -16,7 +16,6 @@ const elements = document.querySelectorAll('main [data-scramble-text]');
 if (elements.length) {
   elements.forEach(el => {
     el.innerHTML = ' ';
-    console.log(el);
     ScrollTrigger.create({
       trigger: el,
       once: true,

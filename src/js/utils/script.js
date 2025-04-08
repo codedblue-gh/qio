@@ -184,8 +184,15 @@ window.addEventListener('load', function () {
       }
     });
 
+    const createElement = () => {
+      const el = document.createElement('div');
+      el.classList.add('process__row');
+      document.querySelector('.process__table').appendChild(el);
+      return el;
+    };
+
     const rowsCount = arr[arr.length - 1].split(',')[1];
-    const rowsRange = getRange(1, rowsCount);
+    const rowsRange = rowsCount < 5 ? [1, 2, 3, 4] : getRange(1, rowsCount);
     const columnsRange = getRange(1, len);
 
     rowsRange.forEach((row, rowI) => {
@@ -193,9 +200,7 @@ window.addEventListener('load', function () {
         const c = colI + 1;
         const r = rowI + 1;
         if (!arr.includes(`${c},${r}`)) {
-          const el = document.createElement('div');
-          el.classList.add('process__row');
-          document.querySelector('.process__table').appendChild(el);
+          const el = createElement();
           gsap.set(el, {
             gridColumnStart: `${c}`,
             gridRowStart: `${r === 1 ? 2 : r}`,

@@ -30,6 +30,19 @@ window.addEventListener('load', function () {
       };
     });
   }
+  if (document.querySelector('.service-catalog__slider')) {
+    mm.add('(max-width: 48em)', () => {
+      const slider = new Swiper('.service-catalog__slider', {
+        speed: 1200,
+        spaceBetween: remToPx(4),
+        slidesPerView: 'auto',
+      });
+
+      return () => {
+        slider.destroy();
+      };
+    });
+  }
   if (document.querySelector('.progress__slider')) {
     const setProgress = swiper => {
       if (swiper.realIndex !== 0) {
@@ -187,7 +200,7 @@ window.addEventListener('load', function () {
       speed: 1200,
       spaceBetween: remToPx(4),
       slidesPerView: 'auto',
-      freeMode: true,
+
       autoplay: {
         delay: 7500,
       },
@@ -196,6 +209,11 @@ window.addEventListener('load', function () {
         hide: false,
         draggable: true,
         dragSize: remToPx(5.6),
+      },
+      breakpoints: {
+        768: {
+          freeMode: true,
+        },
       },
     });
   }

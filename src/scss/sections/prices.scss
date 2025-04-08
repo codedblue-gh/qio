@@ -107,9 +107,13 @@
 
 .item-prices {
   &.swiper-slide {
+    min-height: 52rem;
     @media (max-width: 48em) {
       width: 59rem;
       height: auto;
+    }
+    @media (min-width: 48.01em) {
+      min-height: 34.1rem;
     }
   }
   // .item-prices__inner
@@ -181,6 +185,10 @@
 
     text-align: justify;
     line-height: 140%;
+
+    @media (min-width: 48.01em) {
+      max-width: 31rem;
+    }
   }
 
   // .item-prices__list

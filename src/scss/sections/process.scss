@@ -15,7 +15,7 @@
     display: flex;
     justify-content: space-between;
 
-    @media (max-width: 49em) {
+    @media (max-width: 48em) {
       flex-direction: column;
       row-gap: 4rem;
     }
@@ -66,8 +66,11 @@
   &__row {
     border-top: 1px solid #cccccc;
     border-right: 1px solid #cccccc;
+    min-height: 6rem;
 
     &_has-content {
+      position: relative;
+
       padding: 1.7rem 1.1rem;
 
       display: flex;
