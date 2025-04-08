@@ -24,17 +24,21 @@
               </h2>
               <div class="footer-upper__contacts">
                 <a
-                  href="mailto:qio@gmail.com"
+                  href="#"
+                  target="_blank"
+                  data-scramble-text="telegram"
                   class="footer-upper__contacts-item"
-                  >qio@gmail.com</a
+                  >telegram</a
                 >
                 <a
-                  href="mailto:+77777777777"
+                  href="#"
+                  target="_blank"
+                  data-scramble-text="whatsapp"
                   class="footer-upper__contacts-item"
-                  >+7 (777) 777 77-77</a
+                  >whatsapp</a
                 >
               </div>
-              <form action="#" class="footer-upper__form">
+              <form data-form-validate action="#" class="footer-upper__form">
                 <div class="footer-upper__group">
                   <span class="footer-upper__hint"
                     ><span data-scramble-text="Let us know how we can help"
@@ -81,28 +85,40 @@
                   </div>
                 </div>
                 <div class="footer-upper__fields">
-                  <div class="footer-upper__field field">
+                  <div data-field class="footer-upper__field field">
                     <input
+                      data-required
                       autocomplete="off"
                       type="text"
                       data-name-mask
+                      minlength="1"
                       name="form[]"
                       placeholder="NAME"
                       class="field__input" />
                   </div>
-                  <div class="footer-upper__field field">
+                  <div data-field class="footer-upper__field field">
                     <input
+                      data-required
                       autocomplete="off"
                       type="tel"
+                      minlength="1"
                       data-tel-mask
                       name="form[]"
                       placeholder="PHONE"
                       class="field__input" />
                   </div>
-                  <div class="footer-upper__field field field_textarea">
+                  <div
+                    data-field
+                    class="footer-upper__field field field_textarea">
                     <textarea
+                      data-required
                       placeholder="MESSAGE"
-                      class="field__input"></textarea>
+                      class="field__input"
+                      minlength="1"
+                      maxlength="1000"></textarea>
+                  </div>
+                  <div class="form-message form-message_success btn-secondary">
+                    thank you, your request is sent. we'll contact you asap
                   </div>
                   <button type="submit" class="field__btn btn-secondary">
                     submit

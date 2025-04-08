@@ -805,10 +805,10 @@
 							</span>
 						</h2>
 						<div class="footer-upper__contacts">
-							<a href="mailto:qio@gmail.com" class="footer-upper__contacts-item">qio@gmail.com</a>
-							<a href="mailto:+77777777777" class="footer-upper__contacts-item">+7 (777) 777 77-77</a>
+							<a href="#" target="_blank" data-scramble-text="telegram" class="footer-upper__contacts-item">telegram</a>
+							<a href="#" target="_blank" data-scramble-text="whatsapp" class="footer-upper__contacts-item">whatsapp</a>
 						</div>
-						<form action="#" class="footer-upper__form">
+						<form data-form-validate action="#" class="footer-upper__form">
 							<div class="footer-upper__group">
 								<span class="footer-upper__hint"><span data-scramble-text="Let us know how we can help">Let us know how we can help</span></span>
 								<div class="footer-upper__badges _hidden-scrollbar">
@@ -835,14 +835,17 @@
 								</div>
 							</div>
 							<div class="footer-upper__fields">
-								<div class="footer-upper__field field">
-									<input autocomplete="off" type="text" data-name-mask name="form[]" placeholder="NAME" class="field__input" />
+								<div data-field class="footer-upper__field field">
+									<input data-required autocomplete="off" type="text" data-name-mask minlength="1" name="form[]" placeholder="NAME" class="field__input" />
 								</div>
-								<div class="footer-upper__field field">
-									<input autocomplete="off" type="tel" data-tel-mask name="form[]" placeholder="PHONE" class="field__input" />
+								<div data-field class="footer-upper__field field">
+									<input data-required autocomplete="off" type="tel" minlength="1" data-tel-mask name="form[]" placeholder="PHONE" class="field__input" />
 								</div>
-								<div class="footer-upper__field field field_textarea">
-									<textarea placeholder="MESSAGE" class="field__input"></textarea>
+								<div data-field class="footer-upper__field field field_textarea">
+									<textarea data-required placeholder="MESSAGE" class="field__input" minlength="1" maxlength="1000"></textarea>
+								</div>
+								<div class="form-message form-message_success btn-secondary">
+									thank you, your request is sent. we'll contact you asap
 								</div>
 								<button type="submit" class="field__btn btn-secondary">
 									submit
@@ -855,16 +858,12 @@
 			<footer class="footer">
 				<div class="footer__container container">
 					<span class="footer__txt">©<span data-current-year>2025</span>, QIO WEB STUDIO</span>
-					<ul class="footer__socials">
-						<li class="footer__sc-item">
-							<a href="#" target="_blank" class="footer__sc-item-content"><svg>
-									<use href="#tg-svg"></use>
-								</svg></a>
+					<ul class="footer__contacts">
+						<li class="footer__contacts-item">
+							<a href="mailto:qio@gmail.com" class="footer__contacts-txt">qio@gmail.com</a>
 						</li>
-						<li class="footer__sc-item">
-							<a href="#" target="_blank" class="footer__sc-item-content"><svg>
-									<use href="#whatsapp-svg"></use>
-								</svg></a>
+						<li class="footer__contacts-item">
+							<a href="tel:77777777777" class="footer__contacts-txt">+7 (777) 777 77-77</a>
 						</li>
 					</ul>
 					<span class="footer__txt"><a href="#" target="_blank" class="footer__link">CONFIDENTIAL POLICY</a></span>

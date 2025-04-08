@@ -20,13 +20,29 @@ if (elements.length) {
       trigger: el,
       once: true,
       onEnter: () => {
-        scramble(el);
+        scramble(el, () => {
+          el.addEventListener('mouseenter', function () {
+            el.removeAttribute('data-scramble-text');
+
+            gsap.to(el.querySelectorAll('.char'), {
+              opacity: 0,
+              duration: 0.3,
+              'clip-path': 'inset(0% 100% 0% 100%)',
+            });
+            gsap.to(el.querySelectorAll('.char'), {
+              opacity: 1,
+              stagger: 0.05,
+              'clip-path': 'inset(0% 0% 0% 0%)',
+              delay: 0.3,
+            });
+          });
+        });
       },
     });
   });
 }
 
-export async function scramble(newText) {
+export async function scramble(newText, callback) {
   let el = newText;
   newText = newText.dataset.scrambleText
     ? newText.dataset.scrambleText
@@ -77,6 +93,10 @@ export async function scramble(newText) {
           setTimeout(() => {
             if (el.hasAttribute('data-splitting')) {
               Splitting({ target: el });
+
+              if (callback) {
+                callback();
+              }
             }
           }, 0);
         },

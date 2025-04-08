@@ -13,9 +13,10 @@ export const removeError = (field, form) => {
 
 if (document.querySelectorAll('[data-field]').length) {
   document.querySelectorAll('[data-field]').forEach(field => {
-    const input = field.querySelector('input');
+    const input = field.querySelector('input, textarea');
 
     input.addEventListener('input', function () {
+      field.closest('form').classList.remove('_form-sent');
       if (input.dataset.mask === 'text') {
         input.value = input.value.replace(/[^a-zA-Zа-яА-я]+/g, '');
       }
@@ -103,41 +104,6 @@ if (document.querySelectorAll('[data-form-validate]').length) {
           form.querySelector('._has-error') ||
           inputs.length !== form.querySelectorAll('._is-filled').length
         ) {
-          const message = form.querySelector('.form-message_message');
-          const placeholder =
-            form.querySelector('.field._has-error input') &&
-            form.querySelector('.field._has-error input').placeholder;
-
-          if (message) {
-            const htm = '<span class="form-message__icon"></span>';
-            const setText = txt => {
-              message.innerHTML = `
-               ${htm}
-               ${txt}
-              `;
-            };
-
-            if (placeholder) {
-              if (placeholder.includes('Ваше имя')) {
-                setText(
-                  'Пожалуйста, проверьте правильность написания вашего имени. Оно может содержать только буквы и пробелы.'
-                );
-              } else if (placeholder.includes('телефон')) {
-                setText(
-                  'Пожалуйста, проверьте правильность заполнения телефона, он должен соответствовать образцу +7 (999) 999 — 99 — 99'
-                );
-              } else if (placeholder.includes('email')) {
-                setText('Пожалуйста, проверьте правильность написания почты');
-              }
-            } else {
-              if (form.querySelector('.checkbox._has-error input')) {
-                setText(
-                  'Пожалуйста, дайте согласие на обработку персональных данных'
-                );
-              }
-            }
-          }
-
           return false;
         } else {
           modal && closeModal(modal);
@@ -145,10 +111,7 @@ if (document.querySelectorAll('[data-form-validate]').length) {
             successAlert &&
             !document.querySelector('.form-message_alert._show-alert')
           ) {
-            successAlert.classList.add('_form-sent');
-            setTimeout(() => {
-              successAlert.classList.remove('_form-sent');
-            }, 5000);
+            form.classList.add('_form-sent');
           }
         }
       },

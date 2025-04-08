@@ -79,21 +79,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (hoverItems) {
     hoverItems.forEach(el => {
-      el.addEventListener('mouseenter', function () {
-        el.removeAttribute('data-scramble-text');
+      // el.addEventListener('mouseenter', function () {
+      //   el.removeAttribute('data-scramble-text');
 
-        gsap.to(el.querySelectorAll('.char'), {
-          opacity: 0,
-          duration: 0.3,
-          'clip-path': 'inset(0% 100% 0% 100%)',
-        });
-        gsap.to(el.querySelectorAll('.char'), {
-          opacity: 1,
-          stagger: 0.05,
-          'clip-path': 'inset(0% 0% 0% 0%)',
-          delay: 0.3,
-        });
-      });
+      //   gsap.to(el.querySelectorAll('.char'), {
+      //     opacity: 0,
+      //     duration: 0.3,
+      //     'clip-path': 'inset(0% 100% 0% 100%)',
+      //   });
+      //   gsap.to(el.querySelectorAll('.char'), {
+      //     opacity: 1,
+      //     stagger: 0.05,
+      //     'clip-path': 'inset(0% 0% 0% 0%)',
+      //     delay: 0.3,
+      //   });
+      // });
       if (!el.hasAttribute('data-scramble-text')) {
         Splitting({ target: el });
       }
