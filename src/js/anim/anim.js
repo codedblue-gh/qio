@@ -1,6 +1,7 @@
 import './lenis';
 import './scramble-text';
 import './particles';
+import './dots';
 import gsap from 'gsap';
 import Lottie from 'lottie-web';
 

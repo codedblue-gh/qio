@@ -79,35 +79,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (hoverItems) {
     hoverItems.forEach(el => {
-      // el.addEventListener('mouseenter', function () {
-      //   el.removeAttribute('data-scramble-text');
-
-      //   gsap.to(el.querySelectorAll('.char'), {
-      //     opacity: 0,
-      //     duration: 0.3,
-      //     'clip-path': 'inset(0% 100% 0% 100%)',
-      //   });
-      //   gsap.to(el.querySelectorAll('.char'), {
-      //     opacity: 1,
-      //     stagger: 0.05,
-      //     'clip-path': 'inset(0% 0% 0% 0%)',
-      //     delay: 0.3,
-      //   });
-      // });
       if (!el.hasAttribute('data-scramble-text')) {
         Splitting({ target: el });
       }
     });
   }
-
-  // document.addEventListener('mouseover', function (e) {
-  //   console.log(e.target);
-  //   // if (e.target && e.target.hasAttribute('data-scramble-hover')) {
-  //   //   console.log('log');
-  //   //   e.target.innerHTML = ' ';
-  //   //   scramble(e.target);
-  //   // }
-  // });
 });
 window.addEventListener('load', function () {
   dynamicDOM();
@@ -231,6 +207,19 @@ window.addEventListener('load', function () {
           }
         });
       });
+  }
+
+  if (document.querySelector('.error-message__nums')) {
+    const parent = document.querySelector('.error-message__nums');
+    const data = parent.dataset.errorCode.split('');
+    const arr = getRange(1, 80);
+
+    for (let i = 0; i < arr.length; i++) {
+      const el = document.createElement('span');
+      el.classList.add('particle');
+      el.innerHTML = i <= 20 ? data[0] : i <= 40 ? data[1] : data[2];
+      parent.appendChild(el);
+    }
   }
 });
 window.addEventListener('pageswap', function () {});
