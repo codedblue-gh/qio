@@ -1,6 +1,8 @@
 import gsap, { Power2, Power3 } from 'gsap';
 
 if (document.getElementById('dots-canvas')) {
+  const el = document.getElementById('dots-canvas');
+
   class Canvas {
     constructor() {
       this.domElement = document.getElementById('dots-canvas');
@@ -124,15 +126,15 @@ if (document.getElementById('dots-canvas')) {
     });
   };
 
-  window.addEventListener('mousedown', ev => {
+  el.addEventListener('mousedown', ev => {
     attractive = 350;
   });
 
-  window.addEventListener('mouseup', ev => {
+  el.addEventListener('mouseup', ev => {
     attractive = 150;
   });
 
-  window.addEventListener('mousemove', event => {
+  el.addEventListener('mousemove', event => {
     ev.clientX = event.clientX;
     ev.clientY = event.clientY;
   });
