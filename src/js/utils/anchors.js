@@ -6,17 +6,18 @@ if (document.querySelectorAll('[data-anchor]').length) {
     const el = document.querySelector(anchor.dataset.anchor);
 
     anchor.addEventListener('click', function () {
+      if (anchor.closest('.nav') && !document.querySelector('.hero')) {
+        removeClasses(document.querySelectorAll('.nav__item'), '_is-active');
+        anchor.parentElement.classList.add('_is-active');
+      }
+
       el &&
         lenis.scrollTo(el, {
           force: true,
           lock: true,
-          offset: anchor.dataset.offset ? +anchor.dataset.offset : 0,
+          duration: 1,
+          offset: anchor.dataset.offset ? +anchor.dataset.offset : 10,
         });
-
-      if (anchor.closest('.nav')) {
-        removeClasses(document.querySelectorAll('.nav__item'), '_is-active');
-        anchor.parentElement.classList.add('_is-active');
-      }
     });
   });
 }

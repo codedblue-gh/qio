@@ -30,21 +30,37 @@ const observeWorkflow = () => {
 };
 
 const observe = (anchors, triggers, start) => {
+  const isMainpage = document.querySelector('.hero');
+  const anc = anchors.map(el => el.parentElement);
   if (anchors && triggers) {
     const addActiveClass = idx => {
-      removeClasses(anchors, '_is-active');
-      anchors[idx].classList.add('_is-active');
+      if (isMainpage) {
+        removeClasses(anc, '_is-active');
+        anchors[idx].parentElement.classList.add('_is-active');
+      } else {
+        removeClasses(anchors, '_is-active');
+        anchors[idx].classList.add('_is-active');
+      }
     };
+
     triggers.forEach((trigger, idx) => {
       ScrollTrigger.create({
         trigger,
-        start,
-        end: 'bottom top',
+        start:
+          idx === 0 || (idx === triggers.length - 1 && isMainpage)
+            ? 'center 59%'
+            : isMainpage && idx !== 0 && idx !== triggers.length - 1
+            ? 'center 70%'
+            : start,
+        end: isMainpage ? 'bottom center' : 'bottom top',
         onEnter: () => {
           addActiveClass(idx);
         },
         onLeaveBack: () => {
           addActiveClass(idx);
+        },
+        onEnterBack: () => {
+          isMainpage && addActiveClass(idx);
         },
       });
     });
@@ -208,6 +224,9 @@ window.addEventListener('load', function () {
         });
       });
   }
+
+  if (document.querySelector('.hero'))
+    document.documentElement.classList.add('homepage');
 
   if (document.querySelector('.error-message__nums')) {
     const parent = document.querySelector('.error-message__nums');

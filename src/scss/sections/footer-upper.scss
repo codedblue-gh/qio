@@ -1,14 +1,16 @@
+.homepage {
+  main {
+    // padding-bottom: calc(10rem + 6.5rem);
+    // @media (max-width: 767px) {
+    //   padding-bottom: 10rem;
+    // }
+  }
+}
 .footer-upper {
   position: relative;
   z-index: 5;
 
-  padding-bottom: calc(10rem + 6.5rem);
-
   background-color: var(--c-bg);
-
-  @media (max-width: 767px) {
-    padding-bottom: 10rem;
-  }
 
   &__fields-inner {
     grid-column: span 2;

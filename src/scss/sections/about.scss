@@ -41,6 +41,8 @@
   // .about__wrap
 
   &__wrap {
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     @media (min-width: 767.1px) {
@@ -100,6 +102,10 @@
     order: -1;
 
     background-color: var(--c-primary);
+
+    @media (min-width: 1930px) {
+      transform: translate(-14%, -3rem);
+    }
 
     @media (min-width: 767.1px) {
       margin: 0;

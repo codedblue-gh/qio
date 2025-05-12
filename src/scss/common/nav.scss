@@ -32,6 +32,12 @@
   &__item {
     cursor: pointer;
 
+    &._is-active {
+      .nav__item-content {
+        color: var(--c-primary);
+      }
+    }
+
     &:last-child {
       position: relative;
 
@@ -69,10 +75,6 @@
     color: var(--c-gray);
 
     transition: color 0.5s ease-in-out;
-
-    &._is-active {
-      color: var(--c-primary);
-    }
   }
 
   &__item-ignore .nav__item-content {
