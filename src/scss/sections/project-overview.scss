@@ -26,7 +26,7 @@
       padding-top: 2rem;
 
       display: grid;
-      grid-template-columns: 56.7rem 1fr;
+      grid-template-columns: 54.7rem 1fr;
       height: 75.3rem;
     }
   }
@@ -43,6 +43,10 @@
 
     @media (max-width: 48em) {
       flex: 1 1 auto;
+
+      &:nth-child(2) {
+        flex: 0 0 38rem;
+      }
     }
   }
 
